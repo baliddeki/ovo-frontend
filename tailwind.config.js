@@ -13,6 +13,18 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			  // my colors
+			blue: {
+				1: "#F2F7FB",
+				5: "#2275FC",
+			},
+			gray: {
+				3: "#BDC7D3",
+				8: "#575864",
+			},
+			hr: '#E6EFF6',
+			  // shad-cn colors
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
