@@ -1,7 +1,13 @@
 import {Link, useLocation} from "react-router-dom";
 import logo from "/full-logo.png"
 import {useState} from "react";
-const Sidebar = ()=>{
+import { LuArrowLeftFromLine } from "react-icons/lu";
+
+type Props = {
+    handleToggleSidebar: ()=> void;
+    toggleSidebar: boolean;
+}
+const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
     const [activeBar, setActiveBar] = useState<string | null>("");
     const location = useLocation();
     const path = location.pathname;
@@ -11,12 +17,17 @@ const Sidebar = ()=>{
     }
     return (
         <>
-            <div className={"bg-white shadow-lg fixed max-h-screen h-full left-0 top-0 flex flex-col"}>
-                <Link to={"/"} className={"border-b-2 border-b-hr px-8 py-4"}>
-                    <img src={logo} alt={"Logo Image"}/>
-                </Link>
+            <div className={`${toggleSidebar ? "" :"-translate-x-full"} z-50 duration-300 bg-white shadow-lg fixed max-h-screen h-full left-0 top-0 flex flex-col`}>
+                <div className={"border-b-2 border-b-hr px-8 py-4 relative"}>
+                    <Link to={"/"}>
+                        <img src={logo} alt={"Logo Image"}/>
+                    </Link>
+                    <button onClick={handleToggleSidebar} className={"absolute right-4 top-1/2 -translate-y-1/2"}>
+                        <LuArrowLeftFromLine className={"text-3xl text-gray-3"} />
+                    </button>
+                </div>
                 <div className={"px-8 py-4"}>
-                    <div className={"mt-16 flex flex-col gap-8 font-bold"}>
+                    <div className={"mt-8 md:mt-12 flex flex-col gap-8 font-bold"}>
                         <div className={"flex flex-col gap-4"}>
                             <h3 className={"capitalize text-gray-3"}>Menu</h3>
                             <div className={"flex flex-col gap-2 ml-4"}>
