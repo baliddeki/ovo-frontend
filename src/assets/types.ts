@@ -18,3 +18,11 @@ export type Order = {
     deliveryDate: string;
     image: string;
 }
+
+export type Brand = {
+    id: string;
+    name: string;
+    country: string;
+    established: number;
+    category: string;
+};

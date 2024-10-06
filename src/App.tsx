@@ -10,6 +10,9 @@ import Reports from "@/pages/admin-pages/reports.tsx";
 import Sales from "@/pages/admin-pages/sales.tsx";
 import Settings from "@/pages/admin-pages/settings.tsx";
 import PageNotFound from '@/pages/admin-pages/page-not-found.tsx';
+import Product from "@/pages/admin-pages/product.tsx";
+import EditProduct from "@/pages/admin-pages/edit-product.tsx";
+import AddNewProduct from "@/pages/admin-pages/add-new-product.tsx";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
              <Route path={"analytics"} element={<Analytics />}/>
              <Route path={"sales"} element={<Sales />}/>
              <Route path={"products"} element={<Products />}/>
+             <Route path={"add-new-product"} element={<AddNewProduct />}/>
+             <Route path={"product/:productId"} element={<Product />}/>
+             <Route path={"edit-product/:productId"} element={<EditProduct />}/>
              <Route path={"customers"} element={<Customers />}/>
              <Route path={"orders"} element={<Orders />}/>
              <Route path={"reports"} element={<Reports />}/>
