@@ -23,9 +23,11 @@ export default {
 				8: "#575864",
 			},
 			orange: {
+				2: '#FFF2ED',
 				5: '#FF5200'
 			},
 			green: {
+				2: '#F0FDF4',
 				5: '#22C55E',
 			},
 			hr: '#E6EFF6',

@@ -32,7 +32,7 @@ const AdminHome = ()=>{
                     <div className={"bg-white p-6 rounded-lg vertical-spacing overflow-hidden"}>
                         <div className={"sm:flex sm:items-center sm:justify-between"}>
                             <h3 className={"text-2xl font-bold"}>Top Selling Product</h3>
-                            <Link to={"/"} className={"text-blue-5 font-light"}>see all</Link>
+                            <Link to={"/products"} className={"text-blue-5 font-light"}>see all</Link>
                         </div>
                         <div>
                             <Table className={"min-w-[32rem]"}>
@@ -55,7 +55,14 @@ const AdminHome = ()=>{
                                                     </TableCell>
                                                     <TableCell>{category}</TableCell>
                                                     <TableCell>{totalSales}</TableCell>
-                                                    <TableCell>{availability}</TableCell>
+                                                    <TableCell>
+                                                        {
+                                                            availability === "In Stock" ?
+                                                                <p className={"text-green-5 bg-green-2 px-2 py-1 w-fit"}>{availability}</p>
+                                                                :
+                                                                <p className={"text-orange-5 bg-orange-2 px-2 py-1 w-fit"}>{availability}</p>
+                                                        }
+                                                    </TableCell>
                                                 </TableRow>
                                             ))
                                         }

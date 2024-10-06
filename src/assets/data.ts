@@ -1,4 +1,4 @@
-import {Order, Product} from "@/assets/types.ts";
+import {Brand, Order, Product} from "@/assets/types.ts";
 
 export const products: Product[] = [
     {
@@ -30,7 +30,7 @@ export const products: Product[] = [
         price: "30,000ugx",
         category: "sneakers",
         brand: "Puma",
-        availability: "In Stock",
+        availability: "Out of Stock",
         totalSales: "950,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -193,5 +193,78 @@ export const orders: Order[] = [
         price: "160,000ugx",
         deliveryDate: "25/10/2024",
         image: "/images/boots.jpg",
+    }
+];
+
+export const brands: Brand[] = [
+    {
+        id: "1",
+        name: "Nike",
+        country: "USA",
+        established: 1964,
+        category: "Sportswear Nike",
+    },
+    {
+        id: "2",
+        name: "Adidas",
+        country: "Germany",
+        established: 1949,
+        category: "Sportswear Adidas",
+    },
+    {
+        id: "3",
+        name: "Puma",
+        country: "Germany",
+        established: 1948,
+        category: "Sportswear Puma",
+    },
+    {
+        id: "4",
+        name: "Reebok",
+        country: "USA",
+        established: 1958,
+        category: "Sportswear Reebok",
+    },
+    {
+        id: "5",
+        name: "Under Armour",
+        country: "USA",
+        established: 1996,
+        category: "Sportswear Armour",
+    },
+    {
+        id: "6",
+        name: "New Balance",
+        country: "USA",
+        established: 1906,
+        category: "Sportswear",
+    },
+    {
+        id: "7",
+        name: "Converse",
+        country: "USA",
+        established: 1908,
+        category: "Footwear Converse",
+    },
+    {
+        id: "8",
+        name: "Vans",
+        country: "USA",
+        established: 1966,
+        category: "Footwear",
+    },
+    {
+        id: "9",
+        name: "Levi's",
+        country: "USA",
+        established: 1853,
+        category: "Apparel",
+    },
+    {
+        id: "10",
+        name: "Gucci",
+        country: "Italy",
+        established: 1921,
+        category: "Luxury Fashion",
     }
 ];
