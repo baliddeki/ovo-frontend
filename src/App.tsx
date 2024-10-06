@@ -27,7 +27,6 @@ function App() {
              <Route path={"settings"} element={<Settings />}/>
          </Route>
          <Route path={"/admin"} element={<Admin />}>
-
          </Route>
          <Route path={"*"} element={<PageNotFound />}/>
      </Routes>

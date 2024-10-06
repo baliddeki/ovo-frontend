@@ -1,0 +1,197 @@
+import {Order, Product} from "@/assets/types.ts";
+
+export const products: Product[] = [
+    {
+        id: "1",
+        name: "Black Air Force",
+        quantity: 12,
+        price: "27,000ugx",
+        category: "sinkers",
+        brand: "Nike",
+        availability: "In Stock",
+        totalSales: "789,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "2",
+        name: "White Running Shoes",
+        quantity: 20,
+        price: "35,000ugx",
+        category: "runners",
+        brand: "Adidas",
+        availability: "In Stock",
+        totalSales: "1,200,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "3",
+        name: "Blue Sport Sneakers",
+        quantity: 15,
+        price: "30,000ugx",
+        category: "sneakers",
+        brand: "Puma",
+        availability: "In Stock",
+        totalSales: "950,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "4",
+        name: "Red Basketball Shoes",
+        quantity: 18,
+        price: "45,000ugx",
+        category: "basketball",
+        brand: "Jordan",
+        availability: "Limited Stock",
+        totalSales: "810,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "5",
+        name: "Green Walking Shoes",
+        quantity: 22,
+        price: "20,000ugx",
+        category: "walking",
+        brand: "Reebok",
+        availability: "In Stock",
+        totalSales: "550,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "6",
+        name: "Yellow Track Shoes",
+        quantity: 10,
+        price: "50,000ugx",
+        category: "track",
+        brand: "Under Armour",
+        availability: "Out of Stock",
+        totalSales: "1,500,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "7",
+        name: "Orange High-Tops",
+        quantity: 8,
+        price: "60,000ugx",
+        category: "high-tops",
+        brand: "Converse",
+        availability: "In Stock",
+        totalSales: "720,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "8",
+        name: "Grey Cross Trainers",
+        quantity: 16,
+        price: "40,000ugx",
+        category: "trainers",
+        brand: "New Balance",
+        availability: "Limited Stock",
+        totalSales: "640,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "9",
+        name: "Purple Tennis Shoes",
+        quantity: 13,
+        price: "38,000ugx",
+        category: "tennis",
+        brand: "Fila",
+        availability: "In Stock",
+        totalSales: "494,000ugx",
+        image: "/images/nike-shoes.png"
+    },
+    {
+        id: "10",
+        name: "Brown Hiking Boots",
+        quantity: 5,
+        price: "70,000ugx",
+        category: "hiking",
+        brand: "Timberland",
+        availability: "Out of Stock",
+        totalSales: "350,000ugx",
+        image: "/images/nike-shoes.png"
+    }
+];
+
+export const orders: Order[] = [
+    {
+        id: '1',
+        product: "Brown Hiking Boots",
+        customer: "Emma",
+        price: "127,000ugx",
+        deliveryDate: "12/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '2',
+        product: "Black Air Force",
+        customer: "John",
+        price: "150,000ugx",
+        deliveryDate: "15/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '3',
+        product: "White Running Shoes",
+        customer: "Sarah",
+        price: "90,000ugx",
+        deliveryDate: "14/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '4',
+        product: "Blue Sport Sneakers",
+        customer: "Michael",
+        price: "110,000ugx",
+        deliveryDate: "13/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '5',
+        product: "Red Basketball Shoes",
+        customer: "David",
+        price: "180,000ugx",
+        deliveryDate: "20/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '6',
+        product: "Green Walking Shoes",
+        customer: "Alice",
+        price: "75,000ugx",
+        deliveryDate: "18/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '7',
+        product: "Yellow Track Shoes",
+        customer: "James",
+        price: "200,000ugx",
+        deliveryDate: "19/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '8',
+        product: "Grey Cross Trainers",
+        customer: "Rebecca",
+        price: "130,000ugx",
+        deliveryDate: "21/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '9',
+        product: "Purple Tennis Shoes",
+        customer: "Chris",
+        price: "95,000ugx",
+        deliveryDate: "22/10/2024",
+        image: "/images/boots.jpg",
+    },
+    {
+        id: '10',
+        product: "Orange High-Tops",
+        customer: "Sophia",
+        price: "160,000ugx",
+        deliveryDate: "25/10/2024",
+        image: "/images/boots.jpg",
+    }
+];

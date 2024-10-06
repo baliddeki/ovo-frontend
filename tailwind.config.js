@@ -25,6 +25,9 @@ export default {
 			orange: {
 				5: '#FF5200'
 			},
+			green: {
+				5: '#22C55E',
+			},
 			hr: '#E6EFF6',
 			notification: 'rgba(203, 213,244,.31)',
 			  // shad-cn colors
