@@ -1,4 +1,4 @@
-const Home = ()=>{
+const AdminHome = ()=>{
     return (
         <>
             <p>Home page</p>
@@ -6,4 +6,4 @@ const Home = ()=>{
     )
 }
 
-export default Home
+export default AdminHome
