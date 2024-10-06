@@ -22,7 +22,14 @@ export default {
 				3: "#BDC7D3",
 				8: "#575864",
 			},
+			orange: {
+				5: '#FF5200'
+			},
+			green: {
+				5: '#22C55E',
+			},
 			hr: '#E6EFF6',
+			notification: 'rgba(203, 213,244,.31)',
 			  // shad-cn colors
 
   			background: 'hsl(var(--background))',
