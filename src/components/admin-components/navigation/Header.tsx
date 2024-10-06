@@ -17,9 +17,9 @@ const Header = ({handleToggleSidebar, toggleSidebar}: Props)=>{
                     </button>
                 }
                 <div className={"flex-1"}>
-                <form
+                    <form
                         onSubmit={e => e.preventDefault()}
-                        className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center justify-between max-w-[900px] w-full"}>
+                        className={"rounded-xl border-[1px] px-6 flex gap-4 items-center justify-between max-w-[900px] w-full"}>
                         <input type={"search"} className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
                         <button type={"submit"} className={"border-none shadow-none"}>
                             <CiSearch className={"text-2xl"}/>
