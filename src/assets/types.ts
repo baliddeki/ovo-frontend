@@ -45,3 +45,26 @@ export const productSchema = z.object({
     availability: z.string(),
     image: z.string(),
 })
+
+export const loginSchema = z.object({
+    email: z.string({
+        required_error: "Name is Required"
+    }),
+    password: z.string({
+        required_error: "Password is Required"
+    }),
+})
+
+export const signupSchema = z.object({
+    firstName: z.string({
+        required_error: "Please provide First Name"
+    }),
+    lastName: z.string(),
+    email: z.string({
+        required_error: "Name is Required"
+    }),
+    password: z.string({
+        required_error: "Password is Required"
+    }),
+    confirmPassword: z.string(),
+})
