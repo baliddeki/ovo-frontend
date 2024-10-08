@@ -27,7 +27,7 @@ const SignIn = ()=>{
                 <h3 className={"text-2xl font-bold"}>Login to account</h3>
                 <p className={"text-gray-8 text-sm"}>Enter your email and password to login</p>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(submitForm)} className={"w-full vertical-spacing"}>
+                    <form onSubmit={form.handleSubmit(submitForm)} className={"w-full vertical-spacing gap-6 mt-4"}>
                         <FormField
                             control={form.control}
                             name={"email"}
@@ -99,7 +99,7 @@ const SignIn = ()=>{
 
                     <Button className={"bg-blue-5 text-white mt-4 hover:bg-blue-400 duration-300"}>Signin</Button>
                 </Form>
-                <div>
+                <div className={"mt-4"}>
                     <p className={"text-sm"}>You do not have an account yet? <Link to={"/auth/signup"} className={"ml-1 text-blue-5"}>Signup</Link></p>
                 </div>
             </div>

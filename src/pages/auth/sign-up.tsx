@@ -6,7 +6,6 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/
 import {Input} from "@/components/ui/input.tsx";
 import usePasswordToggle from "@/assets/utils.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
-import {Checkbox} from "@/components/ui/checkbox.tsx";
 import {Link} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
 const SignUp = ()=>{
@@ -27,10 +26,10 @@ const SignUp = ()=>{
     return (
         <>
             <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl shadow-lg shadow-gray-200 mx-auto"}>
-                <h3 className={"text-2xl font-bold"}>Login to account</h3>
-                <p className={"text-gray-8 text-sm"}>Enter your email and password to login</p>
+                <h3 className={"text-2xl font-bold"}>Create an account</h3>
+                <p className={"text-gray-8 text-sm"}>Enter your personal details to create an account</p>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(submitForm)} className={"w-full vertical-spacing"}>
+                    <form onSubmit={form.handleSubmit(submitForm)} className={"w-full vertical-spacing mt-4 gap-6"}>
                         <div className={"grid md:grid-cols-2 gap-4"}>
                             <FormField
                                 control={form.control}
@@ -160,23 +159,11 @@ const SignUp = ()=>{
                             )}
                         />
 
-                        <div className="flex items-center justify-between mt-4">
-                            <div className={"flex items-center gap-4 text-sm text-gray-8"}>
-                                <Checkbox id="terms"/>
-                                <label
-                                    htmlFor="terms"
-                                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                >
-                                    Keep me signed in
-                                </label>
-                            </div>
-                            <Link to={"/auth/password-reset"} className={"text-sm text-blue-5"}>Forgot Password?</Link>
-                        </div>
                     </form>
 
                     <Button className={"bg-blue-5 text-white mt-4 hover:bg-blue-400 duration-300"}>Signup</Button>
                 </Form>
-                <div>
+                <div className={"mt-4"}>
                     <p className={"text-sm"}>Already have an Account? <Link to={"/auth/signin"} className={"ml-1 text-blue-5"}>Signin</Link></p>
                 </div>
             </div>
