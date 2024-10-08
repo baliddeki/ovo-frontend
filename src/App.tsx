@@ -13,11 +13,21 @@ import PageNotFound from '@/pages/admin-pages/page-not-found.tsx';
 import Product from "@/pages/admin-pages/product.tsx";
 import EditProduct from "@/pages/admin-pages/edit-product.tsx";
 import AddNewProduct from "@/pages/admin-pages/add-new-product.tsx";
+import AuthLayout from "@/layouts/AuthLayout.tsx";
+import SignUp from "@/pages/auth/sign-up.tsx";
+import SignIn from "@/pages/auth/sign-in.tsx";
 
 function App() {
   return (
     <>
      <Routes>
+         <Route path={"/auth"} element={<AuthLayout />}>
+             <Route path={"login"} element={<SignIn />}/>
+             <Route path={"signup"} element={<SignUp />}/>
+         </Route>
+
+         {/*<Route path={"/admin"} element={<Admin />}>*/}
+         {/*</Route>*/}
          <Route path={"/"} element={<Admin />}>
              <Route index element={<AdminHome />}/>
              <Route path={"analytics"} element={<Analytics />}/>
@@ -31,8 +41,6 @@ function App() {
              <Route path={"reports"} element={<Reports />}/>
              <Route path={"profile"} element={<Profile />}/>
              <Route path={"settings"} element={<Settings />}/>
-         </Route>
-         <Route path={"/admin"} element={<Admin />}>
          </Route>
          <Route path={"*"} element={<PageNotFound />}/>
      </Routes>

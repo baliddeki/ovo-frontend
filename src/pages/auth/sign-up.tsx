@@ -1,8 +1,9 @@
 const SignUp = ()=>{
     return (
         <>
-            <p>Signup Page</p>
+            <p>SignUp Page</p>
         </>
     )
 }
+
 export default SignUp

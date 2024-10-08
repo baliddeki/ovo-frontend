@@ -45,3 +45,12 @@ export const productSchema = z.object({
     availability: z.string(),
     image: z.string(),
 })
+
+export const loginSchema = z.object({
+    email: z.string({
+        required_error: "Name is Required"
+    }),
+    password: z.string({
+        required_error: "Password is Required"
+    }),
+})
