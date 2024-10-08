@@ -22,7 +22,7 @@ function App() {
     <>
      <Routes>
          <Route path={"/auth"} element={<AuthLayout />}>
-             <Route path={"login"} element={<SignIn />}/>
+             <Route path={"signin"} element={<SignIn />}/>
              <Route path={"signup"} element={<SignUp />}/>
          </Route>
 

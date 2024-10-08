@@ -23,7 +23,7 @@ const SignIn = ()=>{
     }
     return (
         <>
-            <div className={"max-w-[30rem] w-full p-8 vertical-spacing bg-white rounded-xl shadow-lg shadow-gray-200 mx-auto"}>
+            <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl shadow-lg shadow-gray-200 mx-auto"}>
                 <h3 className={"text-2xl font-bold"}>Login to account</h3>
                 <p className={"text-gray-8 text-sm"}>Enter your email and password to login</p>
                 <Form {...form}>
