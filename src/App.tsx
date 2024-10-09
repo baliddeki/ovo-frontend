@@ -26,9 +26,7 @@ function App() {
              <Route path={"signup"} element={<SignUp />}/>
          </Route>
 
-         {/*<Route path={"/admin"} element={<Admin />}>*/}
-         {/*</Route>*/}
-         <Route path={"/"} element={<Admin />}>
+         <Route path={"/admin"} element={<Admin />}>
              <Route index element={<AdminHome />}/>
              <Route path={"analytics"} element={<Analytics />}/>
              <Route path={"sales"} element={<Sales />}/>
