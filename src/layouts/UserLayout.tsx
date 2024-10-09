@@ -1,7 +1,13 @@
+import {Outlet} from "react-router-dom";
+import UserHeader from "@/components/user-components/UserHeader.tsx";
+
 const UserLayout = ()=>{
     return (
         <>
-            UserLayout Page
+            <div>
+                <UserHeader/>
+                <Outlet />
+            </div>
         </>
     )
 }

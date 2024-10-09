@@ -34,7 +34,7 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                 <Link
                                     onClick={()=>handleActiveBar("")}
                                     to={"/admin"}
-                                    className={`${activeBar === "" && path === "/" ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Dashboard</Link>
+                                    className={`${activeBar === "" && path === "/admin" ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Dashboard</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("analytics")}
                                     to={"/admin/analytics"}
