@@ -8,7 +8,10 @@ export const products: Product[] = [
         price: "27,000ugx",
         category: "sinkers",
         brand: "Nike",
+        gender: "Male",
+        size: "EUR 8",
         availability: "In Stock",
+        date: new Date(),
         totalSales: "789,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -19,7 +22,10 @@ export const products: Product[] = [
         price: "35,000ugx",
         category: "runners",
         brand: "Adidas",
+        gender: "Male",
+        size: "EUR 8",
         availability: "In Stock",
+        date: new Date(),
         totalSales: "1,200,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -30,7 +36,10 @@ export const products: Product[] = [
         price: "30,000ugx",
         category: "sneakers",
         brand: "Puma",
+        gender: "Male",
+        size: "EUR 8",
         availability: "Out of Stock",
+        date: new Date(),
         totalSales: "950,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -41,7 +50,10 @@ export const products: Product[] = [
         price: "45,000ugx",
         category: "basketball",
         brand: "Jordan",
+        gender: "Male",
+        size: "EUR 8",
         availability: "Limited Stock",
+        date: new Date(),
         totalSales: "810,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -52,7 +64,10 @@ export const products: Product[] = [
         price: "20,000ugx",
         category: "walking",
         brand: "Reebok",
+        gender: "Female",
+        size: "EUR 8",
         availability: "In Stock",
+        date: new Date(),
         totalSales: "550,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -63,7 +78,10 @@ export const products: Product[] = [
         price: "50,000ugx",
         category: "track",
         brand: "Under Armour",
+        gender: "Female",
+        size: "EUR 8",
         availability: "Out of Stock",
+        date: new Date(),
         totalSales: "1,500,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -74,7 +92,10 @@ export const products: Product[] = [
         price: "60,000ugx",
         category: "high-tops",
         brand: "Converse",
+        gender: "Male",
+        size: "EUR 8",
         availability: "In Stock",
+        date: new Date(),
         totalSales: "720,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -85,7 +106,10 @@ export const products: Product[] = [
         price: "40,000ugx",
         category: "trainers",
         brand: "New Balance",
+        gender: "Male",
+        size: "EUR 8",
         availability: "Limited Stock",
+        date: new Date(),
         totalSales: "640,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -96,7 +120,10 @@ export const products: Product[] = [
         price: "38,000ugx",
         category: "tennis",
         brand: "Fila",
+        gender: "Female",
+        size: "EUR 8",
         availability: "In Stock",
+        date: new Date(),
         totalSales: "494,000ugx",
         image: "/images/nike-shoes.png"
     },
@@ -107,7 +134,10 @@ export const products: Product[] = [
         price: "70,000ugx",
         category: "hiking",
         brand: "Timberland",
+        gender: "Female",
+        size: "EUR 8",
         availability: "Out of Stock",
+        date: new Date(),
         totalSales: "350,000ugx",
         image: "/images/nike-shoes.png"
     }
@@ -248,23 +278,22 @@ export const brands: Brand[] = [
     },
     {
         id: "8",
-        name: "Vans",
+        name: "Timberland",
+        country: "USA",
+        established: 1966,
+        category: "Footwear",
+    }, {
+        id: "8",
+        name: "Fila",
+        country: "USA",
+        established: 1966,
+        category: "Footwear",
+    }, {
+        id: "8",
+        name: "Jordan",
         country: "USA",
         established: 1966,
         category: "Footwear",
     },
-    {
-        id: "9",
-        name: "Levi's",
-        country: "USA",
-        established: 1853,
-        category: "Apparel",
-    },
-    {
-        id: "10",
-        name: "Gucci",
-        country: "Italy",
-        established: 1921,
-        category: "Luxury Fashion",
-    }
+
 ];

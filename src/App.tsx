@@ -13,12 +13,31 @@ import PageNotFound from '@/pages/admin-pages/page-not-found.tsx';
 import Product from "@/pages/admin-pages/product.tsx";
 import EditProduct from "@/pages/admin-pages/edit-product.tsx";
 import AddNewProduct from "@/pages/admin-pages/add-new-product.tsx";
+import AuthLayout from "@/layouts/AuthLayout.tsx";
+import SignUp from "@/pages/auth/sign-up.tsx";
+import SignIn from "@/pages/auth/sign-in.tsx";
+import UserLayout from "@/layouts/UserLayout.tsx";
+import UserHome from "@/pages/user-pages/user-home.tsx";
+import About from "@/pages/user-pages/about.tsx";
+import Contact from "@/pages/user-pages/contact.tsx";
+import Shop from "@/pages/user-pages/shop.tsx";
 
 function App() {
   return (
     <>
      <Routes>
-         <Route path={"/"} element={<Admin />}>
+         <Route path={"/auth"} element={<AuthLayout />}>
+             <Route path={"signin"} element={<SignIn />}/>
+             <Route path={"signup"} element={<SignUp />}/>
+         </Route>
+
+         <Route path={"/"} element={<UserLayout />}>
+            <Route index element={<UserHome />}/>
+             <Route path={"about"} element={<About/>}/>
+             <Route path={"contact"} element={<Contact />}/>
+             <Route path={"shop"} element={<Shop/>}/>
+         </Route>
+         <Route path={"/admin"} element={<Admin />}>
              <Route index element={<AdminHome />}/>
              <Route path={"analytics"} element={<Analytics />}/>
              <Route path={"sales"} element={<Sales />}/>
@@ -31,8 +50,6 @@ function App() {
              <Route path={"reports"} element={<Reports />}/>
              <Route path={"profile"} element={<Profile />}/>
              <Route path={"settings"} element={<Settings />}/>
-         </Route>
-         <Route path={"/admin"} element={<Admin />}>
          </Route>
          <Route path={"*"} element={<PageNotFound />}/>
      </Routes>

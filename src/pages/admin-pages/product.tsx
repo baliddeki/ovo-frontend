@@ -18,11 +18,11 @@ const Product = ()=>{
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
-                                <Link to={"/"}>Dashboard</Link>
+                                <Link to={"/admin"}>Dashboard</Link>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator/>
                             <BreadcrumbItem>
-                                <Link to={"/products"}>Products</Link>
+                                <Link to={"/admin/products"}>Products</Link>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator/>
                             <BreadcrumbItem>

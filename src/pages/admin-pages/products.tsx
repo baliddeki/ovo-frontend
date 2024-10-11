@@ -33,7 +33,7 @@ const Products = ()=>{
                         <Breadcrumb>
                             <BreadcrumbList>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
+                                    <BreadcrumbLink href="/admin">Dashboard</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
@@ -117,8 +117,8 @@ const Products = ()=>{
                                             </TableCell>
                                             <TableCell>
                                                 <div className={"flex gap-4 items-center text-2xl"}>
-                                                    <Link to={`/product/${id}`} className={"text-blue-5"}><LuEye /></Link>
-                                                    <Link to={`/edit-product/${id}`}  className={"text-green-5"}><CiEdit/></Link>
+                                                    <Link to={`/admin/product/${id}`} className={"text-blue-5"}><LuEye /></Link>
+                                                    <Link to={`/admin/edit-product/${id}`}  className={"text-green-5"}><CiEdit/></Link>
                                                     <DeleteProduct productId={id}>
                                                         <button className={"text-orange-5"}><RiDeleteBinLine/></button>
                                                     </DeleteProduct>
