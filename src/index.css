@@ -9,7 +9,9 @@
   .vertical-spacing{
     @apply flex flex-col gap-4
   }
-
+.section {
+  @apply px-8 md:px-12 py-4
+}
 }
 @layer utilities {
   .clip-hexagon{
