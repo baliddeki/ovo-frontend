@@ -13,7 +13,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "789,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "2",
@@ -27,7 +27,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "1,200,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "3",
@@ -41,7 +41,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "950,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "4",
@@ -55,7 +55,7 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "810,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "5",
@@ -69,7 +69,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "550,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "6",
@@ -83,7 +83,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "1,500,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "7",
@@ -97,7 +97,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "720,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "8",
@@ -111,7 +111,7 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "640,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "9",
@@ -125,7 +125,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "494,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "10",
@@ -139,7 +139,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "350,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     }
 ];
 

@@ -8,7 +8,7 @@ const UserFooter = ()=>{
     const copyRight = new Date().getFullYear();
     return (
         <footer
-            className="mt-auto bg-neutral-100text-center text-neutral-600 lg:text-left">
+            className="mt-auto bg-neutral-100 text-center text-neutral-600 lg:text-left">
                 <div
                     className=" md:px-20 lg:px-60 flex items-center justify-center border-b-2 border-neutral-200 p-6 lg:justify-between">
                     <div className="mr-12 hidden lg:block">
