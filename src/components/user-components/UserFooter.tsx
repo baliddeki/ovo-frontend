@@ -8,9 +8,9 @@ const UserFooter = ()=>{
     const copyRight = new Date().getFullYear();
     return (
         <footer
-            className="mt-auto bg-neutral-100 text-center text-neutral-600 lg:text-left">
+            className="mt-auto bg-neutral-100text-center text-neutral-600 lg:text-left">
                 <div
-                    className="flex items-center justify-center border-b-2 border-neutral-200 p-6 lg:justify-between">
+                    className=" md:px-20 lg:px-60 flex items-center justify-center border-b-2 border-neutral-200 p-6 lg:justify-between">
                     <div className="mr-12 hidden lg:block">
                         <span>Get connected with us on social networks:</span>
                     </div>
@@ -30,7 +30,7 @@ const UserFooter = ()=>{
                 </div>
 
                 {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-                <div className="mx-6 py-10 text-center md:text-left">
+                <div className=" md:px-20 lg:px-60 mx-6 py-10 text-center md:text-left">
                     <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                         {/* <!-- TW Elements section --> */}
                         <div className="">
@@ -107,7 +107,7 @@ const UserFooter = ()=>{
                 </div>
 
                 {/* <!--Copyright section--> */}
-                <div className="bg-neutral-200 p-6 text-center">
+                <div className=" md:px-20 lg:px-60 bg-neutral-200 p-6 text-center">
                     <span>© {copyRight} Copyright:</span>
                     <a
                         className="font-semibold text-neutral-600"
