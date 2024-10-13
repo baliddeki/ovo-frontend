@@ -19,4 +19,9 @@ export const useActiveNav = ()=>{
 
     return {activeBar, handleActiveBar, path}
 }
+
+export const gradientBackground = {
+    background:"radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
+}
+
 export default usePasswordToggle;

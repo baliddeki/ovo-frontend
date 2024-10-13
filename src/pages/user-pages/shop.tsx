@@ -9,11 +9,9 @@ import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import {products} from "@/assets/data.ts";
 import Filter from "@/components/user-components/Filter.tsx";
+import {gradientBackground} from "@/assets/utils.tsx";
 
 const Shop = ()=>{
-    const gradientBackground = {
-        background:"radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
-    }
 
     return (
         <>

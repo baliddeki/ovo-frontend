@@ -6,7 +6,7 @@ export const products: Product[] = [
         name: "Black Air Force",
         quantity: 12,
         price: "27,000ugx",
-        category: "sinkers",
+        category: "sneakers",
         brand: "Nike",
         gender: "Male",
         size: "EUR 8",
