@@ -30,13 +30,13 @@ const About = ()=>{
                         <Services number={"04"} title={"Sales & Support"}/>
                     </div>
                 </div>
-                <div className={"grid grid-cols-3 "}>
+                <div className={"grid md:grid-cols-3 "}>
                     <div className={"relative"}>
                         <img className={"block w-full max-h-[46rem] object-cover"} src={speed}
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
-                                <p className={"text-white text-6xl font-extrabold w-fit mx-auto"}>Speed</p>
+                                <p className={"text-white text-5xl lg:text-6xl font-extrabold w-fit mx-auto"}>Speed</p>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const About = ()=>{
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
-                                <p className={"text-white text-6xl font-extrabold w-fit mx-auto"}>Quality</p>
+                                <p className={"text-white text-5xl lg:text-6xl font-extrabold w-fit mx-auto"}>Quality</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const About = ()=>{
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
-                                <p className={"text-white text-6xl font-extrabold w-fit mx-auto"}>Comfort</p>
+                                <p className={"text-white text-5xl lg:text-6xl font-extrabold w-fit mx-auto"}>Comfort</p>
                             </div>
                         </div>
                     </div>

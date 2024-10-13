@@ -4,6 +4,8 @@ import {useActiveNav} from "@/assets/utils.tsx";
 import Cart from "@/components/user-components/Cart.tsx";
 const UserHeader = ()=>{
     const {activeBar, handleActiveBar, path} = useActiveNav();
+
+    console.log(path)
     return (
         <>
             <nav className={"flex items-center gap-4 section"}>
@@ -22,7 +24,7 @@ const UserHeader = ()=>{
                     <Link
                         onClick={()=>handleActiveBar("shop")}
                         to={"/shop"}
-                        className={`${activeBar === "shop" && path === "/shop" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
+                        className={`${activeBar === "shop" || path === "/shop" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
                     >
                         Shop
                     </Link>
@@ -30,7 +32,7 @@ const UserHeader = ()=>{
                     <Link
                         onClick={()=>handleActiveBar("about")}
                         to={"/about"}
-                        className={`${activeBar === "about" && path === "/about" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
+                        className={`${activeBar === "about" || path === "/about" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
                     >
                         About
                     </Link>
@@ -38,7 +40,7 @@ const UserHeader = ()=>{
                     <Link
                         onClick={()=>handleActiveBar("contact")}
                         to={"/contact"}
-                        className={`${activeBar === "contact" && path === "/contact" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
+                        className={`${activeBar === "contact" || path === "/contact" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}
                     >
                         Contact
                     </Link>
