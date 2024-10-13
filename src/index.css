@@ -9,10 +9,15 @@
   .vertical-spacing{
     @apply flex flex-col gap-4
   }
-.section {
-  @apply px-8 md:px-12 py-4
+  .section {
+    @apply px-8 md:px-12 py-4
+  }
+  .inline-padding{
+    @apply px-[clamp(0.5rem,-28.7834rem+37.785vw,15rem)]
+  }
+
 }
-}
+
 @layer utilities {
   .clip-hexagon{
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);

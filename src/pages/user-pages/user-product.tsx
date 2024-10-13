@@ -40,7 +40,7 @@ const handleReviewSubmitForm =(e: { preventDefault: () => void; })=>{
     console.log(relatedProducts)
     return (
         <>
-            <div className={"px-[clamp(0.5rem,-28.7834rem+37.785vw,15rem)] bg-[#F2F4F6] py-16"}>
+            <div className={"inline-padding bg-[#F2F4F6] py-16"}>
                 <div className={"bg-white p-4 md:p-24"}>
                     <div className={'grid lg:grid-cols-2 mb-8'}>
                         <div style={gradientBackground} className={"relative flex items-center justify-center"}>
