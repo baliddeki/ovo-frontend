@@ -9,9 +9,9 @@ const UserHeader = ()=>{
     return (
         <>
             <nav className={"flex items-center gap-4 section"}>
-                <div className={"flex-1"}>
+                <Link to={"/"} className={"flex-1"}>
                     <img src={logo} alt={"Company Logo"}/>
-                </div>
+                </Link>
                 <div className={"flex items-center gap-4"}>
 
                     <Link

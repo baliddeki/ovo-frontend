@@ -12,15 +12,21 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Services from "@/components/user-components/Services.tsx";
+import bgImage from "/images/homepage-bg-free-img-1.jpg"
 
 const UserHome = ()=>{
+    const backgroundImage = {
+        backgroundImage: `url('${bgImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+    }
     return (
         <>
             <div>
                 {/*hero section*/}
-                <div className={"sm:h-[calc(100vh-6.25rem)] w-screen section md:px-20 lg:px-60 flex flex-col"}>
+                <div className={"sm:h-[calc(100vh-6.25rem)] w-screen section md:px-20 lg:px-60 flex flex-col"} style={backgroundImage}>
                     <div className={"p-4 mt-16"}>
-                        <h2 className={"text-5xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto"}>AIR PRO X3</h2>
+                        <h2 className={"text-5xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto text-white text-shadow"}>AIR PRO X3</h2>
                         <img src={shoes} alt={"Boots"} className={"mx-auto block w-auto max-h-[50rem] h-full"}/>
                     </div>
                     <Link to={"shop"}
@@ -52,7 +58,7 @@ const UserHome = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className={"w-screen section md:px-20 lg:px-60 pt-8 my-16 bg-[#F2F4F6]"}>
+                <div className={"w-screen section md:px-20 lg:px-60 pt-8 py-16 bg-[#F2F4F6]"}>
                     <div className={"py-16 grid md:grid-cols-2 md:gap-6 lg:gap-12"}>
                         <Carousel>
                             <CarouselContent>
@@ -85,13 +91,12 @@ const UserHome = ()=>{
                         </div>
                     </div>
 
-                    <div className={"grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 py-10 mb-10"}>
+                    <div className={"grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 pt-10 pb-20"}>
                       <Services number={"01"} title={"Research"}/>
                       <Services number={"02"} title={"Idea & Concept"}/>
                       <Services number={"03"} title={"Design & Production"}/>
                       <Services number={"04"} title={"Sales & Support"}/>
                     </div>
-
                 </div>
             </div>
         </>
