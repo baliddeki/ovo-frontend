@@ -15,7 +15,7 @@ const Shop = ()=>{
 
     return (
         <>
-            <div className={"md:px-20 lg:px-60 bg-[#F2F4F6] py-16"}>
+            <div className={"inline-padding bg-[#F2F4F6] py-16"}>
                 <div className={"flex items-center justify-between mb-10"}>
                     <Filter/>
                     <div className={"flex items-center gap-4"}>
@@ -36,13 +36,13 @@ const Shop = ()=>{
                 </div>
 
                 {/*Products*/}
-                <div className={"grid grid-cols-4 gap-4"}>
+                <div className={"grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4"}>
                     {
                         products.map(({id, image, name, category, price}) => (
-                            <div key={id}>
-                                <Link to={`/product/${id}`} className={"group w-full bg-white flex items-center justify-center p-4"}
+                            <div key={id} className={"min-h-[32.616rem]"}>
+                                <Link to={`/product/${id}`} className={"group w-full max-h-[19.688rem] h-full bg-white flex items-center justify-center p-4"}
                                      style={gradientBackground}>
-                                    <img src={image} alt={"Product Name"} className={"group-hover:scale-105 duration-700"}/>
+                                    <img src={image} alt={"Product Name"} className={"group-hover:scale-105 duration-700 block max-w-[18rem]"}/>
                                 </Link>
                                 <div className={"vertical-spacing gap-2 w-fit mx-auto py-6"}>
                                     <p className={"text-sm text-center"}>{category}</p>
