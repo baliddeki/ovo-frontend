@@ -29,4 +29,29 @@ export const shadowBackground = {
 
     background: "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(94,94,94,0.21750707118785018) 27%, rgba(255,255,255,0) 100%)"
 }
+
+
+export const useProductCount = () => {
+    const [productCounts, setProductCounts] = useState({});
+
+    const handleProductCount = (productId: string,action:string) => {
+        setProductCounts((prevCounts) => {
+
+            // @ts-ignore
+            const currentCount:number = prevCounts[productId] || 0;
+            const newCount = action === "add" ? currentCount + 1 : Math.max(currentCount - 1, 0);
+
+            return {
+                ...prevCounts,
+                [productId]: newCount,
+            };
+        });
+    };
+    return { productCounts, handleProductCount };
+};
+
+
+export const extractNum = (value: string)=>{
+    return (parseInt(value.replace(/\D/g, ''), 10))
+}
 export default usePasswordToggle;

@@ -22,6 +22,7 @@ import About from "@/pages/user-pages/about.tsx";
 import Contact from "@/pages/user-pages/contact.tsx";
 import Shop from "@/pages/user-pages/shop.tsx";
 import UserProduct from "@/pages/user-pages/user-product.tsx";
+import Cart from "@/pages/user-pages/cart.tsx";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
              <Route path={"shop"} element={<Shop/>}/>
              <Route path={"product/:productId"} element={<UserProduct />}/>
              <Route path={"contact"} element={<Contact />}/>
-
+             <Route path={"cart"} element={<Cart/>}/>
          </Route>
          <Route path={"/admin"} element={<Admin />}>
              <Route index element={<AdminHome />}/>

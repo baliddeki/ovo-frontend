@@ -1,6 +1,8 @@
+
+// @ts-nocheck
 import {products} from "@/assets/data.ts";
 import {Link, useParams} from "react-router-dom";
-import {gradientBackground} from "@/assets/utils.tsx";
+import {gradientBackground, useProductCount} from "@/assets/utils.tsx";
 import {Search} from "lucide-react";
 import {useState} from "react";
 import {IoAddOutline} from "react-icons/io5";
@@ -11,28 +13,20 @@ import {Input} from "@/components/ui/input.tsx";
 const UserProduct = ()=>{
     const [activeTab, setActiveTab] = useState<string>("description");
     const {productId} = useParams();
+    const {productCounts, handleProductCount} = useProductCount();
     const product = products.find(product => product.id === productId)
     const productCategory = product?.category;
     const productBrand = product?.brand;
     const productName = product?.name
-    console.log(productName, productCategory, productBrand)
     const relatedProducts = products.filter(
         (product) =>
             (product.category === productCategory || product.brand === productBrand) &&
             product.name !== productName
     )
-    const [productsCount  , setProductsCount] =useState(0)
-    const handleProductsCount = (action: string)=>{
-        if(action === "add"){
-            setProductsCount(prev => prev+1)
-        }else{
-            if(productsCount === 0) return
-            setProductsCount(prev => prev-1)
-        }
+
+    const handleReviewSubmitForm =(e: { preventDefault: () => void; })=>{
+            e.preventDefault()
     }
-const handleReviewSubmitForm =(e: { preventDefault: () => void; })=>{
-        e.preventDefault()
-}
     const handleActiveTab = (value: string)=>{
         setActiveTab(value)
     }
@@ -67,12 +61,12 @@ const handleReviewSubmitForm =(e: { preventDefault: () => void; })=>{
                             </div>
                             <div className={"border-y-[1px] py-4 flex items-center gap-4"}>
                                 <div className={"grid grid-cols-3 items-center"}>
-                                    <button onClick={() => handleProductsCount("minus")}
+                                    <button onClick={() => handleProductCount(product?.id, "minus")}
                                             className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}><AiOutlineMinus/>
                                     </button>
                                     <button
-                                        className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}>{productsCount}</button>
-                                    <button onClick={() => handleProductsCount("add")}
+                                        className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}>{productCounts[product?.id] || 0}</button>
+                                    <button onClick={() => handleProductCount(product?.id, "add")}
                                             className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}><IoAddOutline/>
                                     </button>
                                 </div>
