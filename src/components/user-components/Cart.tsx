@@ -1,12 +1,17 @@
+// @ts-nocheck
+
 import {useState} from "react";
 import {CgClose} from "react-icons/cg";
 import {Link} from "react-router-dom";
 import logo from "/images/boots.jpg"
 import {Minus, Plus, ShoppingBag} from "lucide-react";
 import {SlClose} from "react-icons/sl";
+import {useProductCount} from "@/assets/utils.tsx";
+import { products } from "@/assets/data";
 
 const Cart = ()=>{
     const [openCart, setOpenCart] = useState<boolean>(false)
+    const {productCounts, handleProductCount} = useProductCount();
     const handleOpenCart =()=>{
         setOpenCart(prev=>!prev);
     }
@@ -25,234 +30,68 @@ const Cart = ()=>{
                         <h3 className={"text-base"}>Shopping Cart</h3>
                         <button onClick={handleOpenCart} className={"text-2xl"}><CgClose /></button>
                     </div>
-                    <div className={"flex-1 section flex flex-col gap-6 overflow-y-scroll"}>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
-                        <div className={"flex items-center gap-4 flex-wrap"}>
-                            <div className={"flex-1 flex items-center gap-4"}>
-                                <div className={"h-14 w-14 bg-gray-300"}>
-                                    <img src={logo} alt={"Image Logo"} className={"block w-full h-full object-cover"}/>
-                                </div>
-                                <div className={"flex flex-col gap-2"}>
-                                    <h3>Air Pro X3 Green - 9</h3>
-                                    <div className={"grid grid-cols-3"}>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Minus/></button>
-                                        <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>2</p>
-                                        <button
-                                            className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>
-                                            <Plus/></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"flex flex-col items-center gap-2"}>
-                                <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/></button>
-                                <p>$116.00</p>
-                            </div>
-                        </div>
+                    {/*<div className={"flex-1 section flex flex-col gap-6 overflow-y-scroll"}>*/}
+                    {/*    {*/}
+                    {/*        products.slice(0,4).map(({id})=> (*/}
+                    {/*            <div className={"flex items-center gap-4 flex-wrap"}>*/}
+                    {/*                <div className={"flex-1 flex items-center gap-4"}>*/}
+                    {/*                    <div className={"h-14 w-14 bg-gray-300"}>*/}
+                    {/*                        <img src={logo} alt={"Image Logo"}*/}
+                    {/*                             className={"block w-full h-full object-cover"}/>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={"flex flex-col gap-2"}>*/}
+                    {/*                        <h3>Air Pro X3 Green - 9</h3>*/}
+                    {/*                        <div className={"grid grid-cols-3"}>*/}
+                    {/*                            <button*/}
+                    {/*                                onClick={()=>handleProductCount(id, 'minus')}*/}
+                    {/*                                className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>*/}
+                    {/*                                <Minus/></button>*/}
+                    {/*                            <p className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>{productCounts[id] || 0}</p>*/}
+                    {/*                            <button*/}
+                    {/*                                onClick={()=>handleProductCount(id, "add")}*/}
+                    {/*                                className={"center-items bg-gray-200 border-[1px] border-gray-300 px-3 py-1"}>*/}
+                    {/*                                <Plus/></button>*/}
+                    {/*                        </div>*/}
+                    {/*                    </div>*/}
+                    {/*                </div>*/}
+                    {/*                <div className={"flex flex-col items-center gap-2"}>*/}
+                    {/*                    <button><SlClose className={"text-lg text-gray-400 hover:text-red-400"}/>*/}
+                    {/*                    </button>*/}
+                    {/*                    <p>$116.00</p>*/}
+                    {/*                </div>*/}
+                    {/*            </div>*/}
+                    {/*        ))*/}
+                    {/*    }*/}
+                    {/*</div>*/}
+                    <div className={"center-items w-full h-full text-gray-8"}>
+                        No Items in the cart
+                    </div>
+
+                    <div className={"vertical-spacing section"}>
+                        <Link
+                            onClick={handleOpenCart}
+                            to={"/shop"}
+                            className={"w-full rounded-3xl bg-gray-200 hover:bg-gray-300 font-light px-6 py-3 text-center"}>Continue Shopping</Link>
                     </div>
 
                     {/*Checkout*/}
-                    <div className={"mt-auto flex flex-col gap-6"}>
-                        <div className={"section flex gap-4 items-center justify-between border-y-[1px]"}>
-                            <p>Subtotal:</p>
-                            <p>$116.00</p>
-                        </div>
-                        <div className={"vertical-spacing section"}>
-                            <Link
-                                onClick={handleOpenCart}
-                                to={"/cart"}
-                                  className={"w-full rounded-3xl bg-gray-200 hover:bg-gray-300 font-light px-6 py-3 text-center"}>View
-                                Cart</Link>
-                            <Link
-                                onClick={handleOpenCart}
-                                to={"/checkout"}
-                                  className={"w-full rounded-3xl bg-gray-200 hover:bg-gray-300 font-light px-6 py-3 text-center"}>Checkout</Link>
-                        </div>
-                    </div>
+                    {/*<div className={"mt-auto flex flex-col gap-6"}>*/}
+                    {/*    <div className={"section flex gap-4 items-center justify-between border-y-[1px]"}>*/}
+                    {/*        <p>Subtotal:</p>*/}
+                    {/*        <p>$116.00</p>*/}
+                    {/*    </div>*/}
+                    {/*    <div className={"vertical-spacing section"}>*/}
+                    {/*        <Link*/}
+                    {/*            onClick={handleOpenCart}*/}
+                    {/*            to={"/cart"}*/}
+                    {/*            className={"w-full rounded-3xl bg-gray-200 hover:bg-gray-300 font-light px-6 py-3 text-center"}>View*/}
+                    {/*            Cart</Link>*/}
+                    {/*        <Link*/}
+                    {/*            onClick={handleOpenCart}*/}
+                    {/*            to={"/checkout"}*/}
+                    {/*            className={"w-full rounded-3xl bg-gray-200 hover:bg-gray-300 font-light px-6 py-3 text-center"}>Checkout</Link>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
             </div>
