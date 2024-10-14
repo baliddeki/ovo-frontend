@@ -9,15 +9,19 @@ const usePasswordToggle = ()=>{
     return {showPassword, handleShowPassword}
 }
 export const useActiveNav = ()=>{
+    const [smallScreenNav, setSmallScreenNav] = useState(false);
     const [activeBar, setActiveBar] = useState<string | null>("");
     const location = useLocation();
     const path = location.pathname;
-
+    const handleSmallScreenNav = ()=>{
+        setSmallScreenNav(prev => !prev)
+    }
     const handleActiveBar = (value: string)=>{
         setActiveBar(value)
+        if(smallScreenNav) handleSmallScreenNav()
     }
 
-    return {activeBar, handleActiveBar, path}
+    return {smallScreenNav, handleSmallScreenNav, activeBar, handleActiveBar, path}
 }
 
 export const gradientBackground = {

@@ -38,7 +38,7 @@ const UserHome = ()=>{
                 {/*Products section*/}
                 <div className={"w-screen section md:px-20 lg:px-60 pt-8 my-16"}>
                     <div className={"p-4 mt-16"}>
-                        <h2 className={"text-5xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto capitalize italic"}>UNBELIEVABLE</h2>
+                        <h2 className={"text-3xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto capitalize italic"}>UNBELIEVABLE</h2>
                         <p className={"text-2xl sm:text-3xl lg:text-4xl font-extrabold w-fit mx-auto italic capitalize mt-8"}>SPEED.COMFORT.</p>
                     </div>
                     <div className={"w-full mt-20"}>
@@ -60,7 +60,7 @@ const UserHome = ()=>{
                 </div>
                 <div className={"w-screen section md:px-20 lg:px-60 pt-8 py-16 bg-[#F2F4F6]"}>
                     <div className={"py-16 grid md:grid-cols-2 md:gap-6 lg:gap-12"}>
-                        <Carousel>
+                        <Carousel className={"overflow-hidden sm:overflow-auto"}>
                             <CarouselContent>
                                 <CarouselItem>
                                     <img src={shoes} alt={"Item Name"}/>

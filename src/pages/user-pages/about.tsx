@@ -18,8 +18,8 @@ const About = ()=>{
                              alt={"Background Image"}/>
                         <div className={"absolute top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
-                                <p className={"text-white text-6xl font-extrabold"}>Helping Your Keep Fit</p>
-                                <p className={"text-white text-4xl font-extrabold"}>Since 2016</p>
+                                <p className={"text-white sm:text-6xl text-2xl font-extrabold"}>Helping Your Keep Fit</p>
+                                <p className={"text-white sm:text-4xl text-lg font-extrabold"}>Since 2016</p>
                             </div>
                         </div>
                     </div>
@@ -30,9 +30,9 @@ const About = ()=>{
                         <Services number={"04"} title={"Sales & Support"}/>
                     </div>
                 </div>
-                <div className={"grid md:grid-cols-3 "}>
-                    <div className={"relative"}>
-                        <img className={"block w-full max-h-[46rem] object-cover"} src={speed}
+                <div className={"grid md:grid-cols-3"}>
+                    <div className={"relative max-h-[46rem] h-full"}>
+                        <img className={"block w-full h-full object-cover"} src={speed}
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
@@ -40,8 +40,8 @@ const About = ()=>{
                             </div>
                         </div>
                     </div>
-                    <div className={"relative"}>
-                        <img className={"block w-full max-h-[46rem] object-cover"} src={quality}
+                    <div className={"relative max-h-[46rem] h-full"}>
+                        <img className={"block w-full h-full object-cover"} src={quality}
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
@@ -49,8 +49,8 @@ const About = ()=>{
                             </div>
                         </div>
                     </div>
-                    <div className={"relative"}>
-                        <img className={"block w-full max-h-[46rem] object-cover"} src={comfort}
+                    <div className={"relative max-h-[46rem] h-full"}>
+                        <img className={"block w-full h-full object-cover"} src={comfort}
                              alt={"Background Image"}/>
                         <div style={shadowBackground} className={"absolute bg-bottom-shadow top-0 left-0 w-full h-full flex flex-col p-8 md:px-14 md:py-24"}>
                             <div className={"mt-auto"}>
