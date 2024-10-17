@@ -1,8 +1,6 @@
 import {FaArrowRight} from "react-icons/fa6";
 import {Link} from "react-router-dom";
 
-import ProductCard from "@/components/user-components/ProductCard.tsx";
-import {FaCircle, FaRegCircle} from "react-icons/fa";
 import shoes from "/images/sports-shoe4.png"
 import {
     Carousel,
@@ -13,6 +11,7 @@ import {
 } from "@/components/ui/carousel"
 import Services from "@/components/user-components/Services.tsx";
 import bgImage from "/images/homepage-bg-free-img-1.jpg"
+import ProductSlider from "@/components/user-components/ProductSlider.tsx";
 
 const UserHome = ()=>{
     const backgroundImage = {
@@ -42,20 +41,7 @@ const UserHome = ()=>{
                         <p className={"text-2xl sm:text-3xl lg:text-4xl font-extrabold w-fit mx-auto italic capitalize mt-8"}>SPEED.COMFORT.</p>
                     </div>
                     <div className={"w-full mt-20"}>
-                        <div className={"flex gap-4 items-center overflow-x-scroll w-full "}>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                        </div>
-                        <div className={"mt-8 w-fit mx-auto flex items-center gap-2 mb-10"}>
-                            <FaRegCircle className={"cursor-pointer text-sm text-green-5 hover:text-green-5"}/>
-                            <FaRegCircle className={"cursor-pointer text-sm text-green-5 hover:text-green-5"}/>
-                            <FaRegCircle className={"cursor-pointer text-sm text-green-5 hover:text-green-5"}/>
-                            <FaCircle className={"cursor-pointer text-sm text-green-5 hover:text-green-5"}/>
-                        </div>
+                        <ProductSlider/>
                     </div>
                 </div>
                 <div className={"w-screen section md:px-20 lg:px-60 pt-8 py-16 bg-[#F2F4F6]"}>

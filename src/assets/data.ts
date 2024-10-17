@@ -1,4 +1,4 @@
-import {Brand, Order, Product} from "@/assets/types.ts";
+import {Brand, Customers, Order, Product} from "@/assets/types.ts";
 
 export const products: Product[] = [
     {
@@ -297,3 +297,127 @@ export const brands: Brand[] = [
     },
 
 ];
+
+export const customers: Customers[] = [
+    {
+        id: "1",
+        firstName: "Jane",
+        lastName: "Smith",
+        email: "jane.smith@example.com",
+        password: "securePass456",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "2",
+        firstName: "Michael",
+        lastName: "Johnson",
+        email: "michael.j@example.com",
+        password: "mikePassword789",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "3",
+        firstName: "Emily",
+        lastName: "Davis",
+        email: "emily.davis@example.com",
+        password: "emilySecure321",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "4",
+        firstName: "David",
+        lastName: "Wilson",
+        email: "david.wilson@example.com",
+        password: "wilsonDavid987",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "5",
+        firstName: "Sarah",
+        lastName: "Brown",
+        email: "sarah.brown@example.com",
+        password: "sarah1234",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "6",
+        firstName: "Chris",
+        lastName: "Martinez",
+        email: "chris.martinez@example.com",
+        password: "chrisMpass456",
+        permissions: {
+            "add-product": false,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "7",
+        firstName: "Laura",
+        lastName: "Taylor",
+        email: "laura.taylor@example.com",
+        password: "lauraSecure789",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "8",
+        firstName: "James",
+        lastName: "Anderson",
+        email: "james.anderson@example.com",
+        password: "james456",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "9",
+        firstName: "Olivia",
+        lastName: "Thomas",
+        email: "olivia.thomas@example.com",
+        password: "oliviaPass321",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "10",
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        password: "password123",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": false,
+        },
+    }
+];
+
