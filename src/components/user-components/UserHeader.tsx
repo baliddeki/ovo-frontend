@@ -9,7 +9,7 @@ const UserHeader = ()=>{
     console.log(path)
     return (
         <>
-            <nav className={"flex items-center gap-4 section"}>
+            <nav className={"flex items-center gap-4 section bg-white z-50"}>
                 <Link to={"/"} className={"flex-1"}>
                     <img src={logo} alt={"Company Logo"}/>
                 </Link>
@@ -50,27 +50,29 @@ const UserHeader = ()=>{
                     <Cart/>
                 </div>
             </nav>
-            <div className={`md:hidden ${smallScreenNav ? "inline-padding  bg-[#F2F4F6] vertical-spacing py-6 " : "-translate-x-full "} duration-300`}>
-                <Link onClick={()=>handleActiveBar("")}
-                      to={"/"}
-                      className={`${activeBar === "" && path === "/" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                    Home
-                </Link>
-                <Link onClick={()=>handleActiveBar("shop")}
-                      to={"/shop"}
-                      className={`${activeBar === "shop" || path === "/shop" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                    Shop
-                </Link>
-                <Link onClick={()=>handleActiveBar("about")}
-                      to={"/about"}
-                      className={`${activeBar === "about" || path === "/about" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                    About
-                </Link>
-                <Link  onClick={()=>handleActiveBar("contact")}
-                       to={"/contact"}
-                       className={`${activeBar === "contact" || path === "/contact" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                    Contact Us
-                </Link>
+            <div className={`md:hidden ${smallScreenNav ? "h-[12rem]" : "h-0"} duration-300`}>
+                <div className={"py-6 vertical-spacing inline-padding bg-[#F2F4F6] "}>
+                    <Link onClick={()=>handleActiveBar("")}
+                          to={"/"}
+                          className={`${activeBar === "" && path === "/" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
+                        Home
+                    </Link>
+                    <Link onClick={()=>handleActiveBar("shop")}
+                          to={"/shop"}
+                          className={`${activeBar === "shop" || path === "/shop" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
+                        Shop
+                    </Link>
+                    <Link onClick={()=>handleActiveBar("about")}
+                          to={"/about"}
+                          className={`${activeBar === "about" || path === "/about" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
+                        About
+                    </Link>
+                    <Link  onClick={()=>handleActiveBar("contact")}
+                           to={"/contact"}
+                           className={`${activeBar === "contact" || path === "/contact" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
+                        Contact Us
+                    </Link>
+                </div>
             </div>
         </>
     )
