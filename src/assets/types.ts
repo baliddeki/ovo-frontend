@@ -68,3 +68,33 @@ export const signupSchema = z.object({
     }),
     confirmPassword: z.string(),
 })
+
+export const createUserSchema = z.object({
+    firstName: z.string({
+        required_error: "Please provide First Name"
+    }),
+    lastName: z.string(),
+    email: z.string({
+        required_error: "Name is Required"
+    }),
+    password: z.string({
+        required_error: "Password is Required"
+    }),
+    confirmPassword: z.string(),
+    addProduct: z.boolean(),
+    upDateProduct: z.boolean(),
+    deleteProduct: z.boolean(),
+})
+
+export type Customers = {
+    id: string;
+    email: string;
+    firstName: string,
+    lastName: string,
+    password: string;
+    permissions: {
+        "add-product": boolean;
+        "update-product": boolean;
+        "delete-product": boolean;
+    }
+}

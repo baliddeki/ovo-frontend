@@ -1,4 +1,4 @@
-import {Brand, Order, Product} from "@/assets/types.ts";
+import {Brand, Customers, Order, Product} from "@/assets/types.ts";
 
 export const products: Product[] = [
     {
@@ -6,14 +6,14 @@ export const products: Product[] = [
         name: "Black Air Force",
         quantity: 12,
         price: "27,000ugx",
-        category: "sinkers",
+        category: "sneakers",
         brand: "Nike",
         gender: "Male",
         size: "EUR 8",
         availability: "In Stock",
         date: new Date(),
         totalSales: "789,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "2",
@@ -27,7 +27,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "1,200,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "3",
@@ -41,7 +41,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "950,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "4",
@@ -55,7 +55,7 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "810,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "5",
@@ -69,7 +69,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "550,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "6",
@@ -83,7 +83,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "1,500,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "7",
@@ -97,7 +97,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "720,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "8",
@@ -111,7 +111,7 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "640,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "9",
@@ -125,7 +125,7 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "494,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     },
     {
         id: "10",
@@ -139,7 +139,7 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "350,000ugx",
-        image: "/images/nike-shoes.png"
+        image: "/images/sports-shoe4.png"
     }
 ];
 
@@ -297,3 +297,127 @@ export const brands: Brand[] = [
     },
 
 ];
+
+export const customers: Customers[] = [
+    {
+        id: "1",
+        firstName: "Jane",
+        lastName: "Smith",
+        email: "jane.smith@example.com",
+        password: "securePass456",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "2",
+        firstName: "Michael",
+        lastName: "Johnson",
+        email: "michael.j@example.com",
+        password: "mikePassword789",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "3",
+        firstName: "Emily",
+        lastName: "Davis",
+        email: "emily.davis@example.com",
+        password: "emilySecure321",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "4",
+        firstName: "David",
+        lastName: "Wilson",
+        email: "david.wilson@example.com",
+        password: "wilsonDavid987",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "5",
+        firstName: "Sarah",
+        lastName: "Brown",
+        email: "sarah.brown@example.com",
+        password: "sarah1234",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "6",
+        firstName: "Chris",
+        lastName: "Martinez",
+        email: "chris.martinez@example.com",
+        password: "chrisMpass456",
+        permissions: {
+            "add-product": false,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "7",
+        firstName: "Laura",
+        lastName: "Taylor",
+        email: "laura.taylor@example.com",
+        password: "lauraSecure789",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "8",
+        firstName: "James",
+        lastName: "Anderson",
+        email: "james.anderson@example.com",
+        password: "james456",
+        permissions: {
+            "add-product": true,
+            "update-product": false,
+            "delete-product": true,
+        },
+    },
+    {
+        id: "9",
+        firstName: "Olivia",
+        lastName: "Thomas",
+        email: "olivia.thomas@example.com",
+        password: "oliviaPass321",
+        permissions: {
+            "add-product": false,
+            "update-product": true,
+            "delete-product": false,
+        },
+    },
+    {
+        id: "10",
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        password: "password123",
+        permissions: {
+            "add-product": true,
+            "update-product": true,
+            "delete-product": false,
+        },
+    }
+];
+
