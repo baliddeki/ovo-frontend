@@ -50,7 +50,7 @@ const UserHeader = ()=>{
                     <Cart/>
                 </div>
             </nav>
-            <div className={`md:hidden ${smallScreenNav ? "h-[12rem]" : "h-0"} duration-300`}>
+            <div className={`md:hidden ${smallScreenNav ? "h-[12rem]" : "h-0 overflow-hidden"} duration-300`}>
                 <div className={"py-6 vertical-spacing inline-padding bg-[#F2F4F6] "}>
                     <Link onClick={()=>handleActiveBar("")}
                           to={"/"}
