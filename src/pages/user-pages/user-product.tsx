@@ -1,18 +1,34 @@
-
-// @ts-nocheck
 import {products} from "@/assets/data.ts";
 import {Link, useParams} from "react-router-dom";
 import {gradientBackground, useProductCount} from "@/assets/utils.tsx";
 import {Search} from "lucide-react";
 import {useState} from "react";
 import {IoAddOutline} from "react-icons/io5";
-import {AiFillStar, AiOutlineMinus, AiOutlineStar} from "react-icons/ai";
+import {AiOutlineMinus} from "react-icons/ai";
 import {Textarea} from "@/components/ui/textarea.tsx";
 import {Input} from "@/components/ui/input.tsx";
+import ReactStars from "react-rating-stars-component";
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
 const UserProduct = ()=>{
     const [activeTab, setActiveTab] = useState<string>("description");
     const {productId} = useParams();
+    const [formData, setFormData] = useState({
+        rating: 0,
+        email: '',
+        message: '',
+        name: ''
+    })
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
     const {productCounts, handleProductCount} = useProductCount();
     const product = products.find(product => product.id === productId)
     const productCategory = product?.category;
@@ -25,22 +41,55 @@ const UserProduct = ()=>{
     )
 
     const handleReviewSubmitForm =(e: { preventDefault: () => void; })=>{
-            e.preventDefault()
+        e.preventDefault()
     }
     const handleActiveTab = (value: string)=>{
         setActiveTab(value)
     }
+    const handleFormData = (e: { preventDefault: () => void; target: { name: string; value: string; }; })=>{
+        e.preventDefault()
+        setFormData({
+            ...formData,
+            [e.target.name]: [e.target.value]
+        })
+    }
 
-    console.log(relatedProducts)
+    const handleMouseMove = (e) => {
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+
+        setPosition({ x, y });
+    };
+    const ratingChanged = (newRating: number) => {
+        setFormData({
+            ...formData,
+            rating: newRating
+        })
+    };
+
     return (
         <>
             <div className={"inline-padding bg-[#F2F4F6] py-16"}>
                 <div className={"bg-white p-4 md:p-24"}>
                     <div className={'grid lg:grid-cols-2 mb-8'}>
-                        <div style={gradientBackground} className={"relative flex items-center justify-center"}>
-                            <img src={product?.image} alt={"Product Name"}/>
-                            <button className={"bg-white rounded-full h-10 w-10 p-2 absolute top-4 right-4"}><Search/>
-                            </button>
+                        <div style={gradientBackground} className={"relative"}>
+                            <div className={"w-full h-full overflow-hidden flex items-center justify-center group"}>
+                                <img
+                                    src={product?.image}
+                                    alt={product?.name}
+                                    className="duration-500 ease-in-out transform group-hover:scale-150"
+                                />
+                            </div>
+
+                            <Dialog>
+                                    <DialogTrigger className={"bg-white rounded-full h-10 w-10 p-2 absolute top-4 right-4"}><Search/></DialogTrigger>
+                                    <DialogContent>
+                                        <div className={"bg-white max-w-[45rem] max-h-[45rem] h-full w-full"}>
+                                            <img src={product?.image} alt={product?.name} className={'block w-full h-auto'}/>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                         </div>
                         <div className={"md:px-8 vertical-spacing"}>
                             <p className={"text-green-5 text-lg"}>{product?.category}</p>
@@ -71,7 +120,7 @@ const UserProduct = ()=>{
                                     </button>
                                 </div>
                                 <button
-                                    className={"rounded-3xl px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white font-light text-gray-8"}>ADD
+                                    className={"rounded-3xl px-10 py-1 text-sm bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white font-light text-gray-8"}>ADD
                                     TO CART
                                 </button>
                             </div>
@@ -125,26 +174,38 @@ const UserProduct = ()=>{
                             </p>
                             <p className={"text-gray-8"}>Your email address will not be published. Required fields are
                                 marked *</p>
-                            <div className={"flex gap-2"}>
+                            <div className={"flex gap-2 items-center"}>
                                 <p className={"text-gray-8"}>Your rating *</p>
-                                <AiOutlineStar className={"text-2xl text-gray-8"}/>
-                                <AiOutlineStar className={"text-2xl text-gray-8"}/>
-                                <AiOutlineStar className={"text-2xl text-gray-8"}/>
-                                <AiOutlineStar className={"text-2xl text-gray-8"}/>
-                                <AiOutlineStar className={"text-2xl text-gray-8"}/>
+                                <div>
+                                    <ReactStars
+                                        count={5}
+                                        onChange={ratingChanged}
+                                        size={30}
+                                        activeColor="#ffd700"
+                                    />
+                                </div>
                             </div>
                             <label className={"text-gray-8"}>
                                 Your Review *
-                                <Textarea rows={5}></Textarea>
+                                <Textarea
+                                    name={'message'}
+                                    onChange={handleFormData}
+                                    rows={5}></Textarea>
                             </label>
                             <div className={"grid gap-4 md:grid-cols-2"}>
                                 <label className={"text-gray-8"}>
                                     Name *
-                                    <Input type={"text"}/>
+                                    <Input
+                                        name={'name'}
+                                        onChange={handleFormData}
+                                        type={"text"}/>
                                 </label>
                                 <label className={"text-gray-8"}>
                                     Email *
-                                    <Input type={"email"}/>
+                                    <Input
+                                        name={'email'}
+                                        onChange={handleFormData}
+                                        type={"email"}/>
                                 </label>
                             </div>
                             <button
@@ -180,11 +241,15 @@ const UserProduct = ()=>{
                                                           reloadDocument
                                                           className={"font-extrabold text-lg block text-center"}>{name}</Link>
                                                     <div className={"flex gap-2 items-center w-fit mx-auto"}>
-                                                        <AiFillStar className={"text-lg"}/>
-                                                        <AiFillStar className={"text-lg"}/>
-                                                        <AiOutlineStar className={"text-lg"}/>
-                                                        <AiOutlineStar className={"text-lg"}/>
-                                                        <AiOutlineStar className={"text-lg"}/>
+                                                    {/*    */}
+                                                        <ReactStars
+                                                            count={5}
+                                                            onChange={ratingChanged}
+                                                            size={24}
+                                                            edit={false}
+                                                            value={2}
+                                                            activeColor="#ffd700"
+                                                        />
                                                     </div>
                                                     <div className={"flex items-center gap-2 w-fit mx-auto"}>
                                                         <p className={"text-sm line-through text-gray-8"}>$22.00</p>

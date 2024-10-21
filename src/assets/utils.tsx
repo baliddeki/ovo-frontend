@@ -40,7 +40,6 @@ export const useProductCount = () => {
 
     const handleProductCount = (productId: string,action:string) => {
         setProductCounts((prevCounts) => {
-
             // @ts-ignore
             const currentCount:number = prevCounts[productId] || 0;
             const newCount = action === "add" ? currentCount + 1 : Math.max(currentCount - 1, 0);
