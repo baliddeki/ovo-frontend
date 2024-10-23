@@ -25,7 +25,7 @@ const UserHome = ()=>{
         <>
             <div>
                 {/*hero section*/}
-                <div className={"md:h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col"}
+                <div className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col"}
                      style={backgroundImage}>
                     <div className={"p-4 mt-16"}>
                         <h2 className={"text-5xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto text-white text-shadow"}>AIR
