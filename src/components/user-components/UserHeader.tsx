@@ -85,7 +85,7 @@ const UserHeader = ()=>{
                 <Cart/>
             </div>
         </nav>
-    <div className={`md:hidden ${smallScreenNav ? "h-[12rem]" : "h-0 overflow-hidden"} duration-300`}>
+    <div className={`md:hidden ${smallScreenNav ? "max-h-[24rem]" : "max-h-0 overflow-hidden"} duration-300`}>
         <div className={"py-6 vertical-spacing inline-padding bg-[#F2F4F6] "}>
             <Link onClick={() => handleActiveBar("")}
                   to={"/"}
@@ -97,18 +97,54 @@ const UserHeader = ()=>{
                           className={`${activeBar === "shop" || path === "/shop" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
                         Shop
                     </Link>
-                    <Link onClick={()=>handleActiveBar("about")}
-                          to={"/about"}
-                          className={`${activeBar === "about" || path === "/about" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                        About
-                    </Link>
-                    <Link  onClick={()=>handleActiveBar("contact")}
-                           to={"/contact"}
-                           className={`${activeBar === "contact" || path === "/contact" ? "text-green-5 ": "text-blue-5"} hover:text-green-5  duration-300`}>
-                        Contact Us
-                    </Link>
-                </div>
-            </div>
+
+                    <ul className={"group"}>
+                        <li onClick={()=>handleActiveBar("my-account")} >
+                            <Link
+                                to={'/account-details'}
+                                className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                            >
+                                My Account
+                            </Link>
+
+                        </li>
+                        <ul className={"max-h-0 overflow-hidden group-hover:max-h-[14rem] ml-4 duration-300"}>
+                            <div className={'py-2 vertical-spacing gap-2'}>
+                                <li onClick={() => handleActiveBar("my-account")}>
+                                    <Link
+                                        to={'/orders'}
+                                        className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                                    >
+                                        Orders
+                                    </Link>
+
+                                </li>
+                                <li onClick={() => handleActiveBar("my-account")}>
+                                    <Link
+                                        to={'/account-details'}
+                                        className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                                    >
+                                        Account Details
+                                    </Link>
+
+                                </li>
+                            </div>
+                        </ul>
+                    </ul>
+
+
+            <Link onClick={() => handleActiveBar("about")}
+                  to={"/about"}
+                  className={`${activeBar === "about" || path === "/about" ? "text-green-5 " : "text-blue-5"} hover:text-green-5  duration-300`}>
+                About
+            </Link>
+            <Link onClick={() => handleActiveBar("contact")}
+                  to={"/contact"}
+                  className={`${activeBar === "contact" || path === "/contact" ? "text-green-5 " : "text-blue-5"} hover:text-green-5  duration-300`}>
+                Contact Us
+            </Link>
+        </div>
+    </div>
         </>
     )
 }
