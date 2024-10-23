@@ -5,11 +5,11 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 import {Link} from "react-router-dom";
 import {products} from "@/assets/data.ts";
 import Filter from "@/components/user-components/Filter.tsx";
 import {gradientBackground} from "@/assets/utils.tsx";
+import {Rating} from "@smastrom/react-rating";
 
 const Shop = ()=>{
 
@@ -47,12 +47,8 @@ const Shop = ()=>{
                                 <div className={"vertical-spacing gap-2 w-fit mx-auto py-6"}>
                                     <p className={"text-sm text-center"}>{category}</p>
                                     <Link to={`/product/${id}`} className={"font-extrabold text-lg block text-center"}>{name}</Link>
-                                    <div className={"flex gap-2 items-center w-fit mx-auto"}>
-                                        <AiFillStar className={"text-lg"}/>
-                                        <AiFillStar className={"text-lg"}/>
-                                        <AiOutlineStar className={"text-lg"}/>
-                                        <AiOutlineStar className={"text-lg"}/>
-                                        <AiOutlineStar className={"text-lg"}/>
+                                    <div className={"w-fit mx-auto"}>
+                                        <Rating style={{ maxWidth: 100 }} value={3} readOnly={true}/>
                                     </div>
                                     <div className={"flex items-center gap-2 w-fit mx-auto"}>
                                         <p className={"text-sm line-through text-gray-8"}>$22.00</p>

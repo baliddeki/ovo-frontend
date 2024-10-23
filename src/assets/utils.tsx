@@ -40,6 +40,8 @@ export const useProductCount = () => {
 
     const handleProductCount = (productId: string,action:string) => {
         setProductCounts((prevCounts) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             const currentCount:number = prevCounts[productId] || 0;
             const newCount = action === "add" ? currentCount + 1 : Math.max(currentCount - 1, 0);
 
