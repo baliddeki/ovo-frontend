@@ -212,7 +212,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-        <FaChevronLeft className="text-green-300 hover:text-green-5 duration-300 text-3xl" />
+        <FaChevronLeft className="text-green-400 hover:text-green-5 duration-300 text-3xl" />
       <span className="sr-only">Previous slide</span>
     </button>
   )
@@ -239,7 +239,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <FaChevronRight className="text-green-300 hover:text-green-5 duration-300 text-3xl" />
+      <FaChevronRight className="text-green-400 hover:text-green-5 duration-300 text-3xl" />
       <span className="sr-only">Next slide</span>
     </button>
   )

@@ -18,6 +18,20 @@
 
 }
 
+.swiper {
+  padding-bottom: 3.125rem !important;
+}
+.swiper-pagination-bullet{
+  background: #22C55E !important;
+  margin-top: 2rem !important;
+}
+
+.swiper-button-prev{
+  color: #22C55E !important;
+}
+.swiper-button-next{
+  color: #22C55E !important;
+}
 @layer utilities {
   .text-shadow {
     text-shadow: 3px 0px 7px rgba(0,170,255,0.36);

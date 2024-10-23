@@ -20,6 +20,7 @@ export type Order = {
     product: string,
     customer: string;
     price: string;
+    status: string;
     deliveryDate: string;
     image: string;
 }

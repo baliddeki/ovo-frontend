@@ -2,9 +2,16 @@ import {CgClose} from "react-icons/cg";
 import {useState} from "react";
 import {VscSettings} from "react-icons/vsc";
 import {products} from "@/assets/data.ts";
-
+import MultiRangeSlider from "multi-range-slider-react";
+import {GoDash} from "react-icons/go";
 const Filter = ()=>{
     const [openFilter, setOpenFilter] = useState<boolean>(false)
+    const [minValue, setMinValue] = useState(25);
+    const [maxValue, setMaxValue] = useState(75);
+    const handleInput = (e: { min?: number; max?: number; minValue: number; maxValue: number; }) => {
+        setMinValue(e.minValue);
+        setMaxValue(e.maxValue);
+    };
     const handleOpenFilter =()=>{
         setOpenFilter(prev=>!prev);
     }
@@ -14,7 +21,7 @@ const Filter = ()=>{
     }
     return (
         <>
-            <div>
+            <div className={"z-50"}>
                 <button
                     onClick={handleOpenFilter}
                     className={"rounded-3xl hover:bg-green-5 hover:text-white bg-[rgba(210,210,210,.7)] w-fit px-6 py-2 flex items-center gap-2 font-medium duration-300"}>
@@ -47,11 +54,35 @@ const Filter = ()=>{
                             </div>
                             <div className={"section"}>
                                 <h3 className={"mb-8 text-lg font-bold"}>Filter by Price</h3>
-                                <form onSubmit={handleSubmitForm}>
+                                <form onSubmit={handleSubmitForm} className={"vertical-spacing"}>
+                                    <MultiRangeSlider
+                                        min={0}
+                                        max={100}
+                                        step={5}
+                                        ruler={false}
+                                        minValue={minValue}
+                                        maxValue={maxValue}
+                                        label={false}
+                                        barLeftColor={'#F2F4F6'}
+                                        barRightColor={'#F2F4F6'}
+                                        barInnerColor={'rgb(34, 197, 94)'}
+                                        thumbLeftColor={'rgb(34, 197, 94)'}
+                                        thumbRightColor={'rgb(34, 197, 94)'}
+                                        className={"shadow-none border-none p-0 mb-6"}
+                                        onInput={(e) => {
+                                            handleInput(e);
+                                        }}
+                                    />
                                     <div className={"flex items-center justify-between gap-4"}>
-                                        <button type={"submit"} className={"bg-[rgba(210,210,210,.7)] py-2 px-4 rounded-3xl"}>filter</button>
-                                        <p className={"text-sm font-light"}>Price: <span>$19.00</span></p>
+                                        <button type={"submit"} className={"bg-[rgba(210,210,210,.7)] py-2 px-6 hover:bg-green-5 hover:text-white duration-300 rounded-3xl"}>filter</button>
+                                        <p className={"text-sm font-light flex items-center gap-2"}>Price:
+                                            <span className={"font-medium"}>${minValue}</span>
+                                            <GoDash  className={"font-medium"}/>
+                                            <span className={"font-medium"}>${maxValue}</span>
+                                        </p>
                                     </div>
+
+
                                 </form>
                             </div>
                         </div>

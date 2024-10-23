@@ -8,71 +8,53 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 
 // import required modules
-import { Grid, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation} from 'swiper/modules';
+import {products} from "@/assets/data.ts";
 const ProductSlider = ()=>{
     return (
         <>
-            <Swiper
-                loop={true}
-                rewind={true}
-                grid={{
-                    rows: 1,
-                }}
+        <Swiper
+            loop={true}
+            rewind={true}
+            navigation={true}
+            breakpoints={{
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4
+                },
+            }}
 
-                breakpoints={{
-                    640: {
-                        slidesPerView: 1,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                    },
-                }}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            spaceBetween={30}
+            pagination={{
+                clickable: true,
+            }}
+            modules={[Pagination, Navigation, Autoplay]}
+            className="mySwiper"
+        >
+            {
+                products.slice(0, 10).map(({id, name, image, category, price}) => (
+                    <SwiperSlide key={id}>
+                        <ProductCard category={category} name={name} image={image} price={price}/>
+                    </SwiperSlide>
+                ))
+            }
 
-                autoplay={true}
-                spaceBetween={20}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Grid, Pagination]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ProductCard/>
-                </SwiperSlide>
-
-            </Swiper>
-        </>
-    )
+</Swiper>
+</>
+)
 }
 
 export default ProductSlider
