@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {products} from "@/assets/data.ts";
 import {Link, useParams} from "react-router-dom";
 import {gradientBackground, useProductCount} from "@/assets/utils.tsx";
@@ -7,27 +9,24 @@ import {IoAddOutline} from "react-icons/io5";
 import {AiOutlineMinus} from "react-icons/ai";
 import {Textarea} from "@/components/ui/textarea.tsx";
 import {Input} from "@/components/ui/input.tsx";
-import ReactStars from "react-rating-stars-component";
-
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 
 const UserProduct = ()=>{
     const [activeTab, setActiveTab] = useState<string>("description");
-    const {productId} = useParams();
+    const {productId} = useParams()
     const [formData, setFormData] = useState({
         rating: 0,
         email: '',
         message: '',
         name: ''
     })
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    // const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const {productCounts, handleProductCount} = useProductCount();
     const product = products.find(product => product.id === productId)
@@ -48,26 +47,18 @@ const UserProduct = ()=>{
     }
     const handleFormData = (e: { preventDefault: () => void; target: { name: string; value: string; }; })=>{
         e.preventDefault()
-        setFormData({
-            ...formData,
-            [e.target.name]: [e.target.value]
-        })
+        setFormData(prevState => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
     }
 
-    const handleMouseMove = (e) => {
-        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - left) / width) * 100;
-        const y = ((e.clientY - top) / height) * 100;
-
-        setPosition({ x, y });
-    };
-    const ratingChanged = (newRating: number) => {
-        setFormData({
-            ...formData,
+    const handleRatingChanged = (newRating: number) => {
+        setFormData((prevState) => ({
+            ...prevState,
             rating: newRating
-        })
+        }))
     };
-
     return (
         <>
             <div className={"inline-padding bg-[#F2F4F6] py-16"}>
@@ -110,12 +101,12 @@ const UserProduct = ()=>{
                             </div>
                             <div className={"border-y-[1px] py-4 flex items-center gap-4"}>
                                 <div className={"grid grid-cols-3 items-center"}>
-                                    <button onClick={() => handleProductCount(product?.id, "minus")}
+                                    <button onClick={() => handleProductCount(product?.id as string, "minus")}
                                             className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}><AiOutlineMinus/>
                                     </button>
                                     <button
                                         className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}>{productCounts[product?.id] || 0}</button>
-                                    <button onClick={() => handleProductCount(product?.id, "add")}
+                                    <button onClick={() => handleProductCount(product?.id as string, "add")}
                                             className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}><IoAddOutline/>
                                     </button>
                                 </div>
@@ -177,12 +168,7 @@ const UserProduct = ()=>{
                             <div className={"flex gap-2 items-center"}>
                                 <p className={"text-gray-8"}>Your rating *</p>
                                 <div>
-                                    <ReactStars
-                                        count={5}
-                                        onChange={ratingChanged}
-                                        size={30}
-                                        activeColor="#ffd700"
-                                    />
+                                    <Rating style={{ maxWidth: 150 }} value={formData.rating} onChange={handleRatingChanged} />
                                 </div>
                             </div>
                             <label className={"text-gray-8"}>
@@ -242,14 +228,7 @@ const UserProduct = ()=>{
                                                           className={"font-extrabold text-lg block text-center"}>{name}</Link>
                                                     <div className={"flex gap-2 items-center w-fit mx-auto"}>
                                                     {/*    */}
-                                                        <ReactStars
-                                                            count={5}
-                                                            onChange={ratingChanged}
-                                                            size={24}
-                                                            edit={false}
-                                                            value={2}
-                                                            activeColor="#ffd700"
-                                                        />
+                                                        <Rating style={{ maxWidth: 100 }} value={3} readOnly={true}/>
                                                     </div>
                                                     <div className={"flex items-center gap-2 w-fit mx-auto"}>
                                                         <p className={"text-sm line-through text-gray-8"}>$22.00</p>

@@ -47,16 +47,16 @@ const UserHeader = ()=>{
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger onClick={()=>handleActiveBar("my-account")}>My Account</NavigationMenuTrigger>
+                                <NavigationMenuTrigger onClick={()=>handleActiveBar("my-account")} className={`${activeBar === "my-account" || path === "/my-account" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}>My Account</NavigationMenuTrigger>
                                 <NavigationMenuContent className={"w-full bg-white shadow-md"}>
                                     <div className={' w-[14rem] flex flex-col'}>
                                         <NavigationMenuLink onClick={()=>handleActiveBar("my-account")} asChild>
-                                            <Link to="/orders" className={`${activeBar === "my-account" || path === "/my-account" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 px-5 py-3 duration-300 border-b`}>
+                                            <Link to="/orders" className={`hover:text-green-5 px-5 py-3 duration-300 border-b`}>
                                                 Orders
                                             </Link>
                                         </NavigationMenuLink>
                                         <NavigationMenuLink onClick={()=>handleActiveBar("my-account")} asChild>
-                                            <Link to="/my-account" className={`${activeBar === "my-account" || path === "/my-account" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 px-5 py-3 duration-300`}>
+                                            <Link to="/my-account" className={`hover:text-green-5 px-5 py-3 duration-300`}>
                                                 Account Details
                                             </Link>
                                         </NavigationMenuLink>
@@ -114,7 +114,7 @@ const UserHeader = ()=>{
                                 <li onClick={() => handleActiveBar("my-account")}>
                                     <Link
                                         to={'/orders'}
-                                        className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                                        className={`hover:text-green-5 `}
                                     >
                                         Orders
                                     </Link>
@@ -123,7 +123,7 @@ const UserHeader = ()=>{
                                 <li onClick={() => handleActiveBar("my-account")}>
                                     <Link
                                         to={'/account-details'}
-                                        className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                                        className={`hover:text-green-5 `}
                                     >
                                         Account Details
                                     </Link>
