@@ -9,11 +9,33 @@
   .vertical-spacing{
     @apply flex flex-col gap-4
   }
-.section {
-  @apply px-8 md:px-12 py-4
+  .section {
+    @apply px-8 md:px-12 py-4
+  }
+  .inline-padding{
+    @apply px-[clamp(0.5rem,-28.7834rem+37.785vw,15rem)]
+  }
+
 }
+
+.swiper {
+  padding-bottom: 3.125rem !important;
+}
+.swiper-pagination-bullet{
+  background: #22C55E !important;
+  margin-top: 2rem !important;
+}
+
+.swiper-button-prev{
+  color: #22C55E !important;
+}
+.swiper-button-next{
+  color: #22C55E !important;
 }
 @layer utilities {
+  .text-shadow {
+    text-shadow: 3px 0px 7px rgba(0,170,255,0.36);
+  }
   .clip-hexagon{
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     border-radius: 20px;
