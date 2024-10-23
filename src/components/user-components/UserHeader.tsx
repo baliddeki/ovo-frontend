@@ -12,6 +12,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import {FaChevronRight} from "react-icons/fa";
 
 
 const UserHeader = ()=>{
@@ -99,14 +100,14 @@ const UserHeader = ()=>{
                     </Link>
 
                     <ul className={"group"}>
-                        <li onClick={()=>handleActiveBar("my-account")} >
+                        <li onClick={()=>handleActiveBar("my-account")} className={'flex items-center justify-between gap-4 group'}>
                             <Link
                                 to={'/account-details'}
-                                className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} hover:text-green-5 `}
+                                className={`${activeBar === "my-account" || path === "/my-account" ? "text-green-5 " : "text-blue-5"} group-hover:text-green-5 `}
                             >
                                 My Account
                             </Link>
-
+                            <FaChevronRight className={'group-hover:text-green-5 text-blue-5 group-hover:rotate-90 duration-300'}/>
                         </li>
                         <ul className={"max-h-0 overflow-hidden group-hover:max-h-[14rem] ml-4 duration-300"}>
                             <div className={'py-2 vertical-spacing gap-2'}>
