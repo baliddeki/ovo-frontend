@@ -42,17 +42,17 @@ const Shop = ()=>{
                             <div key={id} className={"min-h-[32.616rem]"}>
                                 <Link to={`/product/${id}`} className={"group w-full max-h-[19.688rem] h-full bg-white flex items-center justify-center p-4"}
                                      style={gradientBackground}>
-                                    <img src={image} alt={"Product Name"} className={"group-hover:scale-105 duration-700 block max-w-[18rem]"}/>
+                                    <img src={image} alt={"Product Name"} className={"group-hover:scale-110 duration-700 block max-w-[14rem]"}/>
                                 </Link>
                                 <div className={"vertical-spacing gap-2 w-fit mx-auto py-6"}>
-                                    <p className={"text-sm text-center"}>{category}</p>
+                                    <p className={"text-sm text-center text-green-5"}>{category}</p>
                                     <Link to={`/product/${id}`} className={"font-extrabold text-lg block text-center"}>{name}</Link>
                                     <div className={"w-fit mx-auto"}>
                                         <Rating style={{ maxWidth: 100 }} value={3} readOnly={true}/>
                                     </div>
                                     <div className={"flex items-center gap-2 w-fit mx-auto"}>
-                                        <p className={"text-sm line-through text-gray-8"}>$22.00</p>
-                                        <p className={"text-sm"}>{price}</p>
+                                        <p className={"text-sm line-through text-gray-8"}>2500ugx</p>
+                                        <p className={"font-medium"}>{price}</p>
                                     </div>
                                 </div>
                             </div>
