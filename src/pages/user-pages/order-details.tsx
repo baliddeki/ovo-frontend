@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom"
 import {orders} from "@/assets/data.ts";
 import {ArrowLeft} from "lucide-react";
+import Progress from "@/components/user-components/Progress.tsx";
 // import Progress from "@/pages/user-pages/progress.tsx";
 
 const UserOrderDetails = ()=>{
@@ -29,7 +30,9 @@ const UserOrderDetails = ()=>{
 
                             </div>
 
-                            {/*<Progress/>*/}
+                            <Progress steps={2}/>
+
+                            yes
 
                         </div>
                     </div>
