@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import {orders, products} from "@/assets/data.ts";
 import {ArrowLeft} from "lucide-react";
 import Progress from "@/components/user-components/Progress.tsx";
@@ -30,7 +30,7 @@ const UserOrderDetails = ()=>{
                 <div className={"bg-white w-full p-6 md:p-12 mx-auto mt-16 vertical-spacing"}>
                     <div className={"border"}>
                         <div className={"flex items-center gap-4 p-4 border-b"}>
-                            <ArrowLeft/>
+                            <Link to={"/orders"}><ArrowLeft/></Link>
                             <h3>Order Details</h3>
                         </div>
                         <div className={"p-4"}>
