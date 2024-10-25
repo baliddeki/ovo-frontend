@@ -3,15 +3,15 @@ import {Link} from "react-router-dom";
 
 const Cart = ()=>{
     return (
-        <div className={"bg-[#F2F4F6] min-h-screen"}>
-            <div className={"inline-padding lg:py-20 sm:py-16 py-6"}>
-                <div className={"bg-white p-24"}>
+        <div className={"bg-[#F2F4F6]"}>
+            <div className={"inline-padding py-6"}>
+                <div className={"bg-white p-4 md:p-24 vertical-spacing"}>
                     <h2 className={"text-3xl font-extrabold"}>Cart</h2>
-                    <div className={"grid md:grid-cols-12 gap-8 mt-8"}>
-                        <div className={"md:col-span-8"}>
+                    <div className={"grid lg:grid-cols-12 gap-8 mt-8"}>
+                        <div className={"lg:col-span-8"}>
                             <CartTable/>
                         </div>
-                        <div className={"md:col-span-4 w-full"}>
+                        <div className={"lg:col-span-4 w-full"}>
                             <div className={"border"}>
                                 <div className={"border-b px-5 py-1 bg-[#F2F4F6]"}>
                                     <h3 className={"text-2xl font-extrabold"}>Cart Totals</h3>
@@ -31,7 +31,7 @@ const Cart = ()=>{
                                         </div>
                                     </div>
                                     <Link to={"/"}
-                                                className={"rounded-3xl mt-10 mx-auto w-fit px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white font-light text-gray-8"}>
+                                                className={"rounded-3xl mt-10 mx-auto w-fit px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8"}>
                                     PROCEED TO CHECKOUT
                                 </Link>
                                 </div>
@@ -39,6 +39,10 @@ const Cart = ()=>{
                             </div>
                         </div>
                     </div>
+
+                    <Link
+                        to={"/shop"}
+                        className={"rounded-3xl bg-gray-200 hover:bg-green-5 hover:text-white duration-300 w-fit font-light px-6 py-3 text-center"}>RETURN TO SHOP</Link>
                 </div>
 
             </div>
