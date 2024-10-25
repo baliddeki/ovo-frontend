@@ -17,12 +17,14 @@ export type Product = {
 
 export type Order = {
     id: string;
-    product: string,
+    productName: string,
+    productId: string,
     customer: string;
     price: string;
     status: string;
     deliveryDate: string;
     image: string;
+    quantity: number,
 }
 
 export type Brand = {
