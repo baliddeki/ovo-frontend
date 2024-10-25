@@ -13,7 +13,6 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-  console.log(props); // Just reference it to avoid unused variable error
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
