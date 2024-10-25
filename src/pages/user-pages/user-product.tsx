@@ -26,8 +26,6 @@ const UserProduct = ()=>{
         message: '',
         name: ''
     })
-    // const [position, setPosition] = useState({ x: 0, y: 0 });
-
     const {productCounts, handleProductCount} = useProductCount();
     const product = products.find(product => product.id === productId)
     const productCategory = product?.category;
@@ -59,6 +57,8 @@ const UserProduct = ()=>{
             rating: newRating
         }))
     };
+
+    console.log(productCounts)
     return (
         <>
             <div className={"inline-padding bg-[#F2F4F6] py-16"}>

@@ -29,7 +29,7 @@ const UserOrders = ()=>{
         <>
             <div
                 className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
-                <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16 vertical-spacing"}>
+                <div className={"bg-white w-full p-6 md:p-16 mx-auto mt-16 vertical-spacing"}>
                     <h3 className={"text-2xl md:text-3xl font-extrabold text-gray-8"}>Order History</h3>
                     <Table>
                         <TableCaption>
@@ -77,7 +77,7 @@ const UserOrders = ()=>{
                                         <TableCell>{deliveryDate}</TableCell>
                                         <TableCell>{price}</TableCell>
                                         <TableCell>
-                                            <Link to={'/order-details'} className={"flex items-center gap-4 text-blue-5"}>
+                                            <Link to={`/order-details/${id}`} className={"flex items-center gap-4 text-blue-5"}>
                                                 <p>View Details</p>
                                                 <ArrowRight />
                                             </Link>
