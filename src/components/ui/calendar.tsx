@@ -13,7 +13,7 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-    return (
+  return (
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
