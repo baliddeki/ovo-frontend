@@ -36,13 +36,14 @@ export const shadowBackground = {
 
 
 export const useProductCount = () => {
-    const [productCounts, setProductCounts] = useState({});
-
+    const [productCounts, setProductCounts] = useState<{
+    [key: string]: number
+}>({});
     const handleProductCount = (productId: string,action:string) => {
         setProductCounts((prevCounts) => {
+
             const currentCount:number = prevCounts[productId] || 0;
             const newCount = action === "add" ? currentCount + 1 : Math.max(currentCount - 1, 0);
-
             return {
                 ...prevCounts,
                 [productId]: newCount,
@@ -51,7 +52,6 @@ export const useProductCount = () => {
     };
     return { productCounts, handleProductCount };
 };
-
 
 export const extractNum = (value: string)=>{
     return (parseInt(value.replace(/\D/g, ''), 10))

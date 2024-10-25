@@ -91,11 +91,11 @@ const AdminHome = ()=>{
                                 <TableBody>
 
                                         {
-                                            orders.slice(0,5).map(({id,product, customer, price, deliveryDate, image })=>(
+                                            orders.slice(0,5).map(({id,productName, customer, price, deliveryDate, image })=>(
                                                 <TableRow key={id} className={"text-gray-8"}>
                                                     <TableCell className={"flex gap-2 items-center"}>
-                                                        <img src={image} alt={product} className={"block w-10 h-10 object-cover"}/>
-                                                        {product}
+                                                        <img src={image} alt={productName} className={"block w-10 h-10 object-cover"}/>
+                                                        {productName}
                                                     </TableCell>
                                                     <TableCell>{customer}</TableCell>
                                                     <TableCell>{price}</TableCell>
