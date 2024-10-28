@@ -6,9 +6,6 @@ import {
     GetCountries
 } from "react-country-state-city";
 
-import "react-country-state-city/dist/react-country-state-city.css";
-import {string} from "zod";
-
 const UserAccount = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle()
     const [countriesList, setCountriesList] = useState<{
