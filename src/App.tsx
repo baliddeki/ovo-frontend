@@ -29,6 +29,7 @@ import CustomerDetails from "@/pages/admin-pages/customer-details.tsx";
 import UserOrders from "@/pages/user-pages/orders.tsx";
 import UserAccount from "@/pages/user-pages/account.tsx";
 import UserOrderDetails from "@/pages/user-pages/order-details.tsx";
+import Checkout from "@/pages/user-pages/checkout.tsx";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
              <Route path={"product/:productId"} element={<UserProduct />}/>
              <Route path={"contact"} element={<Contact />}/>
              <Route path={"cart"} element={<Cart/>}/>
+             <Route path={"checkout"} element={<Checkout/>}/>
              <Route path={"orders"} element={<UserOrders/>}/>
              <Route path={"order-details/:orderId"} element={<UserOrderDetails />}/>
              <Route path={"my-account"} element={<UserAccount />}/>

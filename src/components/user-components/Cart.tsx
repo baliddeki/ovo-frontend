@@ -36,7 +36,7 @@ const Cart = ()=>{
                             <div className={"flex-1 section flex flex-col gap-6 overflow-y-scroll"}>
                         {
                             products.slice(0,4).map(({id})=> (
-                                <div className={"flex items-center gap-4 flex-wrap"}>
+                                <div key={id} className={"flex items-center gap-4 flex-wrap"}>
                                     <div className={"flex-1 flex items-center gap-4"}>
                                         <div className={"h-14 w-14 bg-gray-300"}>
                                             <img src={logo} alt={"Image Logo"}

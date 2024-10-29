@@ -30,7 +30,7 @@ const Cart = ()=>{
                                             <p>127,000shs</p>
                                         </div>
                                     </div>
-                                    <Link to={"/"}
+                                    <Link to={"/checkout"}
                                                 className={"rounded-3xl mt-10 mx-auto w-fit px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8"}>
                                     PROCEED TO CHECKOUT
                                 </Link>
