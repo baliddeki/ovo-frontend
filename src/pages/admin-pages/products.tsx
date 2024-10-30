@@ -20,9 +20,7 @@ import {
 } from "@/components/ui/select"
 import {RiDeleteBinLine} from "react-icons/ri";
 import {Link} from "react-router-dom";
-import DeleteOrder from "@/components/admin-components/products-components/DeleteOrder.tsx";
-
-
+import DeleteProduct from "@/components/admin-components/orders-components/DeleteProduct.tsx";
 const Products = ()=>{
     return (
         <>
@@ -119,9 +117,9 @@ const Products = ()=>{
                                                 <div className={"flex gap-4 items-center text-2xl"}>
                                                     <Link to={`/admin/product/${id}`} className={"text-blue-5"}><LuEye /></Link>
                                                     <Link to={`/admin/edit-product/${id}`}  className={"text-green-5"}><CiEdit/></Link>
-                                                    <DeleteOrder productId={id}>
+                                                    <DeleteProduct productId={id}>
                                                         <button className={"text-orange-5"}><RiDeleteBinLine/></button>
-                                                    </DeleteOrder>
+                                                    </DeleteProduct>
                                                 </div>
                                             </TableCell>
                                         </TableRow>
