@@ -20,9 +20,7 @@ import {
 } from "@/components/ui/select"
 import {RiDeleteBinLine} from "react-icons/ri";
 import {Link} from "react-router-dom";
-import DeleteProduct from "@/components/admin-components/products-components/DeleteProduct.tsx";
-
-
+import DeleteProduct from "@/components/admin-components/orders-components/DeleteProduct.tsx";
 const Products = ()=>{
     return (
         <>

@@ -13,7 +13,24 @@ export type Product = {
     date: Date;
     totalSales: string,
     image: string;
+    color: string;
 }
+export type Wishlist = {
+    id: string;
+    productId: string;
+    name: string;
+    category: string;
+    brand: string;
+    price: string;
+    color: string;
+    size: string;
+    quantity: number;
+    total: string;
+    addedDate: Date;
+    priority: "High" | "Medium" | "Low";
+    userNotes?: string;
+    image: string;
+};
 
 export type Order = {
     id: string;
@@ -25,6 +42,8 @@ export type Order = {
     deliveryDate: string;
     image: string;
     quantity: number,
+    deliveryStatus: string,
+    paymentStatus: string,
 }
 
 export type Brand = {
