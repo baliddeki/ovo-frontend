@@ -76,7 +76,7 @@ const Products = ()=>{
                         </div>
                         <Link to={"/admin/add-new-product"}
                             className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
-                            <LuPlus/>Add New
+                            <LuPlus/>Add New Product
                         </Link>
                     </div>
                     <div>
