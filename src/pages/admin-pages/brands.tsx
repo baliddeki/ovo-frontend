@@ -25,20 +25,18 @@ import {Input} from "@/components/ui/input.tsx";
 import {Label} from "@/components/ui/label.tsx";
 import {Button} from "@/components/ui/button.tsx";
 import {useState} from "react";
-import DeleteCategory from "@/components/admin-components/category-components/DeleteCategory.tsx";
 
+const Brands = ()=>{
+    const [brandValue, setBrandValue] = useState('')
 
-const Categories = ()=>{
-    const [categoryValue, setCategoryValue] = useState('')
-
-    const handleSetCategoryValue = (value: string)=>{
-        setCategoryValue(value)
+    const handleSetBrandValue = (value: string)=>{
+        setBrandValue(value)
     }
     return (
         <>
             <div className={"vertical-spacing"}>
                 <div className={"flex items-center justify-between gap-4"}>
-                    <h2 className={"text-2xl font-bold"}>Category List</h2>
+                    <h2 className={"text-2xl font-bold"}>Brand List</h2>
                     <div>
                         <Breadcrumb>
                             <BreadcrumbList>
@@ -47,7 +45,7 @@ const Categories = ()=>{
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
-                                    <BreadcrumbPage>Categories</BreadcrumbPage>
+                                    <BreadcrumbPage>Brands</BreadcrumbPage>
                                 </BreadcrumbItem>
                             </BreadcrumbList>
                         </Breadcrumb>
@@ -89,15 +87,15 @@ const Categories = ()=>{
 
                         <Dialog>
                             <DialogTrigger className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
-                                    <LuPlus/>Add New Product Category
+                                    <LuPlus/>Add New Product Brand
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
-                                    <DialogTitle>Create New Category Item</DialogTitle>
+                                    <DialogTitle>Create New Brand</DialogTitle>
                                     <DialogDescription>
                                        <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
-                                           <Label htmlFor={'category'} className={"text-black"}>Category Name</Label>
-                                           <Input type={"text"} id="category" name={"category"} placeholder={"category name"} className={"text-black"}/>
+                                           <Label htmlFor={'category'} className={"text-black"}>Brand Name</Label>
+                                           <Input type={"text"} id="brand" name={"brand"} placeholder={"brand name"} className={"text-black"}/>
                                            <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Create</Button>
                                        </form>
                                     </DialogDescription>
@@ -110,39 +108,39 @@ const Categories = ()=>{
                         <Table className={"min-w-[46rem]"}>
                             <TableHeader>
                                 <TableRow className={"font-bold"}>
-                                    <TableHead>Category Id</TableHead>
-                                    <TableHead>Category Name</TableHead>
+                                    <TableHead>Brand Id</TableHead>
+                                    <TableHead>Brand Name</TableHead>
                                     <TableHead className={"text-right"}>Action</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
 
                                 {
-                                    brands.map(({id,category})=>(
+                                    brands.map(({id,name})=>(
                                         <TableRow key={id} className={"text-gray-8"}>
                                             <TableCell>#{id}</TableCell>
-                                            <TableCell>{category}</TableCell>
+                                            <TableCell>{name}</TableCell>
                                             <TableCell className={"flex justify-end"}>
                                                 <div className={"flex gap-4 items-center text-2xl"}>
                                                     <Dialog>
                                                         <DialogTrigger className={"text-green-5"}>
-                                                            <CiEdit  onClick={()=>handleSetCategoryValue(category)}/>
+                                                            <CiEdit  onClick={()=>handleSetBrandValue(name)}/>
                                                         </DialogTrigger>
                                                         <DialogContent>
                                                             <DialogHeader>
-                                                                <DialogTitle>Edit {category}</DialogTitle>
+                                                                <DialogTitle>Edit {name}</DialogTitle>
                                                                 <DialogDescription>
                                                                     <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
-                                                                        <Label htmlFor={'category'} className={"text-black"}>Category Name</Label>
+                                                                        <Label htmlFor={'brand'} className={"text-black"}>Brand Name</Label>
                                                                         <Input
                                                                             onChange={
-                                                                                (e)=> handleSetCategoryValue(e.target.value)
+                                                                                (e)=> handleSetBrandValue(e.target.value)
                                                                             }
                                                                             type={"text"}
-                                                                            id="category"
-                                                                            name={"category"}
-                                                                            placeholder={"category name"}
-                                                                            value={categoryValue}
+                                                                            id="brand"
+                                                                            name={"brand"}
+                                                                            placeholder={"brand name"}
+                                                                            value={brandValue}
                                                                             className={"text-black"}
                                                                         />
                                                                         <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Update</Button>
@@ -152,9 +150,9 @@ const Categories = ()=>{
                                                         </DialogContent>
                                                     </Dialog>
 
-                                                    <DeleteCategory categoryId={id}>
+                                                    <DeleteBrand brandId={id}>
                                                         <button className={"text-orange-5"}><RiDeleteBinLine/></button>
-                                                    </DeleteCategory>
+                                                    </DeleteBrand>
                                                 </div>
                                             </TableCell>
                                         </TableRow>
@@ -172,4 +170,4 @@ const Categories = ()=>{
 }
 
 
-export default Categories
+export default Brands
