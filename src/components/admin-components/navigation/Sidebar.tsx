@@ -60,6 +60,14 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                     onClick={()=>handleActiveBar("orders")}
                                     to={"/admin/orders"}
                                       className={`${activeBar === "orders" || path.includes("orders") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Orders</Link>
+                               <Link
+                                    onClick={()=>handleActiveBar("categories")}
+                                    to={"/admin/categories"}
+                                      className={`${activeBar === "categories" || path.includes("categories") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Categories</Link>
+                               <Link
+                                    onClick={()=>handleActiveBar("brands")}
+                                    to={"/admin/brands"}
+                                      className={`${activeBar === "brands" || path.includes("brands") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Brands</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("reports")}
                                     to={"/admin/reports"}

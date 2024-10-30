@@ -30,6 +30,7 @@ import UserOrders from "@/pages/user-pages/orders.tsx";
 import UserAccount from "@/pages/user-pages/account.tsx";
 import UserOrderDetails from "@/pages/user-pages/order-details.tsx";
 import Checkout from "@/pages/user-pages/checkout.tsx";
+import Categories from "@/pages/admin-pages/categories.tsx";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
              <Route path={"edit-customer/:customerId"} element={<EditCustomer />}/>
              {/**/}
              <Route path={"orders"} element={<Orders />}/>
+             <Route path={"categories"} element={<Categories />}/>
              <Route path={"reports"} element={<Reports />}/>
              <Route path={"profile"} element={<Profile />}/>
              <Route path={"settings"} element={<Settings />}/>
