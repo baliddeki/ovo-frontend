@@ -1,4 +1,4 @@
-import {Brand, Customers, Order, Product} from "@/assets/types.ts";
+import {Brand, Customers, Order, Product, Wishlist} from "@/assets/types.ts";
 
 export const products: Product[] = [
     {
@@ -13,7 +13,8 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "789,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Black"
     },
     {
         id: "2",
@@ -27,7 +28,8 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "1,200,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "White"
     },
     {
         id: "3",
@@ -41,7 +43,8 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "950,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Blue"
     },
     {
         id: "4",
@@ -55,7 +58,8 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "810,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Red"
     },
     {
         id: "5",
@@ -69,7 +73,8 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "550,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Green"
     },
     {
         id: "6",
@@ -83,7 +88,8 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "1,500,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Yellow"
     },
     {
         id: "7",
@@ -97,7 +103,8 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "720,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Orange"
     },
     {
         id: "8",
@@ -111,7 +118,8 @@ export const products: Product[] = [
         availability: "Limited Stock",
         date: new Date(),
         totalSales: "640,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Grey"
     },
     {
         id: "9",
@@ -125,7 +133,8 @@ export const products: Product[] = [
         availability: "In Stock",
         date: new Date(),
         totalSales: "494,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Purple"
     },
     {
         id: "10",
@@ -139,10 +148,10 @@ export const products: Product[] = [
         availability: "Out of Stock",
         date: new Date(),
         totalSales: "350,000ugx",
-        image: "/images/sports-shoe4.png"
+        image: "/images/sports-shoe4.png",
+        color: "Brown"
     }
 ];
-
 export const orders: Order[] = [
     {
         id: '1',
@@ -154,6 +163,8 @@ export const orders: Order[] = [
         deliveryDate: "12/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 1,
+        deliveryStatus: "Pending",
+        paymentStatus: "Unpaid"
     },
     {
         id: '2',
@@ -165,6 +176,8 @@ export const orders: Order[] = [
         deliveryDate: "15/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 2,
+        deliveryStatus: "Pending",
+        paymentStatus: "Paid"
     },
     {
         id: '3',
@@ -176,6 +189,8 @@ export const orders: Order[] = [
         deliveryDate: "14/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 2,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '4',
@@ -187,6 +202,8 @@ export const orders: Order[] = [
         deliveryDate: "13/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 1,
+        deliveryStatus: "Canceled",
+        paymentStatus: "Refunded"
     },
     {
         id: '5',
@@ -198,6 +215,8 @@ export const orders: Order[] = [
         deliveryDate: "20/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 4,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '6',
@@ -209,6 +228,8 @@ export const orders: Order[] = [
         deliveryDate: "18/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 3,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '7',
@@ -220,6 +241,8 @@ export const orders: Order[] = [
         deliveryDate: "19/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 1,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '8',
@@ -231,6 +254,8 @@ export const orders: Order[] = [
         deliveryDate: "21/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 2,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '9',
@@ -242,6 +267,8 @@ export const orders: Order[] = [
         deliveryDate: "22/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 2,
+        deliveryStatus: "Delivered",
+        paymentStatus: "Paid"
     },
     {
         id: '10',
@@ -253,8 +280,92 @@ export const orders: Order[] = [
         deliveryDate: "25/10/2024",
         image: "/images/sports-shoe4.png",
         quantity: 2,
+        deliveryStatus: "Canceled",
+        paymentStatus: "Refunded"
     }
-]
+];
+
+export const wishlist: Wishlist[] = [
+    {
+        id: "1",
+        productId: "2",
+        name: "White Running Shoes",
+        category: "runners",
+        brand: "Adidas",
+        price: "35,000ugx",
+        color: "White",
+        size: "M",
+        quantity: 1,
+        total: "35,000ugx",
+        addedDate: new Date(),
+        priority: "High",
+        image: "/images/sports-shoe4.png",
+    },
+    {
+        id: "2",
+        productId: "4",
+        name: "Red Basketball Shoes",
+        category: "basketball",
+        brand: "Jordan",
+        price: "45,000ugx",
+        color: "Red",
+        size: "L",
+        quantity: 2,
+        total: "90,000ugx",
+        addedDate: new Date(),
+        priority: "Medium",
+        userNotes: "Great for training sessions",
+        image: "/images/sports-shoe4.png",
+    },
+    {
+        id: "3",
+        productId: "5",
+        name: "Green Walking Shoes",
+        category: "walking",
+        brand: "Reebok",
+        price: "20,000ugx",
+        color: "Green",
+        size: "S",
+        quantity: 1,
+        total: "20,000ugx",
+        addedDate: new Date(),
+        priority: "Low",
+        userNotes: "Comfortable for everyday wear",
+        image: "/images/sports-shoe4.png",
+    },
+    {
+        id: "4",
+        productId: "7",
+        name: "Orange High-Tops",
+        category: "high-tops",
+        brand: "Converse",
+        price: "60,000ugx",
+        color: "Orange",
+        size: "M",
+        quantity: 1,
+        total: "60,000ugx",
+        addedDate: new Date(),
+        priority: "High",
+        userNotes: "Stylish addition to the wardrobe",
+        image: "/images/sports-shoe4.png",
+    },
+    {
+        id: "5",
+        productId: "10",
+        name: "Brown Hiking Boots",
+        category: "hiking",
+        brand: "Timberland",
+        price: "70,000ugx",
+        color: "Brown",
+        size: "L",
+        quantity: 1,
+        total: "70,000ugx",
+        addedDate: new Date(),
+        priority: "Medium",
+        userNotes: "Essential for outdoor activities",
+        image: "/images/sports-shoe4.png",
+    }
+];
 
 export const brands: Brand[] = [
     {

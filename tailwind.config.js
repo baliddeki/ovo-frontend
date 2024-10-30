@@ -13,6 +13,82 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			text: {
+				DEFAULT: '#808080',
+				50: '#0d0d0d',
+				100: '#1a1a1a',
+				200: '#333333',
+				300: '#4d4d4d',
+				400: '#666666',
+				500: '#808080',
+				600: '#999999',
+				700: '#b3b3b3',
+				800: '#cccccc',
+				900: '#e6e6e6',
+				950: '#f2f2f2',
+			},
+			background: {
+				DEFAULT: '#F2F7FB',
+				50: '#0d0d0d',
+				100: '#1a1a1a',
+				200: '#333333',
+				300: '#4d4d4d',
+				400: '#666666',
+				500: '#808080',
+				600: '#999999',
+				700: '#b3b3b3',
+				800: '#cccccc',
+				900: '#e6e6e6',
+				950: '#f2f2f2',
+			},
+			primary: {
+				DEFAULT: 'hsl(var(--primary))',
+				foreground: 'hsl(var(--primary-foreground))',
+				50: '#051505',
+				100: '#0a290a',
+				200: '#145214',
+				300: '#1e7b1e',
+				400: '#28a428',
+				500: '#32cd32',
+				600: '#5bd75b',
+				700: '#84e184',
+				800: '#adebad',
+				900: '#d6f5d6',
+				950: '#eafaea',
+			},
+			secondary: {
+				DEFAULT: 'hsl(var(--secondary))',
+				foreground: 'hsl(var(--secondary-foreground))',
+				50: '#1a0700',
+				100: '#330e00',
+				200: '#661b00',
+				300: '#992900',
+				400: '#cc3600',
+				500: '#ff4400',
+				600: '#ff6933',
+				700: '#ff8f66',
+				800: '#ffb499',
+				900: '#ffdacc',
+				950: '#ffece5',
+			},
+			accent: {
+				DEFAULT: 'hsl(var(--accent))',
+				foreground: 'hsl(var(--accent-foreground))',
+				50: '#0d0d0d',
+				100: '#1a1a1a',
+				200: '#333333',
+				300: '#4d4d4d',
+				400: '#666666',
+				500: '#808080',
+				600: '#999999',
+				700: '#b3b3b3',
+				800: '#cccccc',
+				900: '#e6e6e6',
+				950: '#f2f2f2',
+			},
+
+			// new colors
+
   			blue: {
   				'1': '#F2F7FB',
   				'5': '#2275FC'
@@ -31,7 +107,6 @@ export default {
   			},
   			hr: '#E6EFF6',
   			notification: 'rgba(203, 213,244,.31)',
-  			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -41,21 +116,9 @@ export default {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
   			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
