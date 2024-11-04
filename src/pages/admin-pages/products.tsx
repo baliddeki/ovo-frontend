@@ -1,5 +1,5 @@
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
-import {products} from "@/assets/data.ts";
+import {brands, products} from "@/assets/data.ts";
 import {LuEye, LuPlus} from "react-icons/lu";
 import {CiEdit, CiSearch} from "react-icons/ci";
 
@@ -48,34 +48,34 @@ const Products = ()=>{
                         <div className={"flex gap-4 items-center flex-wrap"}>
                             <form
                                 onSubmit={e => e.preventDefault()}
-                                className={"flex gap-4 items-center"}>
-                                <p className={"text-gray-400"}>Showing</p>
-                                <Select>
-                                    <SelectTrigger className="flex items-center justify-center [&_svg]:hidden max-w-[3.5rem]">
-                                        <SelectValue placeholder="10" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="ten">10</SelectItem>
-                                        <SelectItem value="twenty">20</SelectItem>
-                                        <SelectItem value="thirty">30</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                <p className={"text-gray-400"}>entries</p>
-
-                            </form>
-                            <form
-                                onSubmit={e => e.preventDefault()}
                                 className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center"}>
                                 <input type={"search"}
-                                       placeholder={"search here..."}
-                                       className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
+                                       placeholder={"search Product..."}
+                                       className={"w-full py-2 ring-0 bg-none border-none outline-none"}/>
                                 <button type={"submit"} className={"border-none shadow-none"}>
                                     <CiSearch className={"text-2xl"}/>
                                 </button>
                             </form>
+                            <form
+                                onSubmit={e => e.preventDefault()}
+                                className={"flex gap-4 items-center"}>
+                                <Select>
+                                    <SelectTrigger
+                                        className="flex items-center justify-center py-5 rounded-lg">
+                                        <SelectValue placeholder="Filter Category"/>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {
+                                            brands.map(({category})=>(
+                                                <SelectItem value={category}>{category}</SelectItem>
+                                            ))
+                                        }
+                                    </SelectContent>
+                                </Select>
+                            </form>
                         </div>
                         <Link to={"/admin/add-new-product"}
-                            className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
+                              className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
                             <LuPlus/>Add New Product
                         </Link>
                     </div>
@@ -95,10 +95,20 @@ const Products = ()=>{
                             <TableBody>
 
                                 {
-                                    products.slice(0,5).map(({id,image, name, category,price,quantity, totalSales, availability })=>(
+                                    products.slice(0, 5).map(({
+                                                                  id,
+                                                                  image,
+                                                                  name,
+                                                                  category,
+                                                                  price,
+                                                                  quantity,
+                                                                  totalSales,
+                                                                  availability
+                                                              }) => (
                                         <TableRow key={id} className={"text-gray-8"}>
                                             <TableCell className={"flex gap-2 items-center"}>
-                                                <img src={image} alt={name} className={"hidden md:block w-14 h-14 object-cover"}/>
+                                                <img src={image} alt={name}
+                                                     className={"hidden md:block w-14 h-14 object-cover"}/>
                                                 {name}
                                             </TableCell>
                                             <TableCell>{category}</TableCell>

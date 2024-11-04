@@ -6,11 +6,13 @@ import {
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.tsx";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
-import {CiSearch} from "react-icons/ci";
+import {CiEdit, CiSearch} from "react-icons/ci";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import {orders} from "@/assets/data.ts";
 import DeleteOrder from "@/components/admin-components/products-components/DeleteOrder.tsx";
 import {RiDeleteBinLine} from "react-icons/ri";
+import { Link } from "react-router-dom";
+import {LuEye} from "react-icons/lu";
 
 const Orders = ()=>{
     return (
@@ -40,30 +42,43 @@ const Orders = ()=>{
                             <div className={"flex gap-4 items-center flex-wrap"}>
                                 <form
                                     onSubmit={e => e.preventDefault()}
-                                    className={"flex gap-4 items-center"}>
-                                    <p className={"text-gray-400"}>Showing</p>
-                                    <Select>
-                                        <SelectTrigger className="flex items-center justify-center [&_svg]:hidden max-w-[3.5rem]">
-                                            <SelectValue placeholder="10" />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="ten">10</SelectItem>
-                                            <SelectItem value="twenty">20</SelectItem>
-                                            <SelectItem value="thirty">30</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <p className={"text-gray-400"}>entries</p>
-
-                                </form>
-                                <form
-                                    onSubmit={e => e.preventDefault()}
                                     className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center"}>
                                     <input type={"search"}
                                            placeholder={"search here..."}
-                                           className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
+                                           className={"w-full py-2 ring-0 bg-none border-none outline-none"}/>
                                     <button type={"submit"} className={"border-none shadow-none"}>
                                         <CiSearch className={"text-2xl"}/>
                                     </button>
+                                </form>
+                                <form
+                                    onSubmit={e => e.preventDefault()}
+                                    className={"flex gap-4 items-center"}>
+                                    <Select>
+                                        <SelectTrigger
+                                            className="flex items-center justify-center py-5">
+                                            <SelectValue placeholder="Payment Status"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="Pending">Pending</SelectItem>
+                                            <SelectItem value="Delivered">Delivered</SelectItem>
+                                            <SelectItem value="Canceled">Canceled</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </form>
+                                <form
+                                    onSubmit={e => e.preventDefault()}
+                                    className={"flex gap-4 items-center"}>
+                                    <Select>
+                                        <SelectTrigger
+                                            className="flex items-center justify-center py-5">
+                                            <SelectValue placeholder="Order Status"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="In Progress">In Progress</SelectItem>
+                                            <SelectItem value="Completed">Completed</SelectItem>
+                                            <SelectItem value="Canceled">Canceled</SelectItem>
+                                        </SelectContent>
+                                    </Select>
                                 </form>
                             </div>
                         </div>
@@ -120,9 +135,9 @@ const Orders = ()=>{
                                                 <TableCell>{deliveryDate}</TableCell>
                                                 <TableCell>
                                                     <div className={"flex gap-4 items-center text-2xl"}>
-                                                        {/*<Link to={`/admin/product/${id}`} className={"text-blue-5"}><LuEye/></Link>*/}
-                                                        {/*<Link to={`/admin/edit-product/${id}`}*/}
-                                                        {/*      className={"text-green-5"}><CiEdit/></Link>*/}
+                                                        <Link to={`/admin/orders/${id}`} className={"text-blue-5"}><LuEye/></Link>
+                                                        <Link to={`/admin/orders/edit-order/${id}`}
+                                                              className={"text-green-5"}><CiEdit/></Link>
                                                         <DeleteOrder orderId={id}>
                                                             <button className={"text-orange-5"}><RiDeleteBinLine/></button>
                                                         </DeleteOrder>

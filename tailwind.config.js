@@ -38,7 +38,7 @@ export default {
 			},
 			primary: {
 				DEFAULT: '#32CD32',
-				foreground: 'hsl(var(--primary-foreground))',
+				foreground: '#FFFFFF',
 				50: '#F0FDF4',
 				100: '#0a290a',
 				200: '#145214',
@@ -52,7 +52,7 @@ export default {
 			},
 			secondary: {
 				DEFAULT: '#FF4500',
-				foreground: 'hsl(var(--secondary-foreground))',
+				foreground: '#FFFFFF',
 				50: '#ffece5', // worked
 				100: '#ff8f66', // worked
 				200: '#661b00',
@@ -67,7 +67,7 @@ export default {
 			},
 			accent: {
 				DEFAULT: '#333333',
-				foreground: 'hsl(var(--accent-foreground))',
+				foreground: '#FFFFFF',
 				50: '#0d0d0d',
 				100: '#1a1a1a',
 				200: '#333333',

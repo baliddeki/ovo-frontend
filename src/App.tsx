@@ -30,6 +30,8 @@ import UserOrderDetails from "@/pages/user-pages/order-details.tsx";
 import Checkout from "@/pages/user-pages/checkout.tsx";
 import Categories from "@/pages/admin-pages/categories.tsx";
 import Brands from "@/pages/admin-pages/brands.tsx";
+import AdminOrderDetails from "@/pages/admin-pages/admin-order-details.tsx";
+import AdminEditOrder from "@/pages/admin-pages/admin-edit-order.tsx";
 
 function App() {
   return (
@@ -69,6 +71,8 @@ function App() {
              <Route path={"edit-customer/:customerId"} element={<EditCustomer />}/>
              {/**/}
              <Route path={"orders"} element={<Orders />}/>
+             <Route path={"orders/:orderId"} element={<AdminOrderDetails />}/>
+             <Route path={"orders/edit-order/:orderId"} element={<AdminEditOrder />}/>
              <Route path={"categories"} element={<Categories />}/>
              <Route path={"brands"} element={<Brands />}/>
              <Route path={"reports"} element={<Reports />}/>

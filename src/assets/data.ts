@@ -562,3 +562,6 @@ export const customers: Customers[] = [
     }
 ];
 
+export const paymentStatus =  ["Paid", "Unpaid", "Refunded"]
+export const orderStatus = ["CANCELED", "COMPLETED", "IN PROGRESS"]
+export const deliveryStatus = ["Pending", "Delivered", "Canceled"]
