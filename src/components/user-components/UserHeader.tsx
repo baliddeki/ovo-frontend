@@ -22,13 +22,15 @@ const UserHeader = ()=>{
     return (
         <>
             <nav className={"flex items-center gap-4 section bg-white z-50"}>
-                <Link to={"/"} className={"flex-1"}>
-                    <img src={logo} alt={"Company Logo"}/>
-                </Link>
-                <button className={"md:hidden"} onClick={handleSmallScreenNav}>
+                <div style={{filter: 'hue-rotate(270deg)'}}>
+                    <Link to={"/"} className={"max-w-fit bg-red-500"}>
+                        <img src={logo} alt={"Company Logo"}/>
+                    </Link>
+                </div>
+                <button className={"md:hidden flex-1 flex justify-end items-center"} onClick={handleSmallScreenNav}>
                     <IoMdMenu className={"text-3xl"}/>
                 </button>
-                <div className={"hidden md:flex items-center gap-4"}>
+                <div className={"hidden md:flex flex-1 items-center justify-end gap-4"}>
                     <Link
                         onClick={()=>handleActiveBar("")}
                         to={"/"}
@@ -47,7 +49,7 @@ const UserHeader = ()=>{
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger onClick={()=>handleActiveBar("my-account")} className={`${activeBar === "my-account" || path === "/my-account" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 px-4 py-1 rounded-lg duration-300`}>My Account</NavigationMenuTrigger>
+                                <NavigationMenuTrigger onClick={()=>handleActiveBar("my-account")} className={`${activeBar === "my-account" || path === "/my-account" ? "bg-green-2 text-green-5 ": "text-gray-8"} hover:text-green-5 hover:bg-green-2 bg-transparent px-4 py-1 rounded-lg duration-300`}>My Account</NavigationMenuTrigger>
                                 <NavigationMenuContent className={"w-full bg-white shadow-md"}>
                                     <div className={' w-[14rem] flex flex-col'}>
                                         <NavigationMenuLink onClick={()=>handleActiveBar("my-account")} asChild>

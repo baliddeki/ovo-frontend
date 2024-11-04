@@ -18,11 +18,11 @@ const Cart = ()=>{
     const cart = true
     return (
         <div className={"z-50"}>
-            <button onClick={handleOpenCart} className={"text-blue-5 flex gap-2 items-center"}>
+            <button onClick={handleOpenCart} className={"text-green-5 flex gap-2 items-center"}>
                 <p>$116.00</p>
                 <div className={"relative"}>
                     <ShoppingBag/>
-                    <p className={"absolute -top-3 -right-2 bg-blue-5 h-5 w-5 center-items rounded-full text-sm text-white"}>2</p>
+                    <p className={"absolute -top-3 -right-2 bg-red-500 h-5 w-5 center-items rounded-full text-sm text-white"}>2</p>
                 </div>
             </button>
             <div onClick={handleOpenCart} className={`fixed right-0 top-0 bottom-0 left-0 ${openCart ? "bg-[rgba(0,0,0,.3)]": "translate-x-full duration-200"} w-full`}>
