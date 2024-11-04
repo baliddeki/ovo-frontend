@@ -78,7 +78,7 @@ const Cart = ()=>{
                                     <Link
                                         onClick={handleOpenCart}
                                         to={"/shop"}
-                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-green-5 hover:text-white duration-300 font-light px-6 py-3 text-center"}>Continue
+                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-primary hover:text-white duration-300 font-light px-6 py-3 text-center"}>Continue
                                         Shopping</Link>
                                 </div>
                             </>
@@ -95,12 +95,12 @@ const Cart = ()=>{
                                     <Link
                                         onClick={handleOpenCart}
                                         to={"/cart"}
-                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-green-5 hover:text-white duration-300 font-light px-6 py-3 text-center"}>View
+                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-primary hover:text-white duration-300 font-light px-6 py-3 text-center"}>View
                                         Cart</Link>
                                     <Link
                                         onClick={handleOpenCart}
                                         to={"/checkout"}
-                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-green-5 hover:text-white duration-300 font-light px-6 py-3 text-center"}>Checkout</Link>
+                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-primary hover:text-white duration-300 font-light px-6 py-3 text-center"}>Checkout</Link>
                                 </div>
                             </div>
                     }
