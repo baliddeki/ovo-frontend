@@ -47,7 +47,7 @@ const ProductSlider = ()=>{
             {
                 products.slice(0, 10).map(({id, name, image, category, price}) => (
                     <SwiperSlide key={id}>
-                        <ProductCard category={category} name={name} image={image} price={price}/>
+                        <ProductCard category={category} name={name} image={image} price={price} productId={id}/>
                     </SwiperSlide>
                 ))
             }

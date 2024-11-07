@@ -15,7 +15,9 @@
   .inline-padding{
     @apply px-[clamp(0.5rem,-28.7834rem+37.785vw,15rem)]
   }
-
+  .hero-bg::after{
+    @apply h-full w-screen pb-16 section inline-padding flex flex-col
+  }
 }
 
 .progress-bg-1 {
@@ -46,7 +48,7 @@
 }
 @layer utilities {
   .text-shadow {
-    text-shadow: 3px 0px 7px rgba(0,170,255,0.36);
+    text-shadow: 3px 0 7px rgba(0,150,0,0.6);
   }
   .clip-hexagon{
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -59,7 +61,16 @@
     width: 100%;
   }
 }
-
+.hero-bg::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../public/images/homepage-bg-free-img-1.jpg');
+  filter: hue-rotate(320deg);
+  background-size: cover;
+  background-position: center;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

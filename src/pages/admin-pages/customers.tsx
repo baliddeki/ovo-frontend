@@ -48,32 +48,30 @@ const Customers = ()=>{
                 <div className={"bg-white p-6 rounded-lg vertical-spacing overflow-hidden"}>
                     <div className={"flex items-center justify-between flex-wrap gap-4"}>
                         <div className={"flex gap-4 items-center flex-wrap"}>
-                            <form
-                                onSubmit={e => e.preventDefault()}
-                                className={"flex gap-4 items-center"}>
-                                <p className={"text-gray-400"}>Showing</p>
-                                <Select>
-                                    <SelectTrigger className="flex items-center justify-center [&_svg]:hidden max-w-[3.5rem]">
-                                        <SelectValue placeholder="10" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="ten">10</SelectItem>
-                                        <SelectItem value="twenty">20</SelectItem>
-                                        <SelectItem value="thirty">30</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                <p className={"text-gray-400"}>entries</p>
 
-                            </form>
                             <form
                                 onSubmit={e => e.preventDefault()}
                                 className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center"}>
                                 <input type={"search"}
-                                       placeholder={"search here..."}
-                                       className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
+                                       placeholder={"search customers..."}
+                                       className={"w-full py-2 ring-0 bg-none border-none outline-none"}/>
                                 <button type={"submit"} className={"border-none shadow-none"}>
                                     <CiSearch className={"text-2xl"}/>
                                 </button>
+                            </form>
+                            <form
+                                onSubmit={e => e.preventDefault()}
+                                className={"flex gap-4 items-center"}>
+                                <Select>
+                                    <SelectTrigger
+                                        className="flex items-center justify-center py-5">
+                                        <SelectValue placeholder="Filter"/>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="Last Name">Last Name</SelectItem>
+                                        <SelectItem value="First Name">Fist Name</SelectItem>
+                                    </SelectContent>
+                                </Select>
                             </form>
                         </div>
                         <Link to={"/admin/add-new-customer"}
@@ -95,7 +93,7 @@ const Customers = ()=>{
                             <TableBody>
 
                                 {
-                                    customers.map(({id, firstName, lastName, email })=>(
+                                    customers.map(({id, firstName, lastName, email}) => (
                                         <TableRow key={id} className={"text-gray-8"}>
                                             <TableCell>{id}</TableCell>
                                             <TableCell>{firstName}</TableCell>
@@ -103,8 +101,10 @@ const Customers = ()=>{
                                             <TableCell>{email}</TableCell>
                                             <TableCell>
                                                 <div className={"flex gap-4 items-center text-2xl"}>
-                                                    <Link to={`/admin/customer/${id}`} className={"text-blue-5"}><LuEye /></Link>
-                                                    <Link to={`/admin/edit-customer/${id}`}  className={"text-green-5"}><CiEdit/></Link>
+                                                    <Link to={`/admin/customer/${id}`}
+                                                          className={"text-blue-5"}><LuEye/></Link>
+                                                    <Link to={`/admin/edit-customer/${id}`}
+                                                          className={"text-green-5"}><CiEdit/></Link>
                                                     <DeleteCustomer customerId={id}>
                                                         <button className={"text-orange-5"}><RiDeleteBinLine/></button>
                                                     </DeleteCustomer>
