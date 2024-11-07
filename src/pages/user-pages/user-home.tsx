@@ -11,36 +11,29 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Services from "@/components/user-components/Services.tsx";
-import bgImage from "/images/homepage-bg-free-img-1.jpg"
 import ProductSlider from "@/components/user-components/ProductSlider.tsx";
 import {products} from "@/assets/data.ts";
 
 const UserHome = ()=>{
-    const backgroundImage = {
-        backgroundImage: `url('${bgImage}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-    }
     return (
         <>
             <div>
                 {/*hero section*/}
-                <div className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col"}
-                     style={backgroundImage}>
-                    <div className={"p-4 mt-16"}>
+                <div className={"hero-bg relative md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col"}>
+                    <div className={"p-4 mt-16 z-10"} style={{filter: 'unset'}}>
                         <h2 className={"text-5xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto text-white text-shadow"}>AIR
                             PRO X3</h2>
-                        <img src={shoes} alt={"Boots"} className={"mx-auto block w-auto max-h-[50rem] h-full"}/>
+                        <img src={shoes} alt={"Boots"} style={{filter: 'unset'}} className={"mx-auto block w-auto max-h-[50rem] h-full"}/>
                     </div>
                     <Link to={"shop"}
                           reloadDocument
-                          className={"rounded-3xl bg-white shadow-lg text-gray-8 px-6 py-3 w-fit mt-auto mx-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
+                          className={"z-10 rounded-3xl bg-white shadow-lg text-gray-8 px-6 py-3 w-fit mt-auto mx-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
                         <FaArrowRight/>
                         SHOP COLLECTION
                     </Link>
                 </div>
                 {/*Products section*/}
-                <div className={"w-screen section inline-padding pt-8 py-16 bg-white"}>
+                <div className={"w-screen section inline-padding pt-8 py-16 bg-background"}>
                     <div className={"p-4"}>
                         <h2 className={"text-3xl sm:text-7xl lg:text-9xl w-fit font-extrabold mx-auto capitalize italic"}>UNBELIEVABLE</h2>
                         <p className={"text-2xl sm:text-3xl lg:text-4xl font-extrabold w-fit mx-auto italic capitalize mt-8"}>SPEED.COMFORT.</p>
@@ -49,7 +42,7 @@ const UserHome = ()=>{
                         <ProductSlider/>
                     </div>
                 </div>
-                <div className={"w-screen section inline-padding pt-8 py-16 bg-[#F2F4F6]"}>
+                <div className={"w-screen section inline-padding pt-8 py-16 bg-secondary-50"}>
                     <div className={"py-16 grid md:grid-cols-2 md:gap-6 lg:gap-12"}>
                         <Carousel className={"overflow-hidden sm:overflow-auto"}>
                             <CarouselContent>
@@ -72,7 +65,7 @@ const UserHome = ()=>{
                                 ullamcorper mattis, pulvinar dapibus leo.​ Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. </p>
                             <Link to={"shop"}
-                                  className={"rounded-3xl bg-white shadow-lg text-gray-8 px-6 py-3 w-fit mt-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
+                                  className={"rounded-3xl bg-primary shadow-lg text-text-0 px-6 py-3 w-fit mt-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
                                 <FaArrowRight/>
                                 SHOP NOW
                             </Link>
@@ -91,7 +84,7 @@ const UserHome = ()=>{
                     <h2 className={"w-fit mx-auto text-white text-5xl font-extrabold"}>AirPro X3. Turbocharged.</h2>
                     <p className={"sm:w-fit sm:mx-auto text-justify text-white max-w-[45rem]"}>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
                     <Link to={"shop"}
-                          className={"rounded-3xl bg-white shadow-lg text-gray-8 px-6 py-3 w-fit mt-auto sm:mx-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
+                          className={"rounded-3xl bg-background shadow-lg text-gray-8 px-6 py-3 w-fit mt-auto sm:mx-auto font-light flex items-center gap-4 hover:bg-green-5 hover:text-white duration-300"}>
                         <FaArrowRight/>
                         SHOP NOW
                     </Link>

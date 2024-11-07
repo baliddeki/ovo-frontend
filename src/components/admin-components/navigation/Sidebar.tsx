@@ -36,10 +36,6 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                     to={"/admin"}
                                     className={`${activeBar === "" && path === "/admin" ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Dashboard</Link>
                                 <Link
-                                    onClick={()=>handleActiveBar("analytics")}
-                                    to={"/admin/analytics"}
-                                    className={`${activeBar === "analytics" || path.includes("analytics") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Analytics</Link>
-                                <Link
                                     onClick={()=>handleActiveBar("sales")}
                                     to={"/admin/sales"}
                                       className={`${activeBar === "sales" || path.includes("sales") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Sales</Link>
@@ -60,6 +56,14 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                     onClick={()=>handleActiveBar("orders")}
                                     to={"/admin/orders"}
                                       className={`${activeBar === "orders" || path.includes("orders") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Orders</Link>
+                               <Link
+                                    onClick={()=>handleActiveBar("categories")}
+                                    to={"/admin/categories"}
+                                      className={`${activeBar === "categories" || path.includes("categories") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Categories</Link>
+                               <Link
+                                    onClick={()=>handleActiveBar("brands")}
+                                    to={"/admin/brands"}
+                                      className={`${activeBar === "brands" || path.includes("brands") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Brands</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("reports")}
                                     to={"/admin/reports"}
@@ -74,10 +78,6 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
 
                 </div>
                 <div className={"flex flex-col gap-2 ml-4 w-full mt-auto font-bold px-8 py-4"}>
-                    <Link
-                        onClick={()=>handleActiveBar("settings")}
-                        to={"/admin/settings"}
-                          className={`${activeBar === "settings" || path.includes("settings") ? "bg-blue-1 text-blue-5 ": "text-gray-8"} hover:bg-blue-1 over:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300`}>Settings</Link>
                     <form onSubmit={e => e.preventDefault()}>
                         <button type={"submit"}
                                 className={"block text-start hover:bg-blue-1 text-gray-8 hover:text-blue-5 px-5 py-2 rounded-lg min-w-52 duration-300"}>
