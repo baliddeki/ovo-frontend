@@ -5,13 +5,15 @@ import {Notification} from "@/assets/types.ts";
 import {shortenText} from "@/assets/utils.tsx";
 
 const Notifications = ({notifications}:  {notifications: Notification[]})=>{
+    const notificationLength = notifications.filter(({status})=>status == 'read').length
+
     return (
         <Menubar>
             <MenubarMenu>
                 <MenubarTrigger>
                     <div className={"relative rounded-full h-10 w-10 bg-notification center-items p-2"}>
                         <FaRegBell className={"text-2xl text-black"}/>
-                        <p className={"absolute -top-1 -right-1 h-5 w-5 p-2 rounded-full bg-orange-5 center-items text-sm text-white font-light"}>2</p>
+                        <p className={"absolute -top-1 -right-1 min-h-5 min-w-5 max-w-6 max-h-6 p-2 rounded-full bg-orange-5 center-items text-sm text-white font-light"}>{notificationLength}</p>
                     </div>
                 </MenubarTrigger>
                 <MenubarContent className={'mx-8 md:mx-12'}>
