@@ -11,6 +11,7 @@ import {Input} from "@/components/ui/input.tsx";
 import {useState} from "react";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
 import {IoCamera} from "react-icons/io5";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const Profile = ()=>{
     const [userForm, setUserForm] = useState<{
@@ -193,10 +194,7 @@ const Profile = ()=>{
                                 </label>
                             </div>
 
-                            <button type={"submit"}
-                                    className={"rounded-lg py-3 px-6 bg-blue-5 text-white hover:bg-blue-1 hover:text-black w-fit max-w-[14rem]duration-300"}>Update
-                                Profile
-                            </button>
+                            <SubmitButton title={'Update Profile'}/>
                         </form>
                         <h3 className={'font-extrabold text-xl md:text-3xl mt-8'}>Update Password</h3>
                         <form onSubmit={handleUpdatePassword} className={"vertical-spacing"}>
@@ -221,10 +219,7 @@ const Profile = ()=>{
                                            className={"w-full border px-6 block py-6 font-normal"}
                                            onChange={handlePasswordForm}/>
                                 </label>
-                            <button type={"submit"}
-                                    className={"rounded-lg py-3 px-6 bg-blue-5 text-white hover:bg-blue-1 hover:text-black w-fit max-w-[14rem]duration-300"}>Update
-                                Password
-                            </button>
+                            <SubmitButton title={'Update Password'} />
                         </form>
                     </div>
                 </div>

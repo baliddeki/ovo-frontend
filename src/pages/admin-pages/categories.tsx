@@ -22,9 +22,9 @@ import {
 } from "@/components/ui/dialog"
 import {Input} from "@/components/ui/input.tsx";
 import {Label} from "@/components/ui/label.tsx";
-import {Button} from "@/components/ui/button.tsx";
 import {useState} from "react";
 import DeleteCategory from "@/components/admin-components/category-components/DeleteCategory.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 
 const Categories = ()=>{
@@ -95,7 +95,7 @@ const Categories = ()=>{
                                         <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
                                             <Label htmlFor={'category'} className={"text-black"}>Category Name</Label>
                                            <Input type={"text"} id="category" name={"category"} placeholder={"category name"} className={"text-black"}/>
-                                           <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Create</Button>
+                                            <SubmitButton title={'Create'}/>
                                        </form>
                                     </DialogDescription>
                                 </DialogHeader>
@@ -142,7 +142,7 @@ const Categories = ()=>{
                                                                             value={categoryValue}
                                                                             className={"text-black"}
                                                                         />
-                                                                        <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Update</Button>
+                                                                        <SubmitButton title={'Update Category'}/>
                                                                     </form>
                                                                 </DialogDescription>
                                                             </DialogHeader>

@@ -54,6 +54,16 @@ export type Brand = {
     category: string;
 };
 
+export type  CustomerFormType = {
+    addProduct: boolean;
+    confirmPassword: string;
+    deleteProduct: boolean;
+    email: string;
+    firstName: string;
+    lastName: string;
+    password: string;
+    upDateProduct: boolean
+}
 export const productSchema = z.object({
     productName: z.string().min(4).max(20),
     category: z.string(),

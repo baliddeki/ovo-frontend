@@ -23,8 +23,8 @@ import {
 } from "@/components/ui/dialog"
 import {Input} from "@/components/ui/input.tsx";
 import {Label} from "@/components/ui/label.tsx";
-import {Button} from "@/components/ui/button.tsx";
 import {useState} from "react";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const Brands = ()=>{
     const [brandValue, setBrandValue] = useState('')
@@ -94,7 +94,7 @@ const Brands = ()=>{
                                         <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
                                             <Label htmlFor={'category'} className={"text-black"}>Brand Name</Label>
                                            <Input type={"text"} id="brand" name={"brand"} placeholder={"brand name"} className={"text-black"}/>
-                                           <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Create</Button>
+                                            <SubmitButton title={'Create'}/>
                                        </form>
                                     </DialogDescription>
                                 </DialogHeader>
@@ -141,7 +141,7 @@ const Brands = ()=>{
                                                                             value={brandValue}
                                                                             className={"text-black"}
                                                                         />
-                                                                        <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Update</Button>
+                                                                        <SubmitButton title={'Update Brand'}/>
                                                                     </form>
                                                                 </DialogDescription>
                                                             </DialogHeader>
