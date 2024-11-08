@@ -20,7 +20,7 @@ const Contact = ()=>{
                     </h3>
                 </div>
 
-                <div className={"bg-[#F2F4F6] inline-padding mt-24 pb-24"}>
+                <div className={"bg-secondary-50 inline-padding mt-24 pb-24"}>
                     <h2 className={"text-5xl text-center py-20 font-extrabold"}>
                         Quick Assist
                     </h2>

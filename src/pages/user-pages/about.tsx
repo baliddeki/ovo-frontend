@@ -16,7 +16,7 @@ const About = ()=>{
                     <h3 className={"text-gray-8 text-center md:text-left text-3xl md:text-7xl font-extrabold"}>About
                         Us</h3>
                 </div>
-                <div className={"bg-[#F2F4F6] inline-padding mt-24 pb-8"}>
+                <div className={"bg-secondary-50 inline-padding mt-24 pb-8"}>
                     <div className={"relative rounded-lg w-full"}>
                         <img className={"block rounded-lg max-h-[33.5rem] w-full object-cover"} src={backgroundImage}
                              alt={"Background Image"}/>
@@ -87,7 +87,7 @@ const About = ()=>{
                 </div>
 
                 <div
-                    className={"inline-padding section bg-[#F2F4F6] py-16 sm:py-20 md:py-24 lg:py-32 flex flex-col gap-8 mad:gap-10 lg:gap-14"}>
+                    className={"inline-padding section bg-secondary-50 py-16 sm:py-20 md:py-24 lg:py-32 flex flex-col gap-8 mad:gap-10 lg:gap-14"}>
                     <h3 className={"sm:w-fit sm:mx-auto text-lg md:text-3xl font-extrabold"}>Limited Stock
                         Available!</h3>
                     <h2 className={"w-fit mx-auto text-4xl md:text-6xl font-extrabold"}>AirPro X3. Turbocharged.</h2>

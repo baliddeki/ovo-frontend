@@ -8,6 +8,7 @@ import {Minus, Plus, ShoppingBag} from "lucide-react";
 import {SlClose} from "react-icons/sl";
 import {useProductCount} from "@/assets/utils.tsx";
 import { products } from "@/assets/data";
+import AddButton from "@/components/admin-components/AddButton.tsx";
 
 const Cart = ()=>{
     const [openCart, setOpenCart] = useState<boolean>(false)
@@ -92,16 +93,9 @@ const Cart = ()=>{
                                 <p>$116.00</p>
                             </div>
                             <div className={"vertical-spacing section"}>
-                                    <Link
-                                        onClick={handleOpenCart}
-                                        to={"/cart"}
-                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-primary hover:text-white duration-300 font-light px-6 py-3 text-center"}>View
-                                        Cart</Link>
-                                    <Link
-                                        onClick={handleOpenCart}
-                                        to={"/checkout"}
-                                        className={"w-full rounded-3xl bg-gray-200 hover:bg-primary hover:text-white duration-300 font-light px-6 py-3 text-center"}>Checkout</Link>
-                                </div>
+                                <AddButton title={"View Cart"} link={'/cart'} onclick={handleOpenCart} icon={false} />
+                                <AddButton title={"Checkout"} link={'/checkout'} onclick={handleOpenCart} icon={false} />
+                            </div>
                             </div>
                     }
                 </div>
