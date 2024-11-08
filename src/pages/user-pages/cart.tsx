@@ -1,5 +1,5 @@
 import CartTable from "@/components/user-components/CartTable.tsx";
-import {Link} from "react-router-dom";
+import AddButton from "@/components/admin-components/AddButton.tsx";
 
 const Cart = ()=>{
     return (
@@ -30,19 +30,14 @@ const Cart = ()=>{
                                             <p>127,000shs</p>
                                         </div>
                                     </div>
-                                    <Link to={"/checkout"}
-                                                className={"rounded-3xl mt-10 mx-auto w-fit px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8"}>
-                                    PROCEED TO CHECKOUT
-                                </Link>
+
+                                    <AddButton link={"/checkout"} title={'PROCEED TO CHECKOUT'} icon={false} />
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
-                    <Link
-                        to={"/shop"}
-                        className={"rounded-3xl bg-gray-200 hover:bg-green-5 hover:text-white duration-300 w-fit font-light px-6 py-3 text-center"}>RETURN TO SHOP</Link>
+                    <AddButton link={"/shop"} title={'RETURN TO SHOP'} className={'w-fit'} icon={false}/>
                 </div>
 
             </div>

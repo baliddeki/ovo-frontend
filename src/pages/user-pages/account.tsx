@@ -5,6 +5,7 @@ import {LuEye} from "react-icons/lu";
 import {
     GetCountries
 } from "react-country-state-city";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const UserAccount = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle()
@@ -143,10 +144,7 @@ const UserAccount = ()=>{
                                         placeholder={'contact details'}
                                         className={'w-full px-5 py-2 border'}/>
                                 </label>
-                                <button type={'submit'}
-                                        className={'my-6 rounded-3xl mx-auto max-w-[15rem] w-full px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8'}>SAVE
-                                    CHANGES
-                                </button>
+                                <SubmitButton title={"SAVE CHANGES"} />
                             </div>
                         </form>
                     </div>
@@ -203,10 +201,10 @@ const UserAccount = ()=>{
                                     <LuEye className={"text-xl"} onClick={handleShowPassword}/>
                                 </div>
                             </div>
-                            <button type={'submit'}
-                                    className={'my-6 rounded-3xl mx-auto max-w-[15rem] w-full px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8'}>CHANGE
-                                PASSWORD
-                            </button>
+
+                            <div className={"my-6"}>
+                                <SubmitButton title={'UPDATE PASSWORD'} />
+                            </div>
                         </form>
                     </div>
                 </div>

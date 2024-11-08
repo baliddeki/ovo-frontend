@@ -56,4 +56,9 @@ export const useProductCount = () => {
 export const extractNum = (value: string)=>{
     return (parseInt(value.replace(/\D/g, ''), 10))
 }
+
+export function shortenText(text: string, maxLength: number = 50): string {
+    return text.length > maxLength ? text.slice(0, maxLength - 3) + '...' : text;
+}
+
 export default usePasswordToggle;

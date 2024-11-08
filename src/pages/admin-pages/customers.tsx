@@ -1,6 +1,6 @@
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import {customers} from "@/assets/data.ts";
-import {LuEye, LuPlus} from "react-icons/lu";
+import {LuEye} from "react-icons/lu";
 import {CiEdit, CiSearch} from "react-icons/ci";
 
 import {
@@ -21,6 +21,7 @@ import {
 import {RiDeleteBinLine} from "react-icons/ri";
 import {Link} from "react-router-dom";
 import DeleteCustomer from "@/components/admin-components/customers-components/DeleteCustomer.tsx";
+import AddButton from "@/components/admin-components/AddButton.tsx";
 
 
 const Customers = ()=>{
@@ -74,10 +75,7 @@ const Customers = ()=>{
                                 </Select>
                             </form>
                         </div>
-                        <Link to={"/admin/add-new-customer"}
-                              className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
-                            <LuPlus/>Add New
-                        </Link>
+                        <AddButton title={'Add New Customer'} link={'/admin/add-new-customer'}/>
                     </div>
                     <div>
                         <Table className={"min-w-[46rem]"}>

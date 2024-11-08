@@ -38,6 +38,7 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 
 const EditProduct= ()=>{
@@ -84,7 +85,7 @@ const EditProduct= ()=>{
         <>
             <div className={"vertical-spacing flex-wrap"}>
                 <div className={"flex items-center justify-between gap-4"}>
-                    <h2 className={"text-2xl font-bold"}>Add New Product</h2>
+                    <h2 className={"text-2xl font-bold"}>Edit {product?.name}</h2>
                     <div>
                         <Breadcrumb>
                             <BreadcrumbList>
@@ -97,7 +98,7 @@ const EditProduct= ()=>{
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator/>
                                 <BreadcrumbItem>
-                                    <BreadcrumbPage>Add New Product</BreadcrumbPage>
+                                    <BreadcrumbPage>Edit {product?.name}</BreadcrumbPage>
                                 </BreadcrumbItem>
                             </BreadcrumbList>
                         </Breadcrumb>
@@ -398,10 +399,7 @@ const EditProduct= ()=>{
                                         )}
                                     />
                                 </div>
-                                <button type={"submit"}
-                                        className={"py-3 px-6 max-w-[9rem] w-full rounded-lg bg-blue-5 border-none text-white"}>Add
-                                    Product
-                                </button>
+                                <SubmitButton title={'Update product'} />
                             </div>
                         </div>
                     </form>
