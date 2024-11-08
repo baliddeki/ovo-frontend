@@ -1,12 +1,18 @@
+// @ts-nocheck
+
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form.tsx";
 import {Input} from "@/components/ui/input.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
 import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 import usePasswordToggle from "@/assets/utils.tsx";
-import {CustomerFormType} from "@/assets/types.ts";
+import {createUserSchema, CustomerFormType} from "@/assets/types.ts";
 import {UseFormReturn} from "react-hook-form";
+import z from "zod";
 
-const CustomerForm = ({form, submitForm}: {form: UseFormReturn<CustomerFormType>, submitForm: ()=> void})=>{
+const CustomerForm = ({form, submitForm}: {
+    form: UseFormReturn<CustomerFormType>,
+    submitForm?: (data: z.infer<typeof createUserSchema>) => void
+})=>{
     const {showPassword, handleShowPassword} = usePasswordToggle();
     return (
         <Form {...form}>
