@@ -13,7 +13,7 @@ const Header = ({handleToggleSidebar, toggleSidebar}: Props)=>{
             <div className={"bg-white px-8 md:px-12 py-4 h-[6.3rem] flex items-center gap-4"}>
                 {
                     toggleSidebar ? "":<button onClick={handleToggleSidebar}>
-                        <LuArrowRightFromLine className={"text-3xl text-blue-5"} />
+                        <LuArrowRightFromLine className={"text-3xl text-primary"} />
                     </button>
                 }
                 <div className={"flex-1"}>

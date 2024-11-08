@@ -80,17 +80,17 @@ const Contact = ()=>{
 
                     <div className={"mt-24 grid lg:grid-cols-3 md:grid-cols-2 gap-8"}>
                         <div className={"vertical-spacing gap-2"}>
-                            <FaRegCreditCard className={"text-blue-5 text-6xl mx-auto"}/>
+                            <FaRegCreditCard className={"text-primary text-6xl mx-auto"}/>
                             <h3 className={"text-3xl font-extrabold mt-2 w-fit mx-auto"}> 1 800 755 60 20 </h3>
                             <p className={"text-gray-8 w-fit mx-auto"}>Payment Queries</p>
                         </div>
                         <div className={"vertical-spacing gap-2"}>
-                            <FaTruck className={"text-blue-5 text-6xl mx-auto"}/>
+                            <FaTruck className={"text-primary text-6xl mx-auto"}/>
                             <h3 className={"text-3xl font-extrabold mt-2 w-fit mx-auto"}>+256 777777777</h3>
                             <p className={"text-gray-8 w-fit mx-auto"}>Shopping Delivery</p>
                         </div>
                         <div className={"vertical-spacing gap-2"}>
-                            <FaHeadphones className={"text-blue-5 text-6xl mx-auto"}/>
+                            <FaHeadphones className={"text-primary text-6xl mx-auto"}/>
                             <h3 className={"text-3xl font-extrabold mt-2 w-fit mx-auto"}>+256 777777777</h3>
                             <p className={"text-gray-8 w-fit mx-auto"}>Customer Care</p>
                         </div>

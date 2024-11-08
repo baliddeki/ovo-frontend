@@ -10,8 +10,8 @@ const Card =({title, total, icon, stats}: Props)=> {
     return (
         <div className={"rounded-lg bg-white py-4 px-6 flex items-center"}>
             <div className={"flex-1 flex items-center gap-2"}>
-                <div className={"clip-hexagon bg-notification center-items p-2"}>
-                    <div className={"text-3xl text-blue-5"}>
+                <div className={"clip-hexagon bg-primary-50 center-items p-2"}>
+                    <div className={"text-3xl text-primary"}>
                         {icon}
                     </div>
                 </div>

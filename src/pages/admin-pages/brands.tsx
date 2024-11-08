@@ -58,43 +58,41 @@ const Brands = ()=>{
                         <div className={"flex gap-4 items-center flex-wrap"}>
                             <form
                                 onSubmit={e => e.preventDefault()}
-                                className={"flex gap-4 items-center"}>
-                                <p className={"text-gray-400"}>Showing</p>
-                                <Select>
-                                    <SelectTrigger className="flex items-center justify-center [&_svg]:hidden max-w-[3.5rem]">
-                                        <SelectValue placeholder="10" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="ten">10</SelectItem>
-                                        <SelectItem value="twenty">20</SelectItem>
-                                        <SelectItem value="thirty">30</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                <p className={"text-gray-400"}>entries</p>
-
-                            </form>
-                            <form
-                                onSubmit={e => e.preventDefault()}
                                 className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center"}>
                                 <input type={"search"}
-                                       placeholder={"search here..."}
+                                       placeholder={"search here brands"}
                                        className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
                                 <button type={"submit"} className={"border-none shadow-none"}>
                                     <CiSearch className={"text-2xl"}/>
                                 </button>
                             </form>
+                            <form
+                                onSubmit={e => e.preventDefault()}
+                                className={"flex gap-4 items-center"}>
+                                <Select>
+                                    <SelectTrigger
+                                        className="flex items-center justify-center py-5">
+                                        <SelectValue placeholder="Filter"/>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="a to z">A to Z</SelectItem>
+                                        <SelectItem value="z to a">Z to A</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </form>
                         </div>
 
                         <Dialog>
-                            <DialogTrigger className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
-                                    <LuPlus/>Add New Product Brand
+                            <DialogTrigger
+                                className={" min-w-[9rem] border-[1px] border-primary text-primary flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white hover:border-primary duration-300"}>
+                                <LuPlus/>Add New Product Brand
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
                                     <DialogTitle>Create New Brand</DialogTitle>
                                     <DialogDescription>
-                                       <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
-                                           <Label htmlFor={'category'} className={"text-black"}>Brand Name</Label>
+                                        <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
+                                            <Label htmlFor={'category'} className={"text-black"}>Brand Name</Label>
                                            <Input type={"text"} id="brand" name={"brand"} placeholder={"brand name"} className={"text-black"}/>
                                            <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Create</Button>
                                        </form>

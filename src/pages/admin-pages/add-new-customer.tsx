@@ -240,7 +240,7 @@ const AddNewCustomer = ()=>{
                         </div>
                     </div>
                     <Button
-                        className={"bg-blue-5 px-8 max-w-[10rem] w-full py-5 text-white mt-4 hover:bg-blue-400 duration-300"}>Signup</Button>
+                        className={"bg-primary px-8 max-w-[10rem] w-full py-5 text-white mt-4 hover:bg-primary-700 hover:text-text-50 duration-300"}>Signup</Button>
                 </Form>
             </div>
         </>
