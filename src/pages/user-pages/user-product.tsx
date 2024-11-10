@@ -16,6 +16,7 @@ import {
     DialogContent,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const UserProduct = ()=>{
     const [activeTab, setActiveTab] = useState<string>("description");
@@ -110,10 +111,9 @@ const UserProduct = ()=>{
                                             className={"py-1 px-3 border-[1px] h-full w-[2.75rem]"}><IoAddOutline/>
                                     </button>
                                 </div>
-                                <button
-                                    className={"rounded-3xl px-10 py-1 text-sm bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white font-light text-gray-8"}>ADD
-                                    TO CART
-                                </button>
+                                <form onSubmit={e=>e.preventDefault()}>
+                                    <SubmitButton title={'ADD TO CART'} className={'!py-2 !text-base'}/>
+                                </form>
                             </div>
 
                             <div className={"flex items-center gap-4 text-sm mb-8"}>
@@ -194,10 +194,8 @@ const UserProduct = ()=>{
                                         type={"email"}/>
                                 </label>
                             </div>
-                            <button
-                                className={"rounded-3xl w-fit px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white font-light text-gray-8"}>
-                                SUBMIT
-                            </button>
+
+                            <SubmitButton title={'SUBMIT'} />
                         </form>
 
 

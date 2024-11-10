@@ -6,6 +6,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 import {products} from "@/assets/data.ts";
 import {Link} from "react-router-dom";
 import {gradientBackground} from "@/assets/utils.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const Checkout = ()=>{
     const [activeTab, setActiveTab] = useState<string>("shipping");
@@ -26,7 +27,7 @@ const Checkout = ()=>{
                 className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
                 <div className={"bg-white w-full p-6 md:p-12 mx-auto mt-16 vertical-spacing"}>
                     <h2 className={'text-2xl md:text-3xl font-extrabold'}>Check Out</h2>
-                    <div className={"border"}>
+                    <form onSubmit={e=> e.preventDefault()} className={"border"}>
                         <div className={"grid sm:grid-cols-2"}>
                             <div onClick={() => handleActiveTab("shipping")}
                                  className={`${activeTab === "shipping" ? "border-t-green-5" : "border-t-transparent bg-gray-100"} border-t-[3px] w-full p-4`}>
@@ -81,7 +82,6 @@ const Checkout = ()=>{
                                            className={'border px-5 py-2 outline-none active:ring-0 w-full'}/>
                                     <input type={'text'} name={'district'} placeholder={'District *'}
                                            className={'border px-5 py-2 outline-none active:ring-0 w-full'}/>
-
                                 </div>
 
                                 <input type={'text'} name={'contact'} placeholder={'Phone *'}
@@ -131,7 +131,6 @@ const Checkout = ()=>{
 
                                                 </TableRow>
                                             ))
-
                                         }
                                         <TableRow>
                                             <TableCell className={"p-4 text-lg font-bold"}>Total</TableCell>
@@ -142,12 +141,9 @@ const Checkout = ()=>{
                                 </Table>
                             </div>
 
-                            <button type={'submit'}
-                                    className={'my-6 rounded-3xl mx-auto max-w-[15rem] w-full px-6 py-2 bg-[rgba(210,210,210,.4)] hover:bg-green-5 hover:text-white duration-300 font-light text-gray-8'}>PLACE ORDER
-                            </button>
-
+                            <SubmitButton title={"PLACE ORDER"} />
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </>

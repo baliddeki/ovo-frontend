@@ -39,6 +39,7 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 
 const AddNewProduct = ()=>{
@@ -139,7 +140,7 @@ const AddNewProduct = ()=>{
                                                 <FormControl>
                                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                         <FormControl>
-                                                            <SelectTrigger className={"shadow-none"}>
+                                                            <SelectTrigger className={"shadow-none py-5"}>
                                                                 <SelectValue
                                                                     placeholder="Select Category"/>
                                                             </SelectTrigger>
@@ -169,7 +170,7 @@ const AddNewProduct = ()=>{
                                                 <FormControl>
                                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                         <FormControl>
-                                                            <SelectTrigger className={"shadow-none"}>
+                                                            <SelectTrigger className={"shadow-none py-5"}>
                                                                 <SelectValue placeholder="Select Gender"/>
                                                             </SelectTrigger>
                                                         </FormControl>
@@ -196,7 +197,7 @@ const AddNewProduct = ()=>{
                                             <FormControl>
                                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                     <FormControl>
-                                                        <SelectTrigger className={"shadow-none"}>
+                                                        <SelectTrigger className={"shadow-none py-5"}>
                                                             <SelectValue placeholder="select brancd"/>
                                                         </SelectTrigger>
                                                     </FormControl>
@@ -342,7 +343,7 @@ const AddNewProduct = ()=>{
                                                 <FormControl>
                                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                         <FormControl>
-                                                            <SelectTrigger className={"shadow-none"}>
+                                                            <SelectTrigger className={"shadow-none py-5"}>
                                                                 <SelectValue
                                                                     placeholder="Select size"/>
                                                             </SelectTrigger>
@@ -366,7 +367,7 @@ const AddNewProduct = ()=>{
                                                 <FormLabel className={"text-lg"}>Product Date</FormLabel>
                                                 <Popover>
                                                     <PopoverTrigger asChild>
-                                                        <FormControl className={"shadow-none"}>
+                                                        <FormControl className={"shadow-none py-5"}>
                                                             <Button
                                                                 variant={"outline"}
                                                                 className={cn(
@@ -397,10 +398,8 @@ const AddNewProduct = ()=>{
                                         )}
                                     />
                                 </div>
-                                <button type={"submit"}
-                                        className={"py-3 px-6 max-w-[9rem] w-full rounded-lg bg-blue-5 border-none text-white"}>Add
-                                    Product
-                                </button>
+
+                                <SubmitButton title={'Add Product'}/>
                             </div>
                         </div>
                     </form>

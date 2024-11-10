@@ -11,7 +11,6 @@ import {LuPlus} from "react-icons/lu";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import {brands} from "@/assets/data.ts";
 import {RiDeleteBinLine} from "react-icons/ri";
-import DeleteBrand from "@/components/admin-components/brand-components/DeleteBrand.tsx";
 
 import {
     Dialog,
@@ -23,9 +22,9 @@ import {
 } from "@/components/ui/dialog"
 import {Input} from "@/components/ui/input.tsx";
 import {Label} from "@/components/ui/label.tsx";
-import {Button} from "@/components/ui/button.tsx";
 import {useState} from "react";
 import DeleteCategory from "@/components/admin-components/category-components/DeleteCategory.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 
 const Categories = ()=>{
@@ -60,45 +59,43 @@ const Categories = ()=>{
                         <div className={"flex gap-4 items-center flex-wrap"}>
                             <form
                                 onSubmit={e => e.preventDefault()}
-                                className={"flex gap-4 items-center"}>
-                                <p className={"text-gray-400"}>Showing</p>
-                                <Select>
-                                    <SelectTrigger className="flex items-center justify-center [&_svg]:hidden max-w-[3.5rem]">
-                                        <SelectValue placeholder="10" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="ten">10</SelectItem>
-                                        <SelectItem value="twenty">20</SelectItem>
-                                        <SelectItem value="thirty">30</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                                <p className={"text-gray-400"}>entries</p>
-
-                            </form>
-                            <form
-                                onSubmit={e => e.preventDefault()}
                                 className={"rounded-xl border-[1px] px-6 border-gray-[#111111] flex gap-4 items-center"}>
                                 <input type={"search"}
-                                       placeholder={"search here..."}
+                                       placeholder={"search here categories"}
                                        className={"w-full py-3 ring-0 bg-none border-none outline-none"}/>
                                 <button type={"submit"} className={"border-none shadow-none"}>
                                     <CiSearch className={"text-2xl"}/>
                                 </button>
                             </form>
+                            <form
+                                onSubmit={e => e.preventDefault()}
+                                className={"flex gap-4 items-center"}>
+                                <Select>
+                                    <SelectTrigger
+                                        className="flex items-center justify-center py-5">
+                                        <SelectValue placeholder="Filter"/>
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="a to z">A to Z</SelectItem>
+                                        <SelectItem value="z to a">Z to A</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </form>
                         </div>
 
                         <Dialog>
-                            <DialogTrigger className={" min-w-[9rem] border-[1px] border-blue-5 text-blue-5 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-blue-5 hover:text-white hover:border-none duration-300"}>
-                                    <LuPlus/>Add New Product Category
+                            <DialogTrigger
+                                className={" min-w-[9rem] border-[1px] border-primary text-primary flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white hover:border-primary duration-300"}>
+                                <LuPlus/>Add New Product Category
                             </DialogTrigger>
                             <DialogContent>
                                 <DialogHeader>
                                     <DialogTitle>Create New Category Item</DialogTitle>
                                     <DialogDescription>
-                                       <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
-                                           <Label htmlFor={'category'} className={"text-black"}>Category Name</Label>
+                                        <form method={"post"} action={"#"} className={"vertical-spacing mt-4"}>
+                                            <Label htmlFor={'category'} className={"text-black"}>Category Name</Label>
                                            <Input type={"text"} id="category" name={"category"} placeholder={"category name"} className={"text-black"}/>
-                                           <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Create</Button>
+                                            <SubmitButton title={'Create'}/>
                                        </form>
                                     </DialogDescription>
                                 </DialogHeader>
@@ -145,7 +142,7 @@ const Categories = ()=>{
                                                                             value={categoryValue}
                                                                             className={"text-black"}
                                                                         />
-                                                                        <Button type={"submit"} className={"bg-blue-5 text-white rounded-lg px-5 py-2 w-fit"}>Update</Button>
+                                                                        <SubmitButton title={'Update Category'}/>
                                                                     </form>
                                                                 </DialogDescription>
                                                             </DialogHeader>

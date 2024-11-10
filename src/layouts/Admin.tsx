@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {Outlet} from "react-router-dom";
 import Sidebar from "@/components/admin-components/navigation/Sidebar.tsx";
 import Header from "@/components/admin-components/navigation/Header.tsx";
