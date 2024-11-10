@@ -5,7 +5,6 @@ import Customers from "@/pages/admin-pages/customers.tsx";
 import Orders from "@/pages/admin-pages/orders.tsx";
 import Products from "@/pages/admin-pages/products.tsx";
 import Profile from "@/pages/admin-pages/profile.tsx";
-import Reports from "@/pages/admin-pages/reports.tsx";
 import Sales from "@/pages/admin-pages/sales.tsx";
 import PageNotFound from '@/pages/admin-pages/page-not-found.tsx';
 import Product from "@/pages/admin-pages/product.tsx";
@@ -33,6 +32,7 @@ import Brands from "@/pages/admin-pages/brands.tsx";
 import AdminOrderDetails from "@/pages/admin-pages/admin-order-details.tsx";
 import AdminEditOrder from "@/pages/admin-pages/admin-edit-order.tsx";
 import NotificationPage from "@/pages/admin-pages/notification-page.tsx";
+import NotificationsPage from "@/pages/admin-pages/notifications-page.tsx";
 
 function App() {
   return (
@@ -60,6 +60,7 @@ function App() {
          <Route path={"/admin"} element={<Admin />}>
              <Route index element={<AdminHome />}/>
              <Route path={"sales"} element={<Sales />}/>
+             <Route path={"notifications"} element={<NotificationsPage />} />
              <Route path={"notification/:notificationId"} element={<NotificationPage />} />
              {/*Products*/}
              <Route path={"products"} element={<Products />}/>
@@ -77,7 +78,6 @@ function App() {
              <Route path={"orders/edit-order/:orderId"} element={<AdminEditOrder />}/>
              <Route path={"categories"} element={<Categories />}/>
              <Route path={"brands"} element={<Brands />}/>
-             <Route path={"reports"} element={<Reports />}/>
              <Route path={"profile"} element={<Profile />}/>
          </Route>
          <Route path={"*"} element={<PageNotFound />}/>

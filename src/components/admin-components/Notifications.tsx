@@ -57,7 +57,7 @@ const Notifications = ({notifications}:  {notifications: Notification[]})=>{
                     </div>
                     <MenubarItem className={'focus:bg-primary text-primary'}>
                         <Link
-                            to={"/notifications"}
+                            to={"/admin/notifications"}
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-primary-900 data-[focus]:text-gray-00">
                             View All
                         </Link>
