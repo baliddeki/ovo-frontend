@@ -66,7 +66,7 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                       className={`${activeBar === "brands" || path.includes("brands") ? "bg-primary-50 text-primary ": "text-white"} hover:bg-primary-50 hover:text-primary px-5 py-2 rounded-lg min-w-52 duration-300`}>Brands</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("notifications")}
-                                    to={"/admin/notification"}
+                                    to={"/admin/notifications"}
                                       className={`${activeBar === "notifications" || path.includes("notifications") ? "bg-primary-50 text-primary ": "text-white"} hover:bg-primary-50 hover:text-primary px-5 py-2 rounded-lg min-w-52 duration-300`}>Notifications</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("profile")}
