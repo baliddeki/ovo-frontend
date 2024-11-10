@@ -58,7 +58,7 @@ const AddNewCustomer = ()=>{
                     </div>
                 </div>
             </div>
-            <CustomerForm form={form} submitForm={submitForm} />
+            <CustomerForm action={'edit'} form={form} submitForm={submitForm} />
         </>
 )
 }
