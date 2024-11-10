@@ -290,63 +290,114 @@ export const notifications: Notification[] = [
         id: '1',
         title: 'Refine your Shoes',
         message: 'I am a full-time customer of your shoe products, but I always find a problem with the fit for my foot. Kindly work on the shoe sizes since we customers need something that fits us.',
-        status: 'unread'
+        status: 'unread',
+        customerProfile: {
+            name: 'John Doe',
+            email: 'johndoe@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '2',
         title: 'Improve Website Navigation',
         message: 'I had difficulty finding the products I wanted on your website. A better search feature would help customers locate items more quickly.',
-        status: 'read'
+        status: 'read',
+        customerProfile: {
+            name: 'Jane Smith',
+            email: 'janesmith@example.com',
+            profileImage: '/users/user-pofile.png'
+        }
     },
     {
         id: '3',
         title: 'Offer More Discounts',
         message: 'As a regular buyer, I would love to see more discount options, especially during holidays. It would definitely encourage more purchases from loyal customers like me.',
-        status: 'unread'
+        status: 'unread',
+        customerProfile: {
+            name: 'Alice Johnson',
+            email: 'alicejohnson@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '4',
         title: 'Add Product Reviews',
         message: 'It would be helpful if there were customer reviews on your product pages so that we can make informed choices based on others’ experiences.',
-        status: 'read'
+        status: 'read',
+        customerProfile: {
+            name: 'Robert Brown',
+            email: 'robertbrown@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '5',
         title: 'Quality Control Feedback',
         message: 'I recently received a product with minor defects. Please improve quality checks to ensure every item meets high standards before shipping.',
-        status: 'unread'
+        status: 'unread',
+        customerProfile: {
+            name: 'Emily Davis',
+            email: 'emilydavis@example.com',
+            profileImage: '/users/user-profle.png'
+        }
     },
     {
         id: '6',
         title: 'Consider Faster Shipping Options',
         message: 'Shipping took longer than expected for my last order. It would be great if there were an option for faster delivery, even at an extra cost.',
-        status: 'read'
+        status: 'read',
+        customerProfile: {
+            name: 'Michael Wilson',
+            email: 'michaelwilson@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '7',
         title: 'Improve Mobile App Performance',
         message: 'The app sometimes lags on my phone, making it difficult to browse products. Optimizing it for speed would enhance the shopping experience.',
-        status: 'unread'
+        status: 'unread',
+        customerProfile: {
+            name: 'Laura Martinez',
+            email: 'lauramartinez@example.com',
+            profileImage: '/users/user-profile'
+        }
     },
     {
         id: '8',
         title: 'Expand Product Categories',
         message: 'I would love to see a wider range of products in the store, especially in the electronics category. It would save me from shopping on multiple platforms.',
-        status: 'read'
+        status: 'read',
+        customerProfile: {
+            name: 'William Taylor',
+            email: 'williamtaylor@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '9',
         title: 'Email Subscription Preferences',
         message: 'I receive too many promotional emails. It would be better if I could choose the types and frequency of emails to receive from your brand.',
-        status: 'unread'
+        status: 'unread',
+        customerProfile: {
+            name: 'Sophia Anderson',
+            email: 'sophiaanderson@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     },
     {
         id: '10',
         title: 'More Payment Options',
         message: 'It would be convenient if more payment options were available, like digital wallets or pay-on-delivery, to make the shopping experience easier.',
-        status: 'read'
+        status: 'read',
+        customerProfile: {
+            name: 'James Thomas',
+            email: 'jamesthomas@example.com',
+            profileImage: '/users/user-profile.png'
+        }
     }
 ];
+
 
 export const wishlist: Wishlist[] = [
     {
