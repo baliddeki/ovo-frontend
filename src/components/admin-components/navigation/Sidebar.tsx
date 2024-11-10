@@ -65,9 +65,9 @@ const Sidebar = ({toggleSidebar, handleToggleSidebar}: Props)=>{
                                     to={"/admin/brands"}
                                       className={`${activeBar === "brands" || path.includes("brands") ? "bg-primary-50 text-primary ": "text-white"} hover:bg-primary-50 hover:text-primary px-5 py-2 rounded-lg min-w-52 duration-300`}>Brands</Link>
                                 <Link
-                                    onClick={()=>handleActiveBar("reports")}
-                                    to={"/admin/reports"}
-                                      className={`${activeBar === "reports" || path.includes("reports") ? "bg-primary-50 text-primary ": "text-white"} hover:bg-primary-50 hover:text-primary px-5 py-2 rounded-lg min-w-52 duration-300`}>Reports</Link>
+                                    onClick={()=>handleActiveBar("notifications")}
+                                    to={"/admin/notifications"}
+                                      className={`${activeBar === "notifications" || path.includes("notifications") ? "bg-primary-50 text-primary ": "text-white"} hover:bg-primary-50 hover:text-primary px-5 py-2 rounded-lg min-w-52 duration-300`}>Notifications</Link>
                                 <Link
                                     onClick={()=>handleActiveBar("profile")}
                                       to={"/admin/profile"}

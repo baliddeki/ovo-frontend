@@ -69,6 +69,11 @@ export interface Notification {
     title: string,
     message: string,
     status: string,
+    customerProfile: {
+        name: string,
+        email: string,
+        profileImage: string,
+    }
 }
 export const productSchema = z.object({
     productName: z.string().min(4).max(20),

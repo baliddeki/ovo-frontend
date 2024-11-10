@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useLocation} from "react-router-dom";
+import {Notification} from "@/assets/types.ts";
 
 const usePasswordToggle = ()=>{
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -61,4 +62,22 @@ export function shortenText(text: string, maxLength: number = 50): string {
     return text.length > maxLength ? text.slice(0, maxLength - 3) + '...' : text;
 }
 
+export function sortNotificationsByStatus(notifications: Notification[], preference: string): Notification[] {
+    return notifications.sort((a, b) => {
+        if ((preference === 'unread') || (preference == 'recent')) {
+            if (a.status === 'unread' && b.status === 'read') {
+                return -1;
+            } else if (a.status === 'read' && b.status === 'unread') {
+                return 1;
+            }
+        } else if (preference === 'read') {
+            if (a.status === 'read' && b.status === 'unread') {
+                return -1;
+            } else if (a.status === 'unread' && b.status === 'read') {
+                return 1;
+            }
+        }
+        return 0;
+    });
+}
 export default usePasswordToggle;

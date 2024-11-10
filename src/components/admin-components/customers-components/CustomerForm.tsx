@@ -9,9 +9,10 @@ import {createUserSchema, CustomerFormType} from "@/assets/types.ts";
 import {UseFormReturn} from "react-hook-form";
 import z from "zod";
 
-const CustomerForm = ({form, submitForm}: {
+const CustomerForm = ({form, submitForm, action}: {
     form: UseFormReturn<CustomerFormType>,
-    submitForm?: (data: z.infer<typeof createUserSchema>) => void
+    submitForm?: (data: z.infer<typeof createUserSchema>) => void,
+    action?: string
 })=>{
     const {showPassword, handleShowPassword} = usePasswordToggle();
     return (
@@ -187,7 +188,7 @@ const CustomerForm = ({form, submitForm}: {
 
                     </div>
                 </div>
-                <SubmitButton title={'Add New Customer'} />
+                <SubmitButton title={`${action == 'edit' ? 'Edit Customer' : 'Add New Customer'}`} />
             </form>
         </Form>
     )
