@@ -23,6 +23,7 @@ const AddNewCustomer = ()=>{
             addProduct: false,
             upDateProduct: false,
             deleteProduct: false,
+            role: "",
         }
     })
 

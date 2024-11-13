@@ -62,7 +62,8 @@ export type  CustomerFormType = {
     firstName: string;
     lastName: string;
     password: string;
-    upDateProduct: boolean
+    upDateProduct: boolean;
+    role: string;
 }
 export interface Notification {
     id: string,
@@ -127,6 +128,7 @@ export const createUserSchema = z.object({
     addProduct: z.boolean(),
     upDateProduct: z.boolean(),
     deleteProduct: z.boolean(),
+    role: z.string(),
 })
 
 export type Customers = {

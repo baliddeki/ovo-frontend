@@ -180,24 +180,84 @@ const CustomerForm = ({form, submitForm, action}: {
                         </div>
                     </div>
                     <div className={"flex-1 vertical-spacing"}>
-                        <div>
-                            <h2 className={"text-lg font-medium"}>Admin</h2>
-                            <div className={"flex items-center gap-8"}>
-                                <Switch name={'role'} value={'admin'}/>
-                            </div>
-                        </div>
-                        <div>
-                            <h2 className={"text-lg font-medium"}>Staff</h2>
-                            <div className={"flex items-center gap-8"}>
-                                <Switch name={'role'} value={'staff'}/>
-                            </div>
-                        </div>
-                        <div>
-                            <h2 className={"text-lg font-medium"}>User</h2>
-                            <div className={"flex items-center gap-8"}>
-                                <Switch name={'role'} value={'user'}/>
-                            </div>
-                        </div>
+                        <FormField
+                            control={form.control}
+                            name="role"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="space-y-0.5">
+                                        <FormLabel className="text-base">
+                                            Admin
+                                        </FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            value={'admin'}
+                                            checked={field.value === "admin"}
+                                            onCheckedChange={() => field.onChange("admin")}
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="role"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="space-y-0.5">
+                                        <FormLabel className="text-base">
+                                            Staff
+                                        </FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            value={'staff'}
+                                            checked={field.value === "staff"}
+                                            onCheckedChange={() => field.onChange("staff")}
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="role"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <div className="space-y-0.5">
+                                        <FormLabel className="text-base">
+                                            User
+                                        </FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            value={'user'}
+                                            checked={field.value === "user"}
+                                            onCheckedChange={() => field.onChange("user")}
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                        {/*<div>*/}
+                        {/*    <h2 className={"text-lg font-medium"}>Admin</h2>*/}
+                        {/*    <div className={"flex items-center gap-8"}>*/}
+                        {/*        <Switch name={'role'} value={'admin'}/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                        {/*<div>*/}
+                        {/*    <h2 className={"text-lg font-medium"}>Staff</h2>*/}
+                        {/*    <div className={"flex items-center gap-8"}>*/}
+                        {/*        <Switch name={'role'} value={'staff'}/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                        {/*<div>*/}
+                        {/*    <h2 className={"text-lg font-medium"}>User</h2>*/}
+                        {/*    <div className={"flex items-center gap-8"}>*/}
+                        {/*        <Switch name={'role'} value={'user'}/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
                 <SubmitButton title={`${action == 'edit' ? 'Edit Customer' : 'Add New Customer'}`}/>
