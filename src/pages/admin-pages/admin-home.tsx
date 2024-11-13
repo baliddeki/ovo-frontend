@@ -3,7 +3,7 @@ import {AiOutlineTag} from "react-icons/ai";
 import {FiDollarSign} from "react-icons/fi";
 import {FaCartShopping} from "react-icons/fa6";
 import {PiUsers} from "react-icons/pi";
-import {Link, useOutletContext} from "react-router-dom";
+import {Link, useNavigate, useOutletContext} from "react-router-dom";
 import {
     Table,
     TableBody,
@@ -16,6 +16,7 @@ import {orders, products} from "@/assets/data.ts";
 
 const AdminHome = ()=>{
     const {toggleSidebar}: {toggleSidebar: boolean} = useOutletContext()
+    const navigate = useNavigate()
     console.log(toggleSidebar)
     return (
         <>
@@ -32,7 +33,7 @@ const AdminHome = ()=>{
                     <div className={"bg-white p-6 rounded-lg vertical-spacing overflow-hidden"}>
                         <div className={"sm:flex sm:items-center sm:justify-between"}>
                             <h3 className={"text-2xl font-bold"}>Top Selling Product</h3>
-                            <Link to={"/products"} className={"text-blue-5 font-light"}>see all</Link>
+                            <Link to={"/admin/products"} className={"text-blue-5 font-light"}>see all</Link>
                         </div>
                         <div>
                             <Table className={"min-w-[32rem]"}>
@@ -48,22 +49,24 @@ const AdminHome = ()=>{
 
                                         {
                                             products.slice(0,5).map(({id,image, name, category, totalSales, availability })=>(
-                                                <TableRow key={id} className={"text-gray-8"}>
-                                                    <TableCell className={"flex gap-2 items-center"}>
-                                                        <img src={image} alt={name} className={"block w-10 h-10 object-cover"}/>
-                                                        {name}
-                                                    </TableCell>
-                                                    <TableCell>{category}</TableCell>
-                                                    <TableCell>{totalSales}</TableCell>
-                                                    <TableCell>
-                                                        {
-                                                            availability === "In Stock" ?
-                                                                <p className={"text-green-5 bg-green-2 px-2 py-1 w-fit"}>{availability}</p>
-                                                                :
-                                                                <p className={"text-orange-5 bg-orange-2 px-2 py-1 w-fit"}>{availability}</p>
-                                                        }
-                                                    </TableCell>
-                                                </TableRow>
+
+                                                    <TableRow onClick={()=> navigate(`/admin/product/${id}`)} key={id} className={"text-gray-8 cursor-pointer"}>
+                                                        <TableCell className={"flex gap-2 items-center"}>
+                                                            <img src={image} alt={name} className={"block w-10 h-10 object-cover"}/>
+                                                            {name}
+                                                        </TableCell>
+                                                        <TableCell>{category}</TableCell>
+                                                        <TableCell>{totalSales}</TableCell>
+                                                        <TableCell>
+                                                            {
+                                                                availability === "In Stock" ?
+                                                                    <p className={"text-green-5 bg-green-2 px-2 py-1 w-fit"}>{availability}</p>
+                                                                    :
+                                                                    <p className={"text-orange-5 bg-orange-2 px-2 py-1 w-fit"}>{availability}</p>
+                                                            }
+                                                        </TableCell>
+                                                    </TableRow>
+
                                             ))
                                         }
 
@@ -76,7 +79,7 @@ const AdminHome = ()=>{
                     <div className={"bg-white p-6 rounded-lg vertical-spacing overflow-hidden"}>
                         <div className={"sm:flex sm:items-center sm:justify-between"}>
                             <h3 className={"text-2xl font-bold"}>Recent Orders</h3>
-                            <Link to={"/"} className={"text-blue-5 font-light"}>see all</Link>
+                            <Link to={"/admin/orders"} className={"text-blue-5 font-light"}>see all</Link>
                         </div>
                         <div>
                             <Table className={"min-w-[32rem]"}>
@@ -92,7 +95,7 @@ const AdminHome = ()=>{
 
                                         {
                                             orders.slice(0,5).map(({id,productName, customer, price, deliveryDate, image })=>(
-                                                <TableRow key={id} className={"text-gray-8"}>
+                                                <TableRow onClick={()=> navigate(`/admin/orders/${id}`)} key={id} className={"text-gray-8 cursor-pointer"}>
                                                     <TableCell className={"flex gap-2 items-center"}>
                                                         <img src={image} alt={productName} className={"block w-10 h-10 object-cover"}/>
                                                         {productName}
@@ -101,6 +104,7 @@ const AdminHome = ()=>{
                                                     <TableCell>{price}</TableCell>
                                                     <TableCell>{deliveryDate}</TableCell>
                                                 </TableRow>
+
                                             ))
                                         }
                                 </TableBody>
