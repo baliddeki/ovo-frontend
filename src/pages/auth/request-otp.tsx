@@ -16,11 +16,11 @@ const RequestOtp = ()=>{
     })
     const submitForm = (data: z.infer<typeof requestResetPasswordSchema>)=>{
         console.log(data)
-        navigate('/admin/reset-token')
+        navigate('/admin/enter-otp')
     }
     return (
         <>
-            <div className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
+            <div className={"w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
                 <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16"}>
                     <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border mx-auto"}>
                         <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Enter Email</h3>
