@@ -98,6 +98,24 @@ export const loginSchema = z.object({
         required_error: "Password is Required"
     }),
 })
+export const resetPasswordSchema = z.object({
+    newPassword: z.string({
+        required_error: "Password is Required"
+    }),
+    confirmNewPassword: z.string({
+        required_error: "Password is Required"
+    }),
+})
+export const requestResetPasswordSchema = z.object({
+    email: z.string({
+        required_error: "Email is Required"
+    }),
+})
+export const resetTokenSchema = z.object({
+    otp: z.string({
+        required_error: "Otp is Required"
+    })
+})
 
 export const signupSchema = z.object({
     firstName: z.string({

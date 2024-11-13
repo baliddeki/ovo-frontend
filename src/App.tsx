@@ -33,6 +33,9 @@ import AdminOrderDetails from "@/pages/admin-pages/admin-order-details.tsx";
 import AdminEditOrder from "@/pages/admin-pages/admin-edit-order.tsx";
 import NotificationPage from "@/pages/admin-pages/notification-page.tsx";
 import NotificationsPage from "@/pages/admin-pages/notifications-page.tsx";
+import ResetPassword from "@/pages/auth/reset-password.tsx";
+import ResetToken from "@/pages/auth/reset-token.tsx";
+import RequestOtp from "@/pages/auth/request-otp.tsx";
 
 function App() {
   return (
@@ -41,6 +44,9 @@ function App() {
          <Route path={"/auth"} element={<AuthLayout />}>
              <Route path={"signin"} element={<SignIn />}/>
              <Route path={"signup"} element={<SignUp />}/>
+             <Route path={"password-reset"} element={<ResetPassword />}/>
+             <Route path={"request-otp"} element={<RequestOtp />}/>
+             <Route path={"enter-otp"} element={<ResetToken />}/>
          </Route>
 
          <Route path={"/"} element={<UserLayout />}>
