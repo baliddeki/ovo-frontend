@@ -1,14 +1,14 @@
 // @ts-nocheck
 
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form.tsx";
-import {Input} from "@/components/ui/input.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
 import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 import usePasswordToggle from "@/assets/utils.tsx";
 import {createUserSchema, CustomerFormType} from "@/assets/types.ts";
 import {UseFormReturn} from "react-hook-form";
 import z from "zod";
-
+import { Switch } from "@/components/ui/switch"
+import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form.tsx";
+import {Input} from "@/components/ui/input.tsx";
 const CustomerForm = ({form, submitForm, action}: {
     form: UseFormReturn<CustomerFormType>,
     submitForm?: (data: z.infer<typeof createUserSchema>) => void,
@@ -173,22 +173,34 @@ const CustomerForm = ({form, submitForm, action}: {
                 {/*Permissions*/}
                 <div className={"bg-white my-8 rounded-lg p-6 flex gap-8 flex-wrap"}>
                     <div>
+
                         <div className={"vertical-spacing"}>
                             <h2 className={"text-lg md:text-2xl font-extrabold"}>Permissions</h2>
                             <p>Items that the account is allowed to edit</p>
                         </div>
                     </div>
-                    <div className={"flex-1"}>
+                    <div className={"flex-1 vertical-spacing"}>
                         <div>
-                            <h2 className={"text-lg font-medium"}>Add product</h2>
+                            <h2 className={"text-lg font-medium"}>Admin</h2>
                             <div className={"flex items-center gap-8"}>
-
+                                <Switch name={'role'} value={'admin'}/>
                             </div>
                         </div>
-
+                        <div>
+                            <h2 className={"text-lg font-medium"}>Staff</h2>
+                            <div className={"flex items-center gap-8"}>
+                                <Switch name={'role'} value={'staff'}/>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className={"text-lg font-medium"}>User</h2>
+                            <div className={"flex items-center gap-8"}>
+                                <Switch name={'role'} value={'user'}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <SubmitButton title={`${action == 'edit' ? 'Edit Customer' : 'Add New Customer'}`} />
+                <SubmitButton title={`${action == 'edit' ? 'Edit Customer' : 'Add New Customer'}`}/>
             </form>
         </Form>
     )
