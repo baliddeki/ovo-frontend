@@ -1,14 +1,12 @@
-import usePasswordToggle from "@/assets/utils.tsx";
 import {useEffect, useState} from "react";
-import {LuEye} from "react-icons/lu";
 
 import {
     GetCountries
 } from "react-country-state-city";
 import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
+import PasswordInput from "@/components/PasswordInput.tsx";
 
 const UserAccount = ()=>{
-    const {showPassword, handleShowPassword} = usePasswordToggle()
     const [countriesList, setCountriesList] = useState<{
         name: string
     }[]>([])
@@ -153,54 +151,9 @@ const UserAccount = ()=>{
                     <div className={"border vertical-spacing gap-6 mt-10"}>
                         <h2 className={"p-4 border-b"}>UPDATE PASSWORD</h2>
                         <form onSubmit={handleSubmitChangePasswordForm} className={"px-4 vertical-spacing"}>
-                            <div className={"vertical-spacing gap-2"}>
-                                <label htmlFor={'current-password'}>
-                                    Current Password
-                                </label>
-                                <div className={'flex items-center gap-4 w-full px-5 py-2 border'}>
-                                    <input
-                                        onChange={handlePasswordForm}
-                                        type={showPassword ? "text" : "password"}
-                                        name={'currentPassword'}
-                                        id={'current-password'}
-                                        placeholder={"current password"}
-                                        className={'w-full border-none hover:ring-0 ring-0 outline-none active:outline-none'}
-                                    />
-                                    <LuEye className={"text-xl"} onClick={handleShowPassword}/>
-                                </div>
-                            </div>
-                            <div className={"vertical-spacing gap-2"}>
-                                <label htmlFor={'current-password'}>
-                                    New Password
-                                </label>
-                                <div className={'flex items-center gap-4 w-full px-5 py-2 border'}>
-                                    <input
-                                        onChange={handlePasswordForm}
-                                        type={showPassword ? "text" : "password"}
-                                        name={'newPassword'}
-                                        id={'current-password'}
-                                        placeholder={"8+ characters"}
-                                        className={'w-full border-none hover:ring-0 ring-0 outline-none active:outline-none'}
-                                    />
-                                    <LuEye className={"text-xl"} onClick={handleShowPassword}/>
-                                </div>
-                            </div>
-                            <div className={"vertical-spacing gap-2"}>
-                                <label htmlFor={'current-password'}>
-                                    Confirm Password
-                                </label>
-                                <div className={'flex items-center gap-4 w-full px-5 py-2 border'}>
-                                    <input
-                                        onChange={handlePasswordForm}
-                                        type={showPassword ? "text" : "password"}
-                                        name={'confirmPassword'}
-                                        id={'current-password'}
-                                        placeholder={"confirm password"}
-                                        className={'w-full border-none hover:ring-0 ring-0 outline-none active:outline-none'}
-                                    />
-                                    <LuEye className={"text-xl"} onClick={handleShowPassword}/>
-                                </div>
-                            </div>
+                            <PasswordInput title={'Current Password'} handlePasswordForm={handlePasswordForm} />
+                            <PasswordInput title={'New Password'} handlePasswordForm={handlePasswordForm} />
+                            <PasswordInput title={'Confirm Password'} handlePasswordForm={handlePasswordForm} />
 
                             <div className={"my-6"}>
                                 <SubmitButton title={'UPDATE PASSWORD'} />
