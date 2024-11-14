@@ -4,10 +4,10 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import z from 'zod'
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form'
 import {Input} from "@/components/ui/input.tsx";
-import {Button} from "@/components/ui/button.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
 import usePasswordToggle from "@/assets/utils.tsx";
 import {useNavigate} from "react-router-dom";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 const ResetPassword = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle()
     const navigate = useNavigate()
@@ -27,7 +27,7 @@ const ResetPassword = ()=>{
             <div className={"w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
                 <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16"}>
                     <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border mx-auto"}>
-                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Reset Password</h3>
+                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-primary"}>Reset Password</h3>
                         <p className={"text-gray-8 text-sm text-center"}>Create New Password</p>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(submitForm)}
@@ -38,7 +38,7 @@ const ResetPassword = ()=>{
                                     render={({field}) => (
                                         <FormItem>
                                             <FormLabel className={"text-lg"}>New Password
-                                                <span className={"text-sm text-orange-5"}>*</span>
+                                                <span className={"text-sm text-secondary"}>*</span>
                                             </FormLabel>
                                             <FormControl>
                                                 <div
@@ -70,7 +70,7 @@ const ResetPassword = ()=>{
                                 render={({field}) => (
                                     <FormItem>
                                         <FormLabel className={"text-lg"}>Confirm Password
-                                            <span className={"text-sm text-orange-5"}>*</span>
+                                            <span className={"text-sm text-secondary"}>*</span>
                                         </FormLabel>
                                         <FormControl>
                                             <div
@@ -97,8 +97,7 @@ const ResetPassword = ()=>{
 
                                 )}
                             />
-
-                                <Button className={"bg-blue-5 text-white py-6 hover:bg-blue-400 duration-300"}>Reset Password</Button>
+                                <SubmitButton title={'Reset password'} />
                             </form>
                         </Form>
                     </div>

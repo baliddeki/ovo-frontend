@@ -42,7 +42,7 @@ const UserHome = ()=>{
                         <ProductSlider/>
                     </div>
                 </div>
-                <div className={"w-screen section inline-padding pt-8 py-16 bg-[#F7F9FD]"}>
+                <div className={"w-screen section inline-padding pt-8 py-16 bg-gray-2"}>
                     <div className={"py-16 grid md:grid-cols-2 md:gap-6 lg:gap-12"}>
                         <Carousel className={"overflow-hidden sm:overflow-auto"}>
                             <CarouselContent>

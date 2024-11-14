@@ -1,4 +1,3 @@
-import {Button} from "@/components/ui/button.tsx";
 import {
     InputOTP,
     InputOTPGroup,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/input-otp"
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 
 const ResetToken = ()=>{
     const [otp, setOtp] = useState<string>("")
@@ -20,7 +20,7 @@ const ResetToken = ()=>{
             <div className={"w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
                 <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16"}>
                     <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border mx-auto"}>
-                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Enter OTP</h3>
+                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-primary"}>Enter OTP</h3>
                         <p className={"text-gray-8 text-sm text-center"}>Enter OTP to reset Password</p>
                         <form onSubmit={submitForm}
                               className={"w-full vertical-spacing gap-6 mt-4"}>
@@ -43,7 +43,7 @@ const ResetToken = ()=>{
                                        </InputOTPGroup>
                                    </InputOTP>
                                </div>
-                            <Button className={"bg-blue-5 text-white mt-4 py-6 hover:bg-blue-400 duration-300"}>Reset Password</Button>
+                            <SubmitButton title={"Reset Password"} />
                         </form>
                     </div>
                 </div>
