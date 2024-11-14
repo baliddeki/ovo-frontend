@@ -45,43 +45,39 @@ const UserFooter = ()=>{
                         {/* <!-- Products section --> */}
                         <div className="">
                             <h6
-                                className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                                className="mb-4 text-black flex justify-center text-black font-bold uppercase md:justify-start">
                                 Products
                             </h6>
-                            <p className="mb-4">
-                                <a className="text-neutral-600"
-                                >Men Shoes</a>
+                            <p className="mb-1 hover:text-primary">
+                                <Link to={'/products'}>Men Shoes</Link>
                             </p>
-                            <p className="mb-4">
-                                <a className="text-neutral-600"
-                                >Lady's Shoes</a>
+                            <p className="mb-1 hover:text-primary">
+                                <Link to={'/products'}>Lady's Shoes</Link>
                             </p>
-                            <p className="mb-4">
-                                <a className="text-neutral-600"
-                                >Children Shoes</a>
+                            <p className="mb-1 hover:text-primary">
+                                <Link to={'/products'}>Children Shoes</Link>
                             </p>
                         </div>
                         {/* <!-- Useful links section --> */}
-                        <div className="">
+                        <div>
                             <h6
-                                className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+                                className="mb-4 text-black flex justify-center font-semibold uppercase md:justify-start">
                                 Useful links
                             </h6>
-                            <p className="mb-4 ">
-                                <Link to={"/about"} className="text-neutral-600 hover:text-green-5 duration-300"
+                            <p className="mb-1">
+                                <Link to={"/about"} className="text-neutral-600 hover:text-primary duration-300"
                                 >About us</Link>
                             </p>
-                            <p className="mb-4 ">
-                                <Link to={"/contact"} className="text-neutral-600 hover:text-green-5 duration-300"
+                            <p className="mb-1">
+                                <Link to={"/contact"} className="text-neutral-600 hover:text-primary duration-300"
                                 >Contact Us</Link>
                             </p>
-                            <p className="mb-4 ">
-                                <a className="text-neutral-600 hover:text-green-5 duration-300"
-                                >Orders</a>
+                            <p className="mb-1">
+                                <Link to={'/orders'} className="text-neutral-600 hover:text-primary duration-300"
+                                >Orders</Link>
                             </p>
                             <p>
-                                <a className="text-neutral-600 hover:text-green-5 duration-300"
-                                >Help</a>
+                                <Link to={'contact'} className="text-neutral-600 hover:text-primary duration-300" >Help</Link>
                             </p>
                         </div>
                         {/* <!-- Contact section --> */}
@@ -90,15 +86,15 @@ const UserFooter = ()=>{
                                 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                                 Contact
                             </h6>
-                            <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+                            <p className="mb-1 flex items-center justify-center gap-4 md:justify-start">
                                <HiHome className={"text-lg"}/>
                                 Kampala, Uganda
                             </p>
-                            <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+                            <p className="mb-1 flex items-center justify-center gap-4 md:justify-start">
                                <TbMailFilled className={"text-lg"}/>
                                 shoe-shop@gmail.com
                             </p>
-                            <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+                            <p className="mb-1 flex items-center justify-center gap-4 md:justify-start">
                                <FaPhoneAlt className={"text-lg"}/>
                                 + 256 777777777
                             </p>
@@ -108,7 +104,7 @@ const UserFooter = ()=>{
 
                 {/* <!--Copyright section--> */}
                 <div className=" md:px-20 lg:px-60 bg-neutral-200 p-6 text-center">
-                    <span>© {copyRight} Copyright:</span>
+                    <span>© {copyRight} Copyright: {' '}</span>
                     <a
                         className="font-semibold text-neutral-600"
 
