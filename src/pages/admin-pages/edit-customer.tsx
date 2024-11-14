@@ -27,6 +27,7 @@ const AddNewCustomer = ()=>{
             addProduct: customer?.permissions?.["add-product"],
             upDateProduct: customer?.permissions?.["update-product"],
             deleteProduct: customer?.permissions?.["delete-product"],
+            role: "admin",
         }
     })
 
@@ -58,7 +59,7 @@ const AddNewCustomer = ()=>{
                     </div>
                 </div>
             </div>
-            <CustomerForm form={form} submitForm={submitForm} />
+            <CustomerForm action={'edit'} form={form} submitForm={submitForm} />
         </>
 )
 }

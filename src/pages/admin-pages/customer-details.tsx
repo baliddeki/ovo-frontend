@@ -5,13 +5,14 @@ import {
     BreadcrumbList, BreadcrumbPage,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb.tsx";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {customers, orders, wishlist} from "@/assets/data.ts";
 import backgroundImage from "/background-images/user-details-bg.png"
 import userImage from "/users/user-image-0.png"
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import DeleteOrder from "@/components/admin-components/products-components/DeleteOrder.tsx";
 import {RiDeleteBinLine} from "react-icons/ri";
+import {LuEye} from "react-icons/lu";
 
 const CustomerDetails = ()=>{
     const {customerId} = useParams()
@@ -20,7 +21,7 @@ const CustomerDetails = ()=>{
         <>
             <div className={"vertical-spacing"}>
                 <div className={"flex items-center justify-between gap-4"}>
-                    <h2 className={"text-2xl md:text-3xl font-bold"}>Edit {customer?.firstName + " " + customer?.lastName}</h2>
+                    <h2 className={"text-2xl md:text-3xl font-bold"}>{customer?.firstName + " " + customer?.lastName}</h2>
                     <div>
                         <Breadcrumb>
                             <BreadcrumbList>
@@ -128,7 +129,7 @@ const CustomerDetails = ()=>{
                                         <TableCell>{deliveryDate}</TableCell>
                                         <TableCell>
                                             <div className={"flex gap-4 items-center text-2xl"}>
-                                                {/*<Link to={`/admin/product/${id}`} className={"text-blue-5"}><LuEye/></Link>*/}
+                                                <Link to={`/admin/orders/${id}`} className={"text-blue-5 text-2xl"}><LuEye/></Link>
                                                 {/*<Link to={`/admin/edit-product/${id}`}*/}
                                                 {/*      className={"text-green-5"}><CiEdit/></Link>*/}
                                                 <DeleteOrder orderId={id}>

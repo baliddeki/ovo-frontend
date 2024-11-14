@@ -62,13 +62,19 @@ export type  CustomerFormType = {
     firstName: string;
     lastName: string;
     password: string;
-    upDateProduct: boolean
+    upDateProduct: boolean;
+    role: string;
 }
 export interface Notification {
     id: string,
     title: string,
     message: string,
     status: string,
+    customerProfile: {
+        name: string,
+        email: string,
+        profileImage: string,
+    }
 }
 export const productSchema = z.object({
     productName: z.string().min(4).max(20),
@@ -91,6 +97,24 @@ export const loginSchema = z.object({
     password: z.string({
         required_error: "Password is Required"
     }),
+})
+export const resetPasswordSchema = z.object({
+    newPassword: z.string({
+        required_error: "Password is Required"
+    }),
+    confirmNewPassword: z.string({
+        required_error: "Password is Required"
+    }),
+})
+export const requestResetPasswordSchema = z.object({
+    email: z.string({
+        required_error: "Email is Required"
+    }),
+})
+export const resetTokenSchema = z.object({
+    otp: z.string({
+        required_error: "Otp is Required"
+    })
 })
 
 export const signupSchema = z.object({
@@ -122,6 +146,7 @@ export const createUserSchema = z.object({
     addProduct: z.boolean(),
     upDateProduct: z.boolean(),
     deleteProduct: z.boolean(),
+    role: z.string(),
 })
 
 export type Customers = {
