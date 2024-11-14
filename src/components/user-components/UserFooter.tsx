@@ -119,3 +119,144 @@ const UserFooter = ()=>{
 }
 
 export default UserFooter
+
+//
+// import {FaPhoneAlt} from "react-icons/fa";
+// import {Link} from "react-router-dom";
+// import {HiHome} from "react-icons/hi2";
+// import {TbMailFilled} from "react-icons/tb";
+// const categories:{
+//     name: string,
+//     link: string
+// }[] = [
+//     {
+//         name: "Running Shoes",
+//         link: "/products"
+//     },
+//     {
+//         name: "Casual Shoes",
+//         link: "/products"
+//     },
+//     {
+//         name: "Yoga Shoes",
+//         link: "/products"
+//     },
+//     {
+//         name: "Sports Shoes",
+//         link: "/products"
+//     }
+// ]
+// const business:{
+//     name: string,
+//     link: string
+// }[] = [
+//     {
+//         name: "Shop",
+//         link: "/shop"
+//     },
+//     {
+//         name: "Company Profile",
+//         link: "/about"
+//     },
+//     {
+//         name: "Social Responsibility",
+//         link: "/contact"
+//     }
+// ]
+// const usefullLinks:{
+//     name: string,
+//     link: string
+// }[] = [
+//     {
+//         name: "Shop",
+//         link: "/shop"
+//     },
+//     {
+//         name: "Company Profile",
+//         link: "/about"
+//     },
+//     {
+//         name: "Social Responsibility",
+//         link: "/contact"
+//     }
+// ]
+// const UserFooter = ()=>{
+//     const copyRight = new Date().getFullYear();
+//     return (
+//         <footer
+//             className="mt-auto bg-neutral-100 text-center text-neutral-600 lg:text-left">
+//             {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
+//             <div className=" inline-padding py-10 text-center md:text-left">
+//                 <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+//                     {/* <!-- Products section --> */}
+//                     <div className="vertical-spacing !gap-1">
+//                         <h6
+//                             className="mb-4 flex justify-center font-extrabold uppercase md:justify-start">
+//                             Categories
+//                         </h6>
+//                         {
+//                             categories.map(({name, link}, index) => (
+//                                 <Link key={index} to={link} className={`text-neutral-600"`}>{name}</Link>
+//                             ))
+//                         }
+//                     </div>
+//
+//                     {/**/}
+//                     <div className="vertical-spacing !gap-1">
+//                         <h6
+//                             className="mb-4 flex justify-center font-extrabold uppercase md:justify-start">
+//                             Business
+//                         </h6>
+//                         {
+//                             business.map(({name, link}, index) => (
+//                                 <Link key={index} to={link} className={`text-neutral-600"`}>{name}</Link>
+//                             ))
+//                         }
+//                     </div>
+//                     {/* <!-- Useful links section --> */}
+//                     <div className="vertical-spacing !gap-1">
+//                         <h6
+//                             className="mb-4 flex justify-center font-extrabold uppercase md:justify-start">
+//                             Usefull links
+//                         </h6>
+//                         {
+//                             usefullLinks.map(({name, link}, index) => (
+//                                 <Link key={index} to={link} className={`text-neutral-600"`}>{name}</Link>
+//                             ))
+//                         }
+//                     </div>
+//                     {/* <!-- Contact section --> */}
+//                     <div>
+//                         <h6
+//                             className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+//                             Contact
+//                         </h6>
+//                         <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+//                             <HiHome className={"text-lg"}/>
+//                             Kampala, Uganda
+//                         </p>
+//                         <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+//                             <TbMailFilled className={"text-lg"}/>
+//                             shoe-shop@gmail.com
+//                         </p>
+//                         <p className="mb-4 flex items-center justify-center gap-4 md:justify-start">
+//                             <FaPhoneAlt className={"text-lg"}/>
+//                             + 256 777777777
+//                         </p>
+//                     </div>
+//                 </div>
+//             </div>
+//
+//             {/* <!--Copyright section--> */}
+//             <div
+//                 className="inline-padding bg-neutral-100 border-t-2 border-t-white py-16 flex justify-between items-center gap-4">
+//                 <p>Copyright © {copyRight} : OVO | <Link to={"/"} className={"text-blue-500"}
+//                                                          reloadDocument>Credits</Link></p>
+//                 <p>Powered by <Link to={"/"} className={"text-blue-500"} reloadDocument>OVO shoe shop</Link></p>
+//
+//             </div>
+//         </footer>
+//     )
+// }
+//
+// export default UserFooter
