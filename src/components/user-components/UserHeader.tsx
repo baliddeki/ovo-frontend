@@ -13,6 +13,7 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import {FaChevronRight} from "react-icons/fa";
+import HeaderLink from "@/components/HeaderLink.tsx";
 
 
 const UserHeader = ()=>{
@@ -31,54 +32,25 @@ const UserHeader = ()=>{
                     <IoMdMenu className={"text-3xl"}/>
                 </button>
                 <div className={"hidden md:flex flex-1 items-center justify-end gap-4"}>
-                    <Link
-                        onClick={()=>handleActiveBar("")}
-                        to={"/"}
-                        className={`${activeBar === "" && path === "/" ? " text-primary font-medium ": "text-900"} hover:bg-primary-50 hover:text-primary px-4 py-1 rounded-lg duration-300`}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        onClick={()=>handleActiveBar("shop")}
-                        to={"/shop"}
-                        className={`${activeBar === "shop" || path === "/shop" ? "text-primary font-medium ": "text-900"} hover:text-primary hover:bg-primary-50 px-4 py-1 rounded-lg duration-300`}
-                    >
-                        Shop
-                    </Link>
-
-
-                {/* end of navigation menu item */}
-
-                <Link
-                    onClick={() => handleActiveBar("about")}
-                    to={"/about"}
-                    className={`${activeBar === "about" || path === "/about" ? "bg-primary-50 text-primary font-medium" : "text-900"} hover:text-primary hover:bg-primary-50 px-4 py-1 rounded-lg duration-300`}
-                >
-                    About
-                </Link>
-
-                <Link
-                    onClick={() => handleActiveBar("contact")}
-                    to={"/contact"}
-                    className={`${activeBar === "contact" || path === "/contact" ? "bg-primary-50 text-primary " : "text-900"} hover:text-primary hover:bg-primary-50 px-4 py-1 rounded-lg duration-300`}
-                >
-                    Contact
-                </Link>
+                  <HeaderLink activeBar={activeBar} handleActiveBar={handleActiveBar} title={"Home"} link={"/"}/>
+                  <HeaderLink activeBar={activeBar} handleActiveBar={handleActiveBar} title={"Shop"} link={"shop"}/>
+                  <HeaderLink activeBar={activeBar} handleActiveBar={handleActiveBar} title={"About"} link={"about"}/>
+                  <HeaderLink activeBar={activeBar} handleActiveBar={handleActiveBar} title={"Contact"} link={"contact"}/>
                 <Cart/>
                     {/* Navigation menu item */}
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger onClick={()=>handleActiveBar("my-account")} className={`${activeBar === "my-account" || path === "/my-account" ? "bg-primary-50 text-primary ": "text-900"} hover:text-primary hover:bg-primary-50 bg-transparent px-4 py-1 rounded-lg duration-300`}>My Account</NavigationMenuTrigger>
+                                <NavigationMenuTrigger className={`${activeBar === "my-account" || path === "/my-account" ? "bg-primary-50 text-primary font-medium": "text-900"} hover:text-primary hover:font-medium hover:bg-primary-50 bg-transparent px-4 py-1 rounded-lg duration-300`}>My Account</NavigationMenuTrigger>
                                 <NavigationMenuContent className={"w-full bg-white shadow-md"}>
                                     <div className={' w-[14rem] flex flex-col'}>
                                         <NavigationMenuLink onClick={()=>handleActiveBar("my-account")} asChild>
-                                            <Link to="/orders" className={`hover:text-primary px-5 py-3 duration-300 border-b`}>
+                                            <Link to="/orders" className={`hover:text-primary hover-font-medium px-5 py-3 duration-300 border-b`}>
                                                 Orders
                                             </Link>
                                         </NavigationMenuLink>
                                         <NavigationMenuLink onClick={()=>handleActiveBar("my-account")} asChild>
-                                            <Link to="/my-account" className={`hover:text-primary px-5 py-3 duration-300`}>
+                                            <Link to="/my-account" className={`hover:text-primary hover-font-medium px-5 py-3 duration-300`}>
                                                 Account Details
                                             </Link>
                                         </NavigationMenuLink>
