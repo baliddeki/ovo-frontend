@@ -6,11 +6,10 @@ import Orders from "@/pages/admin-pages/orders.tsx";
 import Products from "@/pages/admin-pages/products.tsx";
 import Profile from "@/pages/admin-pages/profile.tsx";
 import Sales from "@/pages/admin-pages/sales.tsx";
-import PageNotFound from '@/pages/admin-pages/page-not-found.tsx';
+import PageNotFound from '@/pages/page-not-found.tsx';
 import Product from "@/pages/admin-pages/product.tsx";
 import EditProduct from "@/pages/admin-pages/edit-product.tsx";
 import AddNewProduct from "@/pages/admin-pages/add-new-product.tsx";
-import AuthLayout from "@/layouts/AuthLayout.tsx";
 import SignUp from "@/pages/auth/sign-up.tsx";
 import SignIn from "@/pages/auth/sign-in.tsx";
 import UserLayout from "@/layouts/UserLayout.tsx";
@@ -33,14 +32,20 @@ import AdminOrderDetails from "@/pages/admin-pages/admin-order-details.tsx";
 import AdminEditOrder from "@/pages/admin-pages/admin-edit-order.tsx";
 import NotificationPage from "@/pages/admin-pages/notification-page.tsx";
 import NotificationsPage from "@/pages/admin-pages/notifications-page.tsx";
+import ResetPassword from "@/pages/auth/reset-password.tsx";
+import ResetToken from "@/pages/auth/reset-token.tsx";
+import RequestOtp from "@/pages/auth/request-otp.tsx";
 
 function App() {
   return (
     <>
      <Routes>
-         <Route path={"/auth"} element={<AuthLayout />}>
+         <Route path={"/auth"} element={<UserLayout />}>
              <Route path={"signin"} element={<SignIn />}/>
              <Route path={"signup"} element={<SignUp />}/>
+             <Route path={"password-reset"} element={<ResetPassword />}/>
+             <Route path={"request-otp"} element={<RequestOtp />}/>
+             <Route path={"enter-otp"} element={<ResetToken />}/>
          </Route>
 
          <Route path={"/"} element={<UserLayout />}>
@@ -54,8 +59,6 @@ function App() {
              <Route path={"orders"} element={<UserOrders/>}/>
              <Route path={"order-details/:orderId"} element={<UserOrderDetails />}/>
              <Route path={"my-account"} element={<UserAccount />}/>
-             <Route path={"signin"} element={<SignIn />}/>
-             <Route path={"signup"} element={<SignUp />}/>
          </Route>
          <Route path={"/admin"} element={<Admin />}>
              <Route index element={<AdminHome />}/>

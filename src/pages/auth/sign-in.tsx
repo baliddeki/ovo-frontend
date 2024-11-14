@@ -7,10 +7,11 @@ import {Input} from "@/components/ui/input.tsx";
 import usePasswordToggle from "@/assets/utils.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
 import {Checkbox} from "@/components/ui/checkbox.tsx";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
 const SignIn = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle();
+    const navigate = useNavigate()
     const form = useForm<z.infer <typeof loginSchema>>({
         resolver: zodResolver(loginSchema),
         defaultValues: {
@@ -20,6 +21,7 @@ const SignIn = ()=>{
     })
     const submitForm = (data: z.infer<typeof loginSchema>)=>{
         console.log(data)
+        navigate('/')
     }
     return (
         <>
@@ -27,7 +29,7 @@ const SignIn = ()=>{
                 <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16"}>
                     <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border mx-auto"}>
                         <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Sign in</h3>
-                        <p className={"text-gray-8 text-sm"}>Enter your email and password to login</p>
+                        <p className={"text-gray-8 text-sm text-center"}>Enter your email and password to login</p>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(submitForm)}
                                   className={"w-full vertical-spacing gap-6 mt-4"}>
@@ -99,13 +101,11 @@ const SignIn = ()=>{
                                             Keep me signed in
                                         </label>
                                     </div>
-                                    <Link to={"/auth/password-reset"} className={"text-sm text-blue-5"}>Forgot
+                                    <Link to={"/auth/request-otp"} className={"text-sm text-blue-5"}>Forgot
                                         Password?</Link>
                                 </div>
+                                <Button className={"bg-blue-5 text-white py-6 hover:bg-blue-400 duration-300"}>Signin</Button>
                             </form>
-
-                            <Button
-                                className={"bg-blue-5 text-white mt-4 hover:bg-blue-400 duration-300"}>Signin</Button>
                         </Form>
                         <div className={"mt-4"}>
                             <p className={"text-sm"}>You do not have an account yet? <Link to={"/auth/signup"}

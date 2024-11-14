@@ -31,7 +31,7 @@ const Notifications = ({notifications}:  {notifications: Notification[]})=>{
                                             <MenubarItem className={'group max-w-[24rem]'}>
                                                 <Link to={`/admin/notification/${id}`} className={"flex items-center gap-4"}>
                                                     <Avatar>
-                                                        <AvatarImage src={customerProfile.profileImage} />
+                                                        <AvatarImage src={customerProfile.profileImage} className={'object-cover'}/>
                                                         <AvatarFallback>
                                                             <RxAvatar className={'w-full h-full text-primary group-hover:text-primary'}/>
                                                         </AvatarFallback>

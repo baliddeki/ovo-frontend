@@ -6,10 +6,11 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/
 import {Input} from "@/components/ui/input.tsx";
 import usePasswordToggle from "@/assets/utils.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button} from "@/components/ui/button.tsx";
 const SignUp = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle();
+    const navigate = useNavigate()
     const form = useForm<z.infer <typeof signupSchema>>({
         resolver: zodResolver(signupSchema),
         defaultValues: {
@@ -22,6 +23,7 @@ const SignUp = ()=>{
     })
     const submitForm = (data: z.infer<typeof signupSchema>)=>{
         console.log(data)
+        navigate('/auth/signin')
     }
     return (
     <>
@@ -30,7 +32,7 @@ const SignUp = ()=>{
                 <div
                     className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border shadow-gray-200 mx-auto"}>
                     <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Sign Up</h3>
-                    <p className={"text-gray-8 text-sm"}>Enter your personal details to create an account</p>
+                    <p className={"text-gray-8 text-sm text-center"}>Enter your personal details to create an account</p>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(submitForm)} className={"w-full vertical-spacing mt-4 gap-6"}>
                             <div className={"grid md:grid-cols-2 gap-4"}>
@@ -169,10 +171,8 @@ const SignUp = ()=>{
 
                                 )}
                             />
-
+                            <Button className={"bg-blue-5 text-white py-6 hover:bg-blue-400 duration-300"}>Signup</Button>
                         </form>
-
-                        <Button className={"bg-blue-5 text-white mt-4 hover:bg-blue-400 duration-300"}>Signup</Button>
                     </Form>
                     <div className={"mt-4"}>
                         <p className={"text-sm"}>Already have an Account? <Link to={"/auth/signin"}
