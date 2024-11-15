@@ -7,14 +7,15 @@ interface Props{
     category: string;
     price: string;
     productId?: string;
+    className?: string;
 }
-const ProductCard = ({image, name, category, price, productId}:Props)=>{
+const ProductCard = ({image, name, category, price, productId, className}:Props)=>{
     const gradientBackground = {
         background:"radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%)",
 }
     return (
         <>
-            <div className={"min-w-[18.75rem] rounded-lg shadow-md"}>
+            <div className={`${className} min-w-[18.75rem] rounded-lg shadow-md`}>
                 <Link to={`/product/${productId}`} reloadDocument style={gradientBackground} className={"rounded-t-lg w-full h-[17.5rem] bg-white flex items-center justify-center p-4"}>
                     <img src={image} alt={name} className={"block my-auto"}/>
                 </Link>

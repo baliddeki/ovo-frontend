@@ -6,6 +6,12 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 @layer components{
   .center-items{
     @apply flex items-center justify-center
