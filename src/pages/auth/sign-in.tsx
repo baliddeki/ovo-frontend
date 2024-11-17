@@ -8,7 +8,7 @@ import usePasswordToggle from "@/assets/utils.tsx";
 import {LuEye, LuEyeOff} from "react-icons/lu";
 import {Checkbox} from "@/components/ui/checkbox.tsx";
 import {Link, useNavigate} from "react-router-dom";
-import {Button} from "@/components/ui/button.tsx";
+import SubmitButton from "@/components/admin-components/SubmitButton.tsx";
 const SignIn = ()=>{
     const {showPassword, handleShowPassword} = usePasswordToggle();
     const navigate = useNavigate()
@@ -28,7 +28,7 @@ const SignIn = ()=>{
             <div className={"md:min-h-[calc(100vh-6.25rem)] w-screen pb-16 section inline-padding flex flex-col bg-[#F2F4F6]"}>
                 <div className={"bg-white max-w-[75rem] w-full p-6 md:p-16 mx-auto mt-16"}>
                     <div className={"max-w-[35rem] w-full p-8 vertical-spacing bg-white rounded-xl border mx-auto"}>
-                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-gray-8"}>Sign in</h3>
+                        <h3 className={"text-2xl md:text-5xl font-extrabold md:text-center text-primary"}>Sign in</h3>
                         <p className={"text-gray-8 text-sm text-center"}>Enter your email and password to login</p>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(submitForm)}
@@ -39,7 +39,7 @@ const SignIn = ()=>{
                                     render={({field}) => (
                                         <FormItem>
                                             <FormLabel className={"text-lg"}>Email Address
-                                                <span className={"text-sm text-orange-5"}>*</span>
+                                                <span className={"text-sm text-secondary"}>*</span>
                                             </FormLabel>
                                             <FormControl>
                                                 <div className={"md:ml-2 border-[1px] rounded-lg px-4 py-2"}>
@@ -63,7 +63,7 @@ const SignIn = ()=>{
                                     render={({field}) => (
                                         <FormItem>
                                             <FormLabel className={"text-lg"}>Email Address
-                                                <span className={"text-sm text-orange-5"}>*</span>
+                                                <span className={"text-sm text-secondary"}>*</span>
                                             </FormLabel>
                                             <FormControl>
                                                 <div
@@ -104,8 +104,8 @@ const SignIn = ()=>{
                                     <Link to={"/auth/request-otp"} className={"text-sm text-blue-5"}>Forgot
                                         Password?</Link>
                                 </div>
-                                <Button className={"bg-blue-5 text-white py-6 hover:bg-blue-400 duration-300"}>Signin</Button>
                             </form>
+                            <SubmitButton  title={'Sign In'} />
                         </Form>
                         <div className={"mt-4"}>
                             <p className={"text-sm"}>You do not have an account yet? <Link to={"/auth/signup"}
