@@ -202,7 +202,7 @@ const CarouselPrevious = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "absolute",
+        "absolute group bg-white rounded-full shadow-md p-4 flex items-center justify-center border border-[#F2F4F6]",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -212,7 +212,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-        <FaChevronLeft className="text-green-400 hover:text-green-5 duration-300 text-3xl" />
+        <FaChevronLeft className="text-gray-3 group-hover:text-gray-8 duration-300 text-3xl" />
       <span className="sr-only">Previous slide</span>
     </button>
   )
@@ -229,7 +229,7 @@ const CarouselNext = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "absolute",
+        "absolute group bg-white rounded-full shadow-md p-4 flex items-center justify-center border border-[#F2F4F6]",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -239,7 +239,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <FaChevronRight className="text-green-400 hover:text-green-5 duration-300 text-3xl" />
+      <FaChevronRight className="text-gray-3 group-hover:text-gray-8 duration-300 text-3xl" />
       <span className="sr-only">Next slide</span>
     </button>
   )
